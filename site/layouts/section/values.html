@@ -1,8 +1,8 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title) }}
+{{ partial "jumbotron" .Params }}
 
-<div class="mw7 center ph3 pt4">
+<div class="mw8 center ph3 pt4">
 
   {{ range $index, $element := .Params.values }}
     {{ if modBool $index 2 }}

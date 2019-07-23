@@ -1,0 +1,10 @@
+<div class="collapsibleList mw8">
+  {{range .blinds}}
+  {{ $target := replaceRE " " "" .heading }}
+  <label for="{{$target}}">{{$target}}</label>
+  <input type="checkbox" id="{{$target}}" />
+  <p>
+    {{.text}}
+    </p>
+{{end}}
+</div>

@@ -1,0 +1,3150 @@
+                               {{ define "main" }}
+{{partial "table-search"}}
+{{ partial "jumbotron" .Params }}
+<div class="tc mw-100">
+{{ range $element := .Params.sections }}
+	{{ partial "jump-to-menu" $element }}
+{{end}}
+{{ range $element := .Params.blinds }}
+	{{ partial "jump-to-menu" $element }}
+{{end}}
+</div>
+	{{ range $index, $element := .Params.sections }}
+	{{ partial "basic-sections" $element }}
+	{{end}}
+
+<!-- Hardcoded html table  -->
+<div class="mw8 center">
+	<input type="text" id="myInput" placeholder="Search repertoire...">
+	<button onclick="searchTable()">Search</button><button onclick="reset()">Reset</button><p />
+	<div style="overflow-x:auto;">
+	<table class="GeneratedTable" id="usersTable">
+	  <thead>
+	  <tr id="header">
+	    <th style="cursor:pointer">Name</th>
+	    <th style="cursor:pointer">汉字</th>
+		<th style="cursor:pointer">Pinyin</th>
+	    <th style="cursor:pointer">Level</th>
+		<th style="cursor:pointer">Attribution</th>
+		<th style="cursor:pointer">Youtube</th>
+		<th style="cursor:pointer">Guzheng.cn</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr class="item">
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td></tr>
+	<tr class="item">
+	<td>Abdul Azul</td>
+	<td>阿都沁阿斯尔</td>
+	<td>a dōu qìn ā sī ěr</td>
+	<td>2*</td>
+	<td>Mongolian Yatga</td>
+	<td><a href="https://www.youtube.com/results?search_query=阿都沁阿斯尔古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=阿都沁阿斯尔"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Arirang Variations</td>
+	<td>阿里郎变奏曲</td>
+	<td>ālǐ láng biànzòuqǔ</td>
+	<td></td>
+	<td>Gaya Qin, or the Korean Gayageum</td>
+	<td><a href="https://www.youtube.com/results?search_query=阿里郎变奏曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=阿里郎变奏曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Andang</td>
+	<td>安当散调</td>
+	<td>ān dāng sàn diào</td>
+	<td></td>
+	<td>Gaya Qin, or the Korean Gayageum</td>
+	<td><a href="https://www.youtube.com/results?search_query=安当散调古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=安当散调"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Babur Astel</td>
+	<td>巴布尔阿斯尔</td>
+	<td>bā bù'ěr ā sī ěr</td>
+	<td></td>
+	<td>Mongolian Yatga</td>
+	<td><a href="https://www.youtube.com/results?search_query=巴布尔阿斯尔古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=巴布尔阿斯尔"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Harvest Carrots</td>
+	<td>拔萝卜</td>
+	<td>bá luóbo</td>
+	<td>1</td>
+	<td>Person, Yang Nani</td>
+	<td><a href="https://www.youtube.com/results?search_query=拔萝卜古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=拔萝卜"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The King of the Chu Taking off His Coat of Mail</td>
+	<td></td>
+	<td>ba wang xie jia</td>
+	<td></td>
+	<td>Zhejiang</td>
+	<td><a href="https://www.youtube.com/results?search_query=古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q="target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>August Osmanthus Blooms Everywhere</td>
+	<td>八月桂花遍地开</td>
+	<td>bā yuè guìhuā biàndì kāi</td>
+	<td>4</td>
+	<td>Sichuan folk, Jiangxi Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=八月桂花遍地开古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=八月桂花遍地开"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Baijiachun</td>
+	<td>百家春</td>
+	<td>bǎi jiā chūn</td>
+	<td></td>
+	<td>Hakka (kejia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=百家春古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=百家春"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Hundred Birds Honoring the Phoenix</td>
+	<td>百鸟朝凤</td>
+	<td>bǎi niǎo cháo fèng</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=百鸟朝凤古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=百鸟朝凤"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Eight scenes</td>
+	<td>八景</td>
+	<td>bājǐng</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=八景古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=八景"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Baggage</td>
+	<td>包楞调</td>
+	<td>bāo léng diào</td>
+	<td>7,8,9</td>
+	<td>Shandong Folk, Han Tinggui</td>
+	<td><a href="https://www.youtube.com/results?search_query=包楞调古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=包楞调"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>北正宫</td>
+	<td>běi zhènggōng</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=北正宫古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=北正宫"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Gold Mountain of Beijing</td>
+	<td>北京的金山上</td>
+	<td>běijīng de jīnshān shàng</td>
+	<td>1</td>
+	<td>Tibetan Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=北京的金山上古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=北京的金山上"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Banquet dance music</td>
+	<td>釆茶舞曲</td>
+	<td>biàn chá wǔqǔ</td>
+	<td>1</td>
+	<td>Zhejiang*</td>
+	<td><a href="https://www.youtube.com/results?search_query=釆茶舞曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=釆茶舞曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Silk Flower</td>
+	<td>釆花</td>
+	<td>biàn huā</td>
+	<td>5</td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=釆花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=釆花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Dancing Song at the Frontiers</td>
+	<td>边疆舞曲</td>
+	<td>biānjiāng wǔqǔ</td>
+	<td></td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=边疆舞曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=边疆舞曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Hard to be Apart</td>
+	<td>别亦难</td>
+	<td>bié yì nán</td>
+	<td></td>
+	<td>Person, He Zhanhao</td>
+	<td><a href="https://www.youtube.com/results?search_query=别亦难古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=别亦难"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Tea Picking Butterflies Flutter</td>
+	<td>采茶扑蝶</td>
+	<td>cǎi chá pū dié</td>
+	<td></td>
+	<td>Fujian, Anhui*</td>
+	<td><a href="https://www.youtube.com/results?search_query=采茶扑蝶古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=采茶扑蝶"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Colorful Clouds Chasing the Moon</td>
+	<td>彩云追月</td>
+	<td>cǎiyún zhuī yuè</td>
+	<td></td>
+	<td>Cantonese*</td>
+	<td><a href="https://www.youtube.com/results?search_query=彩云追月古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=彩云追月"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Sea with A Smile</td>
+	<td>沧海一声笑</td>
+	<td>cānghǎi yīshēng xiào</td>
+	<td>1</td>
+	<td>Cantonese, Modern*, James Wong 黃霑, C</td>
+	<td><a href="https://www.youtube.com/results?search_query=沧海一声笑古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=沧海一声笑"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Love Song of Grasslands</td>
+	<td>草原情歌</td>
+	<td>cǎoyuán qínggē</td>
+	<td></td>
+	<td>Mongolian, Modern*</td>
+	<td><a href="https://www.youtube.com/results?search_query=草原情歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=草原情歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Little Grassland Hero Sisters</td>
+	<td>草原英雄小姐妹</td>
+	<td>cǎoyuán yīngxióng xiǎo jiěmèi</td>
+	<td>9, 10</td>
+	<td>People: Liu Qichao, Zhang Yan, Wu Yingju</td>
+	<td><a href="https://www.youtube.com/results?search_query=草原英雄小姐妹古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=草原英雄小姐妹"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Music of the Great Wall</td>
+	<td></td>
+	<td>chang cheng qu</td>
+	<td></td>
+	<td>Person, Zhou Yuanjia</td>
+	<td><a href="https://www.youtube.com/results?search_query=古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q="target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Chang'an eight King</td>
+	<td>长安八景</td>
+	<td>cháng'ān bājǐng</td>
+	<td>10</td>
+	<td>People: Yang Jieming, Li Yufen</td>
+	<td><a href="https://www.youtube.com/results?search_query=长安八景古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=长安八景"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>禅院钟声</td>
+	<td>chányuàn zhōng shēng</td>
+	<td></td>
+	<td>Cantonese, Cui Weilin 崔騎林, C</td>
+	<td><a href="https://www.youtube.com/results?search_query=禅院钟声古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=禅院钟声"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Chen Xingyuan’s Matrimonial Alliance with the Barbarians</td>
+	<td>陈杏元和番</td>
+	<td>chénxìngyuán hé fān</td>
+	<td>7, 8</td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=陈杏元和番古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=陈杏元和番"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Cheng Xingyuan Landing in the General’s Yard</td>
+	<td>陈杏元落院</td>
+	<td>chénxìngyuán luò yuàn</td>
+	<td>7</td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=陈杏元落院古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=陈杏元落院"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Gallop</td>
+	<td>驰骋</td>
+	<td>chíchěng</td>
+	<td></td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=驰骋古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=驰骋"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Flower and Bee</td>
+	<td>穿花蜂</td>
+	<td>chuān huā fēng</td>
+	<td>1,2</td>
+	<td>Shandong Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=穿花蜂古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=穿花蜂"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Chuanshan Dragon</td>
+	<td>川山龙 (重六调) </td>
+	<td>chuān shān lóng (zhòng liù diào)</td>
+	<td>1</td>
+	<td>Guangdong Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=川山龙 (重六调) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=川山龙 (重六调) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Spring string</td>
+	<td>春串</td>
+	<td>chūn chuàn</td>
+	<td></td>
+	<td>Minnan</td>
+	<td><a href="https://www.youtube.com/results?search_query=春串古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=春串"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Spring to Lhasa</td>
+	<td>春到拉萨</td>
+	<td>chūn dào lāsà</td>
+	<td>6, 7</td>
+	<td>Person, Shi Zhaoyun</td>
+	<td><a href="https://www.youtube.com/results?search_query=春到拉萨古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=春到拉萨"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Spring Comes to Xiang River</td>
+	<td>春到湘江</td>
+	<td>chūn dào xiāngjiāng</td>
+	<td>9, 10</td>
+	<td>Person, Wang Zhongshan, Ning Baosheng</td>
+	<td><a href="https://www.youtube.com/results?search_query=春到湘江古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=春到湘江"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Spring Fountain</td>
+	<td>春涧流泉</td>
+	<td>chūn jiàn liú quán</td>
+	<td>7</td>
+	<td>Person, Xu Disheng</td>
+	<td><a href="https://www.youtube.com/results?search_query=春涧流泉古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=春涧流泉"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>春郊试马</td>
+	<td>chūn jiāo shì mǎ</td>
+	<td></td>
+	<td>Cantonese</td>
+	<td><a href="https://www.youtube.com/results?search_query=春郊试马古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=春郊试马"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Chun Manjiang</td>
+	<td>春满漓江</td>
+	<td>chūn mǎn líjiāng</td>
+	<td>5</td>
+	<td>People: Lin Jian, Jiao Jinhai</td>
+	<td><a href="https://www.youtube.com/results?search_query=春满漓江古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=春满漓江"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="or Spring Seedling">Hope Springs</dfn></td>
+	<td>春苗</td>
+	<td>chūn miáo</td>
+	<td>4, 6</td>
+	<td>Person, Lin Jian</td>
+	<td><a href="https://www.youtube.com/results?search_query=春苗古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=春苗"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="or A Moonlit Night On The Spring River">Flowers by the River on a Moonlit Night</dfn></td>
+	<td>春江花月夜</td>
+	<td>chūnjiāng huā yuèyè</td>
+	<td>8, 10</td>
+	<td>Ancient Song</td>
+	<td><a href="https://www.youtube.com/results?search_query=春江花月夜古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=春江花月夜"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Excerpt or Melody from <dfn data-info="or A Moonlit Night On The Spring River">Flowers by the River on a Moonlit Night</dfn></td>
+	<td>春江花月夜</td>
+	<td>chūnjiāng huā yuèyè (melody)</td>
+	<td>1</td>
+	<td>Ancient Song</td>
+	<td><a href="https://www.youtube.com/results?search_query=春江花月夜古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=春江花月夜"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Spring Rain Hasn't Cleared</td>
+	<td>春雨未晴</td>
+	<td>chūnyǔ wèi qíng</td>
+	<td>5</td>
+	<td>Jiangnan Silk Bamboo</td>
+	<td><a href="https://www.youtube.com/results?search_query=春雨未晴古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=春雨未晴"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="or Lotus out of Water">Lotus Blossoms Emerging from the Water</dfn></td>
+	<td>出水莲</td>
+	<td>chūshuǐ lián</td>
+	<td>6, 7</td>
+	<td>Hakka (kejia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=出水莲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=出水莲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Big Eight Beat</td>
+	<td>大八板</td>
+	<td>dà bā bǎn</td>
+	<td></td>
+	<td>Shandong, Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=大八板古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=大八板"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="or Not Afraid of Tiger">Fighting the Tiger on the Mountain</dfn></td>
+	<td>打虎上山 (京剧《智取威虎山》选段) </td>
+	<td>dǎ hǔ shàngshān</td>
+	<td>9, 10</td>
+	<td>From the movie "The Taking of Tiger Mountain" 智取威虎山</td>
+	<td><a href="https://www.youtube.com/results?search_query=打虎上山 (京剧《智取威虎山》选段) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=打虎上山 (京剧《智取威虎山》选段) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Big Currency</td>
+	<td>大金钱</td>
+	<td>dà jīnqián</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=大金钱古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=大金钱"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Wide-Opened Hand</td>
+	<td>大开手</td>
+	<td>dà kāi shǒu</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=大开手古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=大开手"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Swinging</td>
+	<td>打秋千</td>
+	<td>dǎ qiūqiān</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=打秋千古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=打秋千"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Hunting Wild Geese</td>
+	<td>打雁</td>
+	<td>dǎ yàn</td>
+	<td>5, 6</td>
+	<td>Henan Bantou Folk Music</td>
+	<td><a href="https://www.youtube.com/results?search_query=打雁古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=打雁"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Turning Silver Silk</td>
+	<td>大银纽丝</td>
+	<td>dà yín niǔ sī</td>
+	<td>1</td>
+	<td>Luqin Shuchang</td>
+	<td><a href="https://www.youtube.com/results?search_query=大银纽丝古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=大银纽丝"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>单点头乱插花</td>
+	<td>dān diǎntóu luàn chāhuā</td>
+	<td></td>
+	<td>Hakka</td>
+	<td><a href="https://www.youtube.com/results?search_query=单点头乱插花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=单点头乱插花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>单点头‧乱插花</td>
+	<td>dān diǎntóu‧luàn chāhuā</td>
+	<td></td>
+	<td>Hakka</td>
+	<td><a href="https://www.youtube.com/results?search_query=单点头‧乱插花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=单点头‧乱插花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Falling Hanging Curtain</td>
+	<td>倒垂帘</td>
+	<td>dào chuílián</td>
+	<td>6</td>
+	<td>Cantonese/Guangdong</td>
+	<td><a href="https://www.youtube.com/results?search_query=倒垂帘古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=倒垂帘"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>到春来</td>
+	<td>dào chūnlái</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=到春来古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=到春来"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Falling off the Donkey</td>
+	<td>倒骑驴 (反线调) </td>
+	<td>dào qí lǘ (fǎn xiàn diào)</td>
+	<td>3</td>
+	<td>Chaozhou Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=倒骑驴 (反线调) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=倒骑驴 (反线调) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Information</td>
+	<td>道情</td>
+	<td>dào qíng</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=道情古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=道情"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Washing Clothes</td>
+	<td>捣衣曲</td>
+	<td>dǎo yī qū</td>
+	<td>3</td>
+	<td>Qin</td>
+	<td><a href="https://www.youtube.com/results?search_query=捣衣曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=捣衣曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="same as Embroidered Shoes">Moonbeams and Bright Lights</dfn></td>
+	<td>灯月交辉</td>
+	<td>dēng yuè jiāo huī</td>
+	<td>3, 5</td>
+	<td>Zhejiang</td>
+	<td><a href="https://www.youtube.com/results?search_query=灯月交辉古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=灯月交辉"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>登楼</td>
+	<td>dēnglóu</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=登楼古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=登楼"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="or Butterflies in Love">The Butterfly Lingers Over Flower</dfn></td>
+	<td>蝶恋花</td>
+	<td>dié liàn huā</td>
+	<td>2, 3</td>
+	<td>Chaozhou folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=蝶恋花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=蝶恋花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Fishing Song of the East Sea</td>
+	<td>东海渔歌</td>
+	<td>dōnghǎi yúgē</td>
+	<td>8, 9</td>
+	<td>Person, Zhang Yan</td>
+	<td><a href="https://www.youtube.com/results?search_query=东海渔歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=东海渔歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="or Pleasant Melody of Dongting Lake">The New Song of Dongting River</dfn></td>
+	<td>洞庭新歌</td>
+	<td>dòngtíng xīngē</td>
+	<td>5, 7</td>
+	<td>Person, Bai Chengren arranger, Wang Changyuan adaptation</td>
+	<td><a href="https://www.youtube.com/results?search_query=洞庭新歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=洞庭新歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Dance of the Dong People</td>
+	<td>侗族舞曲</td>
+	<td>dòngzú wǔqǔ</td>
+	<td>7, 8</td>
+	<td>Person, Jiao Jinhai</td>
+	<td><a href="https://www.youtube.com/results?search_query=侗族舞曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=侗族舞曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Cuckoo Spirit</td>
+	<td>杜宇魂</td>
+	<td>dù yǔ hún</td>
+	<td></td>
+	<td>Hakka (kejia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=杜宇魂古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=杜宇魂"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Oroqen Dance Music</td>
+	<td>鄂伦春舞曲</td>
+	<td>èlúnchūn wǔqǔ</td>
+	<td>5</td>
+	<td>Oroqen Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=鄂伦春舞曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=鄂伦春舞曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>恩莫里</td>
+	<td>ēn mò lǐ</td>
+	<td></td>
+	<td>Gaya Qin, or the Korean Gayageum</td>
+	<td><a href="https://www.youtube.com/results?search_query=恩莫里古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=恩莫里"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="or Busy">Hurried</dfn> Weaving</td>
+	<td>纺织忙</td>
+	<td>fǎngzhī máng</td>
+	<td>3, 4</td>
+	<td>Liu Tianyi 劉天一, C</td>
+	<td><a href="https://www.youtube.com/results?search_query=纺织忙古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=纺织忙"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>飞凤含书 (轻六调) </td>
+	<td>fēi fèng hán shū (qīng liù diào)</td>
+	<td>1</td>
+	<td>Chaozhou Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=飞凤含书 (轻六调) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=飞凤含书 (轻六调) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>A Halcyon Skimmed over the Deep Pool</td>
+	<td>翡翠登潭</td>
+	<td>fěicuì dēng tán</td>
+	<td></td>
+	<td>Hakka (kejia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=翡翠登潭古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=翡翠登潭"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>飞花点翠</td>
+	<td>fēihuā diǎn cuì</td>
+	<td>2, 3</td>
+	<td>Shandong folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=飞花点翠古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=飞花点翠"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>粉蝶采花 (轻六调) </td>
+	<td>fěndié cǎihuā</td>
+	<td>5, 7</td>
+	<td>Chaozhou Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=粉蝶采花 (轻六调) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=粉蝶采花 (轻六调) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Bamboo Swaying in the Wind</td>
+	<td>风摆翠竹</td>
+	<td>fēng bǎi cuì zhú</td>
+	<td>6</td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=风摆翠竹古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=风摆翠竹"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>风求凰 (轻三) </td>
+	<td>fēng qiú huáng (qīng sān)</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=风求凰 (轻三) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=风求凰 (轻三) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>风翔歌</td>
+	<td>fēng xiáng gē</td>
+	<td>1, 3</td>
+	<td>Shandong qinshu</td>
+	<td><a href="https://www.youtube.com/results?search_query=风翔歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=风翔歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Fengyang huagu</td>
+	<td>鳳陽花鼓</td>
+	<td>fèng yáng huāgǔ</td>
+	<td>1</td>
+	<td>Anhui*</td>
+	<td><a href="https://www.youtube.com/results?search_query=鳳陽花鼓古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=鳳陽花鼓"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>风流子</td>
+	<td>fēngliú zi</td>
+	<td></td>
+	<td>Minnan</td>
+	<td><a href="https://www.youtube.com/results?search_query=风流子古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=风流子"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Harvest Song</td>
+	<td>丰收歌</td>
+	<td>fēngshōu gē</td>
+	<td></td>
+	<td>Ng Tai-kong 吳大江, C</td>
+	<td><a href="https://www.youtube.com/results?search_query=丰收歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=丰收歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Harvest gongs and drums</td>
+	<td>丰收锣鼓</td>
+	<td>fēngshōu luógǔ</td>
+	<td>6</td>
+	<td>Person, LiZuji</td>
+	<td><a href="https://www.youtube.com/results?search_query=丰收锣鼓古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=丰收锣鼓"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>A Song of Hovering Phoenix</td>
+	<td>凤翔歌</td>
+	<td>fèngxiáng gē</td>
+	<td>1,2,4</td>
+	<td>Shandong Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=凤翔歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=凤翔歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>风云会</td>
+	<td>fēngyún huì</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=风云会古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=风云会"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>粉红莲 (诸宫调) </td>
+	<td>fěnhóng lián (zhū gōngdiào)</td>
+	<td>7, 9</td>
+	<td>Chaozhou Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=粉红莲 (诸宫调) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=粉红莲 (诸宫调) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>福德词 (活五三十四板) </td>
+	<td>fú dé cí (huó wǔsānshísì bǎn)</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=福德词 (活五三十四板) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=福德词 (活五三十四板) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>福寿绵长</td>
+	<td>fúshòu miáncháng</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=福寿绵长古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=福寿绵长"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>A Fierce Fight at Gaixia</td>
+	<td></td>
+	<td>gaixia han zhan</td>
+	<td></td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q="target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>钢水奔流</td>
+	<td>gāngshuǐ bēnliú</td>
+	<td>9, 10</td>
+	<td>Person, Zhou Deming</td>
+	<td><a href="https://www.youtube.com/results?search_query=钢水奔流古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=钢水奔流"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Green Mountain</td>
+	<td>高山青</td>
+	<td>gāoshān qīng·</td>
+	<td></td>
+	<td>Taiwan Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=高山青古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=高山青"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>High Mountains and Flowing Water</td>
+	<td>高山流水</td>
+	<td>gāoshānliúshuǐ</td>
+	<td>3, 4, 5, 6, 7, 8</td>
+	<td>Henan, Shandong, Zhejiang, Wulin Yiyun</td>
+	<td><a href="https://www.youtube.com/results?search_query=高山流水古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=高山流水"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Rosy Cheeks / Red Plateau</td>
+	<td>高原红</td>
+	<td>gāoyuán hóng</td>
+	<td></td>
+	<td>Tibet*</td>
+	<td><a href="https://www.youtube.com/results?search_query=高原红古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=高原红"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>古力查干阿斯尔</td>
+	<td>gǔ lì chá gàn ā sī ěr</td>
+	<td></td>
+	<td>Mongolian Yatga</td>
+	<td><a href="https://www.youtube.com/results?search_query=古力查干阿斯尔古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=古力查干阿斯尔"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>古曲联奏</td>
+	<td>gǔ qū lián zòu</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=古曲联奏古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=古曲联奏"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Moon Over the Mountain Pass</td>
+	<td>关山月</td>
+	<td>guān shān yuè</td>
+	<td>1, 2</td>
+	<td>Henan Qin Song</td>
+	<td><a href="https://www.youtube.com/results?search_query=关山月古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=关山月"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>广陵散</td>
+	<td>guǎnglíng sàn</td>
+	<td>7</td>
+	<td>Ancient Qin Song</td>
+	<td><a href="https://www.youtube.com/results?search_query=广陵散古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=广陵散"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>归去来</td>
+	<td>guī qù lái</td>
+	<td></td>
+	<td>Ancient Tune</td>
+	<td><a href="https://www.youtube.com/results?search_query=归去来古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=归去来"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="or The Grievance of a Lady in Her Room">Lament of a Maiden</dfn></td>
+	<td>闺中怨</td>
+	<td>guī zhōng yuàn</td>
+	<td>6</td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=闺中怨古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=闺中怨"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The River Dragon</td>
+	<td>过江龙</td>
+	<td>guò jiāng lóng</td>
+	<td>1, 5</td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=过江龙古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=过江龙"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>咼山流水 (中板《板头曲》) </td>
+	<td>guō shān liúshuǐ (zhōng bǎn 《bǎn tóu qū")</td>
+	<td>5</td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=咼山流水 (中板《板头曲》) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=咼山流水 (中板《板头曲》) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Swanee River</td>
+	<td>故乡的亲人</td>
+	<td>gùxiāng de qīnrén</td>
+	<td>6</td>
+	<td>American Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=故乡的亲人古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=故乡的亲人"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Five Etudes for Guzheng</td>
+	<td>古筝练习曲五</td>
+	<td>gǔzhēng liànxí qǔ wǔ</td>
+	<td></td>
+	<td>Daniel Law, C</td>
+	<td><a href="https://www.youtube.com/results?search_query=古筝练习曲五古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=古筝练习曲五"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Vulture Snatched a Crane</td>
+	<td>海青拿鶴</td>
+	<td>hǎi qīng ná hè</td>
+	<td>9</td>
+	<td>Zhejiang</td>
+	<td><a href="https://www.youtube.com/results?search_query=海青拿鶴古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=海青拿鶴"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Vulture Snatched a Crane</td>
+	<td>海青拿天鹅</td>
+	<td>hǎi qīng ná tiān'é</td>
+	<td>9</td>
+	<td>Zhejiang</td>
+	<td><a href="https://www.youtube.com/results?search_query=海青拿天鹅古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=海青拿天鹅"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Autumn Moon Over the Han Palace</td>
+	<td>汉宫秋月</td>
+	<td>hàn gōng qiūyuè</td>
+	<td>3, 4, 5</td>
+	<td>Shandong, Li Lianjun</td>
+	<td><a href="https://www.youtube.com/results?search_query=汉宫秋月古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=汉宫秋月"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>寒鹊争梅</td>
+	<td>hán què zhēng méi</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=寒鹊争梅古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=寒鹊争梅"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Summer's Thunderstorm</td>
+	<td>旱天雷</td>
+	<td>hàn tiān léi</td>
+	<td>3</td>
+	<td>Guangdong Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=旱天雷古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=旱天雷"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="or Winter Crows">Jackdaws</dfn>  Playing on the River</td>
+	<td>寒鸦戏水</td>
+	<td>hán yā xì shuǐ</td>
+	<td>7, 8, 9</td>
+	<td>Chaozhou Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=寒鸦戏水古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=寒鸦戏水"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>汉江韵</td>
+	<td>hànjiāng yùn</td>
+	<td>8, 10</td>
+	<td>People: Qiao Jinwen, Ren Qingzhi</td>
+	<td><a href="https://www.youtube.com/results?search_query=汉江韵古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=汉江韵"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>和番</td>
+	<td>hé fān</td>
+	<td>7</td>
+	<td>Person, Cao Dongfu</td>
+	<td><a href="https://www.youtube.com/results?search_query=和番古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=和番"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>荷英花</td>
+	<td>hé yīng huā</td>
+	<td></td>
+	<td>Mongolian Yatga</td>
+	<td><a href="https://www.youtube.com/results?search_query=荷英花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=荷英花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>合欢令</td>
+	<td>héhuān lìng</td>
+	<td></td>
+	<td>Mongolian?</td>
+	<td><a href="https://www.youtube.com/results?search_query=合欢令古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=合欢令"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="same as The New World of Datong">The Baban Tune of the Henan Area</dfn></td>
+	<td>河南八板</td>
+	<td>hénán bā bǎn</td>
+	<td>3, 5</td>
+	<td>Henan (Zhongzhou) Ancient Folk Music</td>
+	<td><a href="https://www.youtube.com/results?search_query=河南八板古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=河南八板"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>河南曲牌联奏</td>
+	<td>hénán qǔpái lián zòu</td>
+	<td>6</td>
+	<td>Person, Cao Guifen</td>
+	<td><a href="https://www.youtube.com/results?search_query=河南曲牌联奏古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=河南曲牌联奏"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Praising the Red Plum</td>
+	<td>红梅贊</td>
+	<td>hóng méi zàn</td>
+	<td></td>
+	<td>Person, Yang Ming, Jiang Chunyang, Jing Sha</td>
+	<td><a href="https://www.youtube.com/results?search_query=红梅贊古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=红梅贊"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Clever Explanation of Hong Niang</td>
+	<td></td>
+	<td>hong-niang qiao bian</td>
+	<td></td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q="target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Iridescent sister</td>
+	<td>虹彩妹妹</td>
+	<td>hóngcǎi mèimei</td>
+	<td>1</td>
+	<td>Inner Mongolia (Suiyuan)</td>
+	<td><a href="https://www.youtube.com/results?search_query=虹彩妹妹古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=虹彩妹妹"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>红楼梦曲</td>
+	<td>hónglóumèng qū</td>
+	<td>4</td>
+	<td>Person, Wang Liping</td>
+	<td><a href="https://www.youtube.com/results?search_query=红楼梦曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=红楼梦曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>红娘巧辩</td>
+	<td>hóngniáng qiǎo biàn</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=红娘巧辩古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=红娘巧辩"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>鸿雁捎书</td>
+	<td>hóngyàn shāo shū</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=鸿雁捎书古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=鸿雁捎书"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Swan Goose Calls in the Night</td>
+	<td>鸿雁夜啼</td>
+	<td>hóngyàn yè tí</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=鸿雁夜啼古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=鸿雁夜啼"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>花儿与少年</td>
+	<td>huā er yǔ shàonián</td>
+	<td>5, 6</td>
+	<td>Qinghai Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=花儿与少年古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=花儿与少年"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>怀古</td>
+	<td>huáigǔ</td>
+	<td></td>
+	<td>Hakka (kejia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=怀古古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=怀古"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>花篮谣</td>
+	<td>huālán yáo</td>
+	<td>10</td>
+	<td>Person, Qiyao</td>
+	<td><a href="https://www.youtube.com/results?search_query=花篮谣古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=花篮谣"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Dance of the Blackbirds</td>
+	<td>画眉跳架</td>
+	<td>huàméi tiào jià</td>
+	<td>2+</td>
+	<td>Chaozhou Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=画眉跳架古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=画眉跳架"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>唤娇娘</td>
+	<td>huàn jiāo niáng</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=唤娇娘古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=唤娇娘"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Celebrate</td>
+	<td>欢庆</td>
+	<td>huān qìng</td>
+	<td>6</td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=欢庆古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=欢庆"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>黄陵随想</td>
+	<td>huáng líng suíxiǎng</td>
+	<td>10</td>
+	<td>Rao Yuyan 饒余燕, C</td>
+	<td><a href="https://www.youtube.com/results?search_query=黄陵随想古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=黄陵随想"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td></td>
+	<td>huang peng ci</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q="target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Guest in a Deserted City</td>
+	<td>荒城来客</td>
+	<td>huāngchéng láikè</td>
+	<td></td>
+	<td>So Chun-bo 蘇振波, C</td>
+	<td><a href="https://www.youtube.com/results?search_query=荒城来客古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=荒城来客"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>欢乐的阿佤</td>
+	<td>huānlè de ā wǎ</td>
+	<td>4, 5</td>
+	<td>Person, Yang Zhengren</td>
+	<td><a href="https://www.youtube.com/results?search_query=欢乐的阿佤古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=欢乐的阿佤"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Fantasia</td>
+	<td>幻想曲</td>
+	<td>huànxiǎng qǔ</td>
+	<td>10</td>
+	<td>Person, Wang Jianmin</td>
+	<td><a href="https://www.youtube.com/results?search_query=幻想曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=幻想曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>挥莫里</td>
+	<td>huī mò lǐ</td>
+	<td></td>
+	<td>Gaya Qin, or the Korean Gayageum</td>
+	<td><a href="https://www.youtube.com/results?search_query=挥莫里古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=挥莫里"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>混将龙</td>
+	<td>hùn jiāng lóng</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=混将龙古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=混将龙"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Much Sorrow</td>
+	<td>几多愁</td>
+	<td>jǐ duō chóu</td>
+	<td></td>
+	<td>Person, Tan Jian Chang</td>
+	<td><a href="https://www.youtube.com/results?search_query=几多愁古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=几多愁"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Milk the Cow</td>
+	<td>挤牛奶</td>
+	<td>jǐ niúnǎi</td>
+	<td>3, 4</td>
+	<td>From the movie "Prarie Children", Adapted by Zhang Yan</td>
+	<td><a href="https://www.youtube.com/results?search_query=挤牛奶古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=挤牛奶"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>吉尔本阿其</td>
+	<td>jí'ěr běn ē qí</td>
+	<td></td>
+	<td>Mongolian Yatga</td>
+	<td><a href="https://www.youtube.com/results?search_query=吉尔本阿其古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=吉尔本阿其"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Moon of Jianchang</td>
+	<td>建昌月 (蜀乡风情组曲之四) </td>
+	<td>jiàn chāng yuè</td>
+	<td>8</td>
+	<td>Person, Xu Xiaolin</td>
+	<td><a href="https://www.youtube.com/results?search_query=建昌月 (蜀乡风情组曲之四) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=建昌月 (蜀乡风情组曲之四) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Shear Indigo</td>
+	<td>剪靛花</td>
+	<td>jiǎn diàn huā</td>
+	<td>2, 3</td>
+	<td>Henan (Zhongzhou)</td>
+	<td><a href="https://www.youtube.com/results?search_query=剪靛花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=剪靛花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>剪剪花</td>
+	<td>jiǎn jiǎn huā</td>
+	<td></td>
+	<td>Shaanxi Opera (Meihu)</td>
+	<td><a href="https://www.youtube.com/results?search_query=剪剪花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=剪剪花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Tears of Jiangnu</td>
+	<td>姜女泪</td>
+	<td>jiāng nǚ lèi</td>
+	<td>8</td>
+	<td>Shaanxi Opera (Meihu)</td>
+	<td><a href="https://www.youtube.com/results?search_query=姜女泪古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=姜女泪"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>降香牌</td>
+	<td>jiàng xiāng pái</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=降香牌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=降香牌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>江湖水</td>
+	<td>jiānghú shuǐ</td>
+	<td></td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=江湖水古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=江湖水"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>General Order</td>
+	<td>将军令</td>
+	<td>jiāngjūn lìng</td>
+	<td>8, 9</td>
+	<td>Hakka, Zhejiang</td>
+	<td><a href="https://www.youtube.com/results?search_query=将军令古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=将军令"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The General’s Command</td>
+	<td>将军令</td>
+	<td>jiāngjūn lìng</td>
+	<td></td>
+	<td>Hakka</td>
+	<td><a href="https://www.youtube.com/results?search_query=将军令古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=将军令"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>江西月</td>
+	<td>jiāngxī yuè</td>
+	<td></td>
+	<td>Zhejiang</td>
+	<td><a href="https://www.youtube.com/results?search_query=江西月古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=江西月"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Night Rain Tapping on the Window</td>
+	<td>蕉窗夜雨</td>
+	<td>jiāo chuāng yè yǔ</td>
+	<td>5, 7</td>
+	<td>Hakka</td>
+	<td><a href="https://www.youtube.com/results?search_query=蕉窗夜雨古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=蕉窗夜雨"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Water Dragon Spewing Pearls</td>
+	<td>蛟龙吐珠</td>
+	<td>jiāolóng tǔ zhū</td>
+	<td></td>
+	<td>Minnan/Fujian</td>
+	<td><a href="https://www.youtube.com/results?search_query=蛟龙吐珠古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=蛟龙吐珠"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>桔梗谣</td>
+	<td>jiégěng yáo</td>
+	<td>1</td>
+	<td>Korean, Adapted by Qu Yun.</td>
+	<td><a href="https://www.youtube.com/results?search_query=桔梗谣古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=桔梗谣"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>King Flower</td>
+	<td>锦上花</td>
+	<td>jǐn shàng huā</td>
+	<td>2, 5</td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=锦上花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=锦上花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Sun Shines on Jinggangshan</td>
+	<td>井岗山上太阳红</td>
+	<td>jǐng gǎng shān shàng tàiyáng hóng</td>
+	<td>9, 10</td>
+	<td>People, Ainan, Zhao Manqin</td>
+	<td><a href="https://www.youtube.com/results?search_query=井岗山上太阳红古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=井岗山上太阳红"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>金陵怀古 (原名《天京抒怀》) </td>
+	<td>jīnlíng huáigǔ (yuánmíng 《tiān jīng shūhuái》)</td>
+	<td>6</td>
+	<td>Person, Tu Yongmei</td>
+	<td><a href="https://www.youtube.com/results?search_query=金陵怀古 (原名《天京抒怀》) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=金陵怀古 (原名《天京抒怀》) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Adding Flowers to Colorfulness</td>
+	<td>锦上添花 (轻六) </td>
+	<td>jǐnshàngtiānhuā (qīng liù)</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=锦上添花 (轻六) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=锦上添花 (轻六) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Golden Snake Dance</td>
+	<td>金蛇狂舞</td>
+	<td>jīnshé kuáng wǔ</td>
+	<td></td>
+	<td>Person, Niè ěr</td>
+	<td><a href="https://www.youtube.com/results?search_query=金蛇狂舞古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=金蛇狂舞"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Open the Window</td>
+	<td>开扇窗</td>
+	<td>kāi shàn chuāng</td>
+	<td>2, 4</td>
+	<td>Chaozhou Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=开扇窗古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=开扇窗"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>开新板</td>
+	<td>kāi xīn bǎn</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=开新板古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=开新板"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Love Song of Kangding</td>
+	<td>康定情歌</td>
+	<td>kāngdìng qínggē</td>
+	<td>1+</td>
+	<td>Sichuan Folk*</td>
+	<td><a href="https://www.youtube.com/results?search_query=康定情歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=康定情歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Peacock Flying Southeast</td>
+	<td>孔雀东南飞</td>
+	<td>kǒngquè dōngnán fēi</td>
+	<td>7, 8</td>
+	<td>Person, Zheng Deyuan</td>
+	<td><a href="https://www.youtube.com/results?search_query=孔雀东南飞古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=孔雀东南飞"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>哭长城</td>
+	<td>kū chángchéng</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=哭长城古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=哭长城"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Weeping for Zhou Yu</td>
+	<td>哭周瑜</td>
+	<td>kū zhōuyú</td>
+	<td>5</td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=哭周瑜古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=哭周瑜"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>快乐的哕嗦</td>
+	<td>kuàilè de huì suo</td>
+	<td>3</td>
+	<td>Yi folk Song, Arranged by Li Wei (Bian)</td>
+	<td><a href="https://www.youtube.com/results?search_query=快乐的哕嗦古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=快乐的哕嗦"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>快乐的女战士</td>
+	<td>kuàilè de nǚ zhànshì</td>
+	<td>1</td>
+	<td>People: Wu Zuqiang, Du Mingxin  (And others... 等) Zhao Shuping Adaptation</td>
+	<td><a href="https://www.youtube.com/results?search_query=快乐的女战士古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=快乐的女战士"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="same as Lantern and Moonlight">Embroidered Shoes</dfn></td>
+	<td>剌绣鞋</td>
+	<td>lá tòu xié</td>
+	<td>5, 3</td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=剌绣鞋古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=剌绣鞋"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Waves wash the sand</td>
+	<td>浪淘沙</td>
+	<td>làng táo shā</td>
+	<td>2, 4, 5, 6</td>
+	<td>Chaozhou, Hakka Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=浪淘沙古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=浪淘沙"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Old Six Beat</td>
+	<td>老六板</td>
+	<td>lǎo liù bǎn</td>
+	<td>1, 2+</td>
+	<td>Jiangnan Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=老六板古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=老六板"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>老龙哭海</td>
+	<td>lǎo lóng kū hǎi</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=老龙哭海古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=老龙哭海"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Labor is the Most Glorious</td>
+	<td>劳动最光荣 (动画片《劳动最光荣》主题歌) 一</td>
+	<td>láodòng zuì guāngróng (dònghuà piàn 《láodòng zuì guāngróng》 zhǔtí gē) yī</td>
+	<td>3, 4</td>
+	<td>Person, Huang Zhun; arranged by Shi Zhaoyuan</td>
+	<td><a href="https://www.youtube.com/results?search_query=劳动最光荣 (动画片《劳动最光荣》主题歌) 一古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=劳动最光荣 (动画片《劳动最光荣》主题歌) 一"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>梁父吟</td>
+	<td>liáng fù yín</td>
+	<td></td>
+	<td>Minnan</td>
+	<td><a href="https://www.youtube.com/results?search_query=梁父吟古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=梁父吟"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Butterfly Lovers</td>
+	<td>梁祝</td>
+	<td>liángzhù</td>
+	<td></td>
+	<td>Ancient</td>
+	<td><a href="https://www.youtube.com/results?search_query=梁祝古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=梁祝"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>莲花赞 (潮州庙堂音乐《焰口佛曲》轻六调)</td>
+	<td>liánhuā zàn (cháozhōu miàotáng yīnyuè 《yànkou fú qū》 qīng liù diào)</td>
+	<td>2</td>
+	<td>Chaozhou Temple Music, Li Maogen</td>
+	<td><a href="https://www.youtube.com/results?search_query=莲花赞 (潮州庙堂音乐《焰口佛曲》轻六调)古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=莲花赞 (潮州庙堂音乐《焰口佛曲》轻六调)"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>辽南情</td>
+	<td>liáo nán qíng</td>
+	<td>5</td>
+	<td>Person, Yan Li</td>
+	<td><a href="https://www.youtube.com/results?search_query=辽南情古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=辽南情"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td></td>
+	<td>林冲夜奔</td>
+	<td>línchōng yè bēn</td>
+	<td>9, 10</td>
+	<td>Zhejiang, Person: Lu Xiuzheng, Arranged by Wang Yizhi</td>
+	<td><a href="https://www.youtube.com/results?search_query=林冲夜奔古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=林冲夜奔"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>铃銮</td>
+	<td>líng luán</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=铃銮古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=铃銮"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>柳摇金 (六十板尺字头) </td>
+	<td>liǔ yáo jīn (liùshí bǎn chǐ zì tóu)</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=柳摇金 (六十板尺字头) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=柳摇金 (六十板尺字头) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Drops of Water on the Willow Leaves</td>
+	<td></td>
+	<td>liu ye jin</td>
+	<td></td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q="target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Madam Liuqing</td>
+	<td>柳青娘</td>
+	<td>liǔqīngniáng</td>
+	<td>3, 6, 10</td>
+	<td>Chaozhou Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=柳青娘古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=柳青娘"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>流水激石</td>
+	<td>liúshuǐ jī shí</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=流水激石古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=流水激石"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Liuyang River</td>
+	<td>浏阳河</td>
+	<td>liúyáng hé</td>
+	<td>4, 5</td>
+	<td>Person, Tang Shuguan</td>
+	<td><a href="https://www.youtube.com/results?search_query=浏阳河古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=浏阳河"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>陇东小调</td>
+	<td>lǒng dōng xiǎodiào</td>
+	<td>2</td>
+	<td>Person, Sun Wenzhao</td>
+	<td><a href="https://www.youtube.com/results?search_query=陇东小调古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=陇东小调"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>乱插花</td>
+	<td>luàn chāhuā</td>
+	<td>3</td>
+	<td>Guangdong Hakka</td>
+	<td><a href="https://www.youtube.com/results?search_query=乱插花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=乱插花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Courtyard</td>
+	<td>落院</td>
+	<td>luò yuàn</td>
+	<td>7</td>
+	<td>Person, Cao Dongfu</td>
+	<td><a href="https://www.youtube.com/results?search_query=落院古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=落院"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>麻姑进酒</td>
+	<td>má gū jìn jiǔ</td>
+	<td></td>
+	<td>Minnan</td>
+	<td><a href="https://www.youtube.com/results?search_query=麻姑进酒古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=麻姑进酒"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>慢吟</td>
+	<td>màn yín</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=慢吟古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=慢吟"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Three Stanzas of Plum-blossoms</td>
+	<td>梅花三弄</td>
+	<td>méihuā sān nòng</td>
+	<td>4, 6, 7</td>
+	<td>Qin</td>
+	<td><a href="https://www.youtube.com/results?search_query=梅花三弄古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=梅花三弄"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>梅花引 (赚) </td>
+	<td>méihuā yǐn (zhuàn)</td>
+	<td>5</td>
+	<td>Shaanxi, Xian Drum Music</td>
+	<td><a href="https://www.youtube.com/results?search_query=梅花引 (赚) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=梅花引 (赚) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Beautiful Grassland, My Home</td>
+	<td>美丽的草原我的家</td>
+	<td>měilì de cǎoyuán wǒ de jiā</td>
+	<td></td>
+	<td>Mongolia*</td>
+	<td><a href="https://www.youtube.com/results?search_query=美丽的草原我的家古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=美丽的草原我的家"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>美丽的夏令营</td>
+	<td>měilì de xiàlìngyíng</td>
+	<td>3</td>
+	<td>Batu chaolu</td>
+	<td><a href="https://www.youtube.com/results?search_query=美丽的夏令营古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=美丽的夏令营"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>美女思春</td>
+	<td>měinǚ sīchūn</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=美女思春古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=美女思春"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>美女思乡aka昭君怨</td>
+	<td>měinǚ sīxiāng aka zhāojūn yuàn</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=美女思乡aka昭君怨古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=美女思乡aka昭君怨"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Lady Meng</td>
+	<td>孟姜女</td>
+	<td>mèngjiāngnǚ</td>
+	<td>1, 2</td>
+	<td>Folk Music, adapted by Qiu Dacheng</td>
+	<td><a href="https://www.youtube.com/results?search_query=孟姜女古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=孟姜女"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>米蘑菇的小姑娘</td>
+	<td>mǐ mógū de xiǎo gūniáng</td>
+	<td>5</td>
+	<td>Person, Gu Jianfen</td>
+	<td><a href="https://www.youtube.com/results?search_query=米蘑菇的小姑娘古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=米蘑菇的小姑娘"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>蜜柑红</td>
+	<td>mìgān hóng</td>
+	<td>4</td>
+	<td>Arranged by Su Qiaozheng</td>
+	<td><a href="https://www.youtube.com/results?search_query=蜜柑红古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=蜜柑红"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>明安阿斯尔</td>
+	<td>míng ān ā sī ěr</td>
+	<td></td>
+	<td>Mongolian Yatga</td>
+	<td><a href="https://www.youtube.com/results?search_query=明安阿斯尔古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=明安阿斯尔"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>溟山</td>
+	<td>míng shān</td>
+	<td>10</td>
+	<td>Person, Wang Zhongshan</td>
+	<td><a href="https://www.youtube.com/results?search_query=溟山古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=溟山"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>陌上桑</td>
+	<td>mò shàng sāng</td>
+	<td>9</td>
+	<td>People: Yan Ming, Liu Qiaojun</td>
+	<td><a href="https://www.youtube.com/results?search_query=陌上桑古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=陌上桑"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Jasmine Fragrance</td>
+	<td>茉莉芬芳</td>
+	<td>mòlì fēnfāng</td>
+	<td>8, 9</td>
+	<td>Person, He Zhanhao</td>
+	<td><a href="https://www.youtube.com/results?search_query=茉莉芬芳古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=茉莉芬芳"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Jasmine Flower</td>
+	<td>茉莉花</td>
+	<td>mòlìhuā</td>
+	<td></td>
+	<td>Nanjing Liuhe Folk*</td>
+	<td><a href="https://www.youtube.com/results?search_query=茉莉花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=茉莉花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Muqam Dance</td>
+	<td>木卡姆散序与舞曲</td>
+	<td>mù kǎ mǔ sàn xù yǔ wǔqǔ</td>
+	<td>8, 9</td>
+	<td>People: Zhou Ji, Shao Guangyu, Li Mei</td>
+	<td><a href="https://www.youtube.com/results?search_query=木卡姆散序与舞曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=木卡姆散序与舞曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Shepherd Song</td>
+	<td>牧羊曲</td>
+	<td>mùyáng qū</td>
+	<td></td>
+	<td>People; Wáng Lìpíng, Zhèng Xùlán</td>
+	<td><a href="https://www.youtube.com/results?search_query=牧羊曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=牧羊曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>南泥湾</td>
+	<td>nán ní wān</td>
+	<td>3, 5</td>
+	<td>Marco Polo / 马可</td>
+	<td><a href="https://www.youtube.com/results?search_query=南泥湾古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=南泥湾"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Once Upon a Time in China</td>
+	<td>男兒當自强</td>
+	<td>nán'ér dāng zìqiáng</td>
+	<td></td>
+	<td>Movie Score, James Wong 黃霑</td>
+	<td><a href="https://www.youtube.com/results?search_query=男兒當自强古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=男兒當自强"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Celebration of the Lantern Festival</td>
+	<td>闹元宵</td>
+	<td>nào yuánxiāo</td>
+	<td>6, 7</td>
+	<td>Arranged by Cao Dongfu</td>
+	<td><a href="https://www.youtube.com/results?search_query=闹元宵古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=闹元宵"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>诺多尔江边</td>
+	<td>nuò duō ěr jiāng biān</td>
+	<td></td>
+	<td>Gaya Qin, or the Korean Gayageum</td>
+	<td><a href="https://www.youtube.com/results?search_query=诺多尔江边古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=诺多尔江边"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Wild Geese Alighting on the <dfn data-info="or Beach">Sandy Shore</dfn></td>
+	<td>平沙落雁</td>
+	<td>píng shā luòyàn</td>
+	<td>7</td>
+	<td>Chaozhou Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=平沙落雁古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=平沙落雁"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>平沙落雁</td>
+	<td>píng shā luòyàn</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=平沙落雁古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=平沙落雁"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>平湖</td>
+	<td>pínghú</td>
+	<td></td>
+	<td>Hakka (kejia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=平湖古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=平湖"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Moon over Peaceful Lake in Autumn</td>
+	<td>平湖秋月</td>
+	<td>pínghú qiūyuè</td>
+	<td></td>
+	<td>Cantonese Opera*</td>
+	<td><a href="https://www.youtube.com/results?search_query=平湖秋月古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=平湖秋月"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>平山乐</td>
+	<td>píngshān yào</td>
+	<td></td>
+	<td>Hakka (kejia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=平山乐古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=平山乐"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>琵琶词</td>
+	<td>pípá cí</td>
+	<td></td>
+	<td>Hakka (kejia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=琵琶词古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=琵琶词"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>泼水 (《云南风情组曲》之一) </td>
+	<td>pōshuǐ (《yúnnán fēngqíng zǔqǔ》 zhī yī)</td>
+	<td>5</td>
+	<td>Person, Zhang Shude</td>
+	<td><a href="https://www.youtube.com/results?search_query=泼水 (《云南风情组曲》之一) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=泼水 (《云南风情组曲》之一) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>普庵咒</td>
+	<td>pǔ ān zhòu</td>
+	<td></td>
+	<td>Zhejiang</td>
+	<td><a href="https://www.youtube.com/results?search_query=普庵咒古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=普庵咒"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>铺地锦</td>
+	<td>pū dì jǐn</td>
+	<td></td>
+	<td>Minnan</td>
+	<td><a href="https://www.youtube.com/results?search_query=铺地锦古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=铺地锦"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>葡萄嫁</td>
+	<td>pútáo jià</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=葡萄嫁古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=葡萄嫁"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>普天同庆</td>
+	<td>pǔtiāntóngqìng</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=普天同庆古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=普天同庆"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>掐蒜苔</td>
+	<td>qiā suàntái</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=掐蒜苔古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=掐蒜苔"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Sound of a Thousand Buddhas</td>
+	<td>千声佛</td>
+	<td>qiān shēng fú</td>
+	<td>1, 2</td>
+	<td>Chaozhou, Lian Tsai Ping</td>
+	<td><a href="https://www.youtube.com/results?search_query=千声佛古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=千声佛"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td></td>
+	<td>黔中赋</td>
+	<td>qián zhōng fù</td>
+	<td>9, 10</td>
+	<td>Person, Xu Xiaolin</td>
+	<td><a href="https://www.youtube.com/results?search_query=黔中赋古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=黔中赋"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Thousands of Miles</td>
+	<td>千里缘</td>
+	<td>qiānlǐ yuán</td>
+	<td></td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=千里缘古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=千里缘"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>凄凉曲 (又名《老五更》) </td>
+	<td>qīliáng qū (yòu míng 《lǎo wǔ gēng》)</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=凄凉曲 (又名《老五更》) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=凄凉曲 (又名《老五更》) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Melody of Remembrance</td>
+	<td>秦桑曲</td>
+	<td>qín sāng qū</td>
+	<td>7</td>
+	<td>People: Qiang Zengkang, Zhou Yanjia</td>
+	<td><a href="https://www.youtube.com/results?search_query=秦桑曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=秦桑曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>琴韵</td>
+	<td>qín yùn</td>
+	<td>6</td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=琴韵古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=琴韵"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Qing Feng years</td>
+	<td>庆丰年</td>
+	<td>qìng fēngnián</td>
+	<td>6</td>
+	<td>Zhao Yuzhai 赵玉斋, C</td>
+	<td><a href="https://www.youtube.com/results?search_query=庆丰年古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=庆丰年"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Breeze Blows Gently in the Bamboo Forest</td>
+	<td>清风弄竹</td>
+	<td>Qīngfēng nòng zhú</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=清风弄竹古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=清风弄竹"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>清江放排</td>
+	<td>qīngjiāng fàng pái</td>
+	<td>10</td>
+	<td>People: Chen Guoquan, Ding Bojun</td>
+	<td><a href="https://www.youtube.com/results?search_query=清江放排古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=清江放排"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Scenario three chapters</td>
+	<td>情景三章</td>
+	<td>qíngjǐng sān zhāng</td>
+	<td>10</td>
+	<td>Person, Xu Xiaolin</td>
+	<td><a href="https://www.youtube.com/results?search_query=情景三章古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=情景三章"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>A Dragonfly Touching Lightly on the Water</td>
+	<td>蜻蜓点水</td>
+	<td>qīngtíngdiǎnshuǐ</td>
+	<td>4</td>
+	<td>Minnan</td>
+	<td><a href="https://www.youtube.com/results?search_query=蜻蜓点水古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=蜻蜓点水"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>琴书曲牌联奏</td>
+	<td>qínshū qǔpái lián zòu</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=琴书曲牌联奏古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=琴书曲牌联奏"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>秋夜思</td>
+	<td>qiū yè sī</td>
+	<td>9, 10</td>
+	<td>Person, Zhou Yiguo</td>
+	<td><a href="https://www.youtube.com/results?search_query=秋夜思古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=秋夜思"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>秋夜筝 (又名《郿鄂调》) </td>
+	<td>qiū yè zhēng (yòu míng 《méi è diào》)</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=秋夜筝 (又名《郿鄂调》) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=秋夜筝 (又名《郿鄂调》) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Autumn Wind Tune</td>
+	<td>秋风词</td>
+	<td>qiūfēng cí</td>
+	<td></td>
+	<td>Qin*</td>
+	<td><a href="https://www.youtube.com/results?search_query=秋风词古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=秋风词"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Autumn Longing</td>
+	<td>秋思 (重六调) </td>
+	<td>qiūsī (zhòng liù diào)</td>
+	<td>4</td>
+	<td>Chaozhou Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=秋思 (重六调) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=秋思 (重六调) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Meditation in Autumn</td>
+	<td>秋思曲</td>
+	<td>qiūsī qū</td>
+	<td>5, 6</td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=秋思曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=秋思曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Recital on Chinese Valentine's Day</td>
+	<td>七夕吟</td>
+	<td>qīxì yín</td>
+	<td></td>
+	<td>Cantonese*</td>
+	<td><a href="https://www.youtube.com/results?search_query=七夕吟古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=七夕吟"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Amazing Grace</td>
+	<td>奇异恩典</td>
+	<td>qíyì ēndiǎn</td>
+	<td>1</td>
+	<td>American Gospel Music</td>
+	<td><a href="https://www.youtube.com/results?search_query=奇异恩典古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=奇异恩典"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>赛相思</td>
+	<td>sài xiāngsī</td>
+	<td></td>
+	<td>Minnan</td>
+	<td><a href="https://www.youtube.com/results?search_query=赛相思古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=赛相思"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Scattered Words</td>
+	<td>散楚词</td>
+	<td>sàn chǔ cí</td>
+	<td></td>
+	<td>Hakka (kejia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=散楚词古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=散楚词"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>三秦欢歌</td>
+	<td>sān qín huāngē</td>
+	<td>7</td>
+	<td>Person, Wei Jun</td>
+	<td><a href="https://www.youtube.com/results?search_query=三秦欢歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=三秦欢歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>33 Beats</td>
+	<td>三十三板</td>
+	<td>sānshísān bǎn</td>
+	<td>2, 3, 4</td>
+	<td>Zhejiang</td>
+	<td><a href="https://www.youtube.com/results?search_query=三十三板古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=三十三板"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>扫雪</td>
+	<td>sǎo xuě</td>
+	<td>3</td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=扫雪古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=扫雪"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Red Flowers Bloom All Over the Mountain</td>
+	<td>山丹丹开花红艳艳</td>
+	<td>shān dān dān kāihuā hóngyànyàn</td>
+	<td>5, 6</td>
+	<td>Shaanxi and Gansu Folk, Person: Liu Feng</td>
+	<td><a href="https://www.youtube.com/results?search_query=山丹丹开花红艳艳古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=山丹丹开花红艳艳"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>山的遐想</td>
+	<td>shān de xiáxiǎng</td>
+	<td>10</td>
+	<td>Person, Zhuang Wei(Yu)</td>
+	<td><a href="https://www.youtube.com/results?search_query=山的遐想古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=山的遐想"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>山魅</td>
+	<td>shān mèi</td>
+	<td></td>
+	<td>Xu Xiaolin 余曉林, C</td>
+	<td><a href="https://www.youtube.com/results?search_query=山魅古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=山魅"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>山鸣谷应</td>
+	<td>Shān míng gǔ yīng</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=山鸣谷应古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=山鸣谷应"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Climbing Stairs</td>
+	<td>上楼</td>
+	<td>shàng lóu</td>
+	<td>1, 2, 3</td>
+	<td>Henan Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=上楼古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=上楼"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>赏秋</td>
+	<td>shǎng qiū</td>
+	<td>2</td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=赏秋古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=赏秋"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>山坡羊 (又名《状元游街》) </td>
+	<td>shānpō yáng (yòu míng 《zhuàngyuán yóujiē》)</td>
+	<td>6, 7</td>
+	<td>Henan Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=山坡羊 (又名《状元游街》) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=山坡羊 (又名《状元游街》) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>闪烁的小星星</td>
+	<td>shǎnshuò de xiǎo xīngxīng</td>
+	<td>2</td>
+	<td>French</td>
+	<td><a href="https://www.youtube.com/results?search_query=闪烁的小星星古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=闪烁的小星星"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>畲山茶歌</td>
+	<td>shē shānchá gē</td>
+	<td>5</td>
+	<td>Person, Wang Wei</td>
+	<td><a href="https://www.youtube.com/results?search_query=畲山茶歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=畲山茶歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>深闺怨 (活五) </td>
+	<td>shēnguī yuàn (huó wǔ)</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=深闺怨 (活五) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=深闺怨 (活五) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Magic Beauty</td>
+	<td>神奇的九寨</td>
+	<td>shénqí de jiǔzhài</td>
+	<td></td>
+	<td>Person, Yáng Guóqìng*</td>
+	<td><a href="https://www.youtube.com/results?search_query=神奇的九寨古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=神奇的九寨"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Ten Drinks        </td>
+	<td>十杯酒</td>
+	<td>shí bēi jiǔ</td>
+	<td>1</td>
+	<td>Chaozhou folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=十杯酒古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=十杯酒"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Lion play ball (heavy six) forty beats</td>
+	<td>獅子戲球(重六調)四十板</td>
+	<td>shīzi xì qiú (zhòng liù diào)</td>
+	<td>4</td>
+	<td>Chaozhou Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=獅子戲球(重六調)四十板古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=獅子戲球(重六調)四十板"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Sound of Reciting</td>
+	<td>书韵</td>
+	<td>shu yun</td>
+	<td>6</td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=书韵古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=书韵"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>双叠翠</td>
+	<td>shuāng diécuì</td>
+	<td>1, 3</td>
+	<td>Henan Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=双叠翠古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=双叠翠"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>双飞</td>
+	<td>shuāngfēi</td>
+	<td>1</td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=双飞古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=双飞"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>水底鱼</td>
+	<td>shuǐ dǐ yú</td>
+	<td></td>
+	<td>Minnan</td>
+	<td><a href="https://www.youtube.com/results?search_query=水底鱼古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=水底鱼"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Four Variations</td>
+	<td>四段锦</td>
+	<td>sì duàn jǐn</td>
+	<td>9, 10</td>
+	<td>Ancient, Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=四段锦古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=四段锦"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="or Harmony and Gratification">Universal Happiness</dfn></td>
+	<td>四合如意</td>
+	<td>sì hé rúyì</td>
+	<td>7, 9</td>
+	<td>Zhejiang Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=四合如意古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=四合如意"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>思情</td>
+	<td>sī qíng</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=思情古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=思情"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>思春</td>
+	<td>sīchūn</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=思春古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=思春"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>思凡 (轻六调) </td>
+	<td>sīfán (qīng liù diào)</td>
+	<td>4</td>
+	<td>Chaozhou folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=思凡 (轻六调) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=思凡 (轻六调) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>思凡 (轻六) </td>
+	<td>sīfán (qīng liù)</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=思凡 (轻六) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=思凡 (轻六) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Song of the Four Seasons</td>
+	<td>四季歌</td>
+	<td>sìjì gē</td>
+	<td></td>
+	<td>From the Movie "The Angel of the Road"《马路天使》</td>
+	<td><a href="https://www.youtube.com/results?search_query=四季歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=四季歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>苏鲁克阿斯尔</td>
+	<td>sū lǔ kè ā sī ěr</td>
+	<td></td>
+	<td>Mongolian Yatga</td>
+	<td><a href="https://www.youtube.com/results?search_query=苏鲁克阿斯尔古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=苏鲁克阿斯尔"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Mission to Xiongnu</td>
+	<td>苏武牧羊</td>
+	<td>sūwǔ mùyáng</td>
+	<td></td>
+	<td>Liaoning Province*</td>
+	<td><a href="https://www.youtube.com/results?search_query=苏武牧羊古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=苏武牧羊"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Su Wu Longing for Home</td>
+	<td>苏武思乡</td>
+	<td>sūwǔ sī xiāng</td>
+	<td>5, 6, 8</td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=苏武思乡古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=苏武思乡"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>踏雪寻梅</td>
+	<td>tà xuě xún méi</td>
+	<td></td>
+	<td>Minnan</td>
+	<td><a href="https://www.youtube.com/results?search_query=踏雪寻梅古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=踏雪寻梅"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>太仆寺阿斯尔</td>
+	<td>tài pū sì ā sī ěr</td>
+	<td></td>
+	<td>Mongolian Yatga</td>
+	<td><a href="https://www.youtube.com/results?search_query=太仆寺阿斯尔古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=太仆寺阿斯尔"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>台湾儿女的心愿</td>
+	<td>táiwān érnǚ de xīnyuàn</td>
+	<td>7, 8</td>
+	<td>Person, Zhu Xiaogu</td>
+	<td><a href="https://www.youtube.com/results?search_query=台湾儿女的心愿古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=台湾儿女的心愿"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>A Dirge for Yan Hui</td>
+	<td>叹颜回</td>
+	<td>tàn yán huí</td>
+	<td>3</td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=叹颜回古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=叹颜回"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>A Dirge for Yan Hui</td>
+	<td>叹颜回 (中板《板头曲》) </td>
+	<td>tàn yán huí (zhōng bǎn 《bǎn tóu qū")</td>
+	<td>3</td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=叹颜回 (中板《板头曲》) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=叹颜回 (中板<板头曲>" target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>天上月亮带星星</td>
+	<td>tiānshàng yuèliàng dài xīngxīng</td>
+	<td>5</td>
+	<td>Guangxi zhuangzu</td>
+	<td><a href="https://www.youtube.com/results?search_query=天上月亮带星星古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=天上月亮带星星"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="same as The Baban Tune of the Henan Area">Universal Harmony</dfn></td>
+	<td>天下大同</td>
+	<td>tiānxià dàtóng</td>
+	<td>3</td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=天下大同古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=天下大同"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>天下大同 (又名《河南八板》) </td>
+	<td>tiānxià dàtóng (yòu míng 《hénán bā bǎn》)</td>
+	<td>2</td>
+	<td>Zhongzhou Folk Music</td>
+	<td><a href="https://www.youtube.com/results?search_query=天下大同 (又名《河南八板》) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=天下大同 (又名《河南八板》) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Harmony All Over the World</td>
+	<td>天下同</td>
+	<td>tiānxià tóng</td>
+	<td>2, 3</td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=天下同古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=天下同"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Music of the Iron Horse</td>
+	<td>铁马吟</td>
+	<td>tiěmǎ yín</td>
+	<td>7</td>
+	<td>Zhao Dengshan 赵登山, C</td>
+	<td><a href="https://www.youtube.com/results?search_query=铁马吟古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=铁马吟"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Deep in the House Garden</td>
+	<td>庭院深深</td>
+	<td>tíngyuàn shēn shēn</td>
+	<td></td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=庭院深深古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=庭院深深"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>踢踏舞</td>
+	<td>tītàwǔ</td>
+	<td>1</td>
+	<td>Dongmeng  (East Mongolia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=踢踏舞古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=踢踏舞"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>童年的回忆</td>
+	<td>tóngnián de huíyì</td>
+	<td>4</td>
+	<td>Person, Various Foreigners</td>
+	<td><a href="https://www.youtube.com/results?search_query=童年的回忆古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=童年的回忆"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Embroidery gold plaque</td>
+	<td>綉金匾</td>
+	<td>tòu jīn biǎn</td>
+	<td>3</td>
+	<td>Shaanxi-Gansu Border folk*</td>
+	<td><a href="https://www.youtube.com/results?search_query=綉金匾古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=綉金匾"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>娃哈哈</td>
+	<td>wáhāhā</td>
+	<td>4</td>
+	<td>Person, Guo Shifu</td>
+	<td><a href="https://www.youtube.com/results?search_query=娃哈哈古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=娃哈哈"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Drawn Brows</td>
+	<td>枉凝眉</td>
+	<td>wǎng níng méi</td>
+	<td></td>
+	<td>From Chinese Classic "Dream of the Red Chamber"</td>
+	<td><a href="https://www.youtube.com/results?search_query=枉凝眉古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=枉凝眉"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>文姬思汉</td>
+	<td>wén jīsīhàn</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=文姬思汉古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=文姬思汉"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>嗡嘿呀</td>
+	<td>wēng hēi ya</td>
+	<td></td>
+	<td>Gaya Qin, or the Korean Gayageum</td>
+	<td><a href="https://www.youtube.com/results?search_query=嗡嘿呀古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=嗡嘿呀"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>我有一头小毛驴</td>
+	<td>wǒ yǒu yītóu xiǎo máolǘ</td>
+	<td>3</td>
+	<td>Anonymous?</td>
+	<td><a href="https://www.youtube.com/results?search_query=我有一头小毛驴古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=我有一头小毛驴"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>五更鼓</td>
+	<td>wǔ gēng gǔ</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=五更鼓古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=五更鼓"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>五更鸟</td>
+	<td>wǔ gēng niǎo</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=五更鸟古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=五更鸟"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Boat song at the river of Ussuri</td>
+	<td>乌苏里船歌</td>
+	<td>wū sū lǐ chuán gē</td>
+	<td></td>
+	<td>Hezhe Folk*</td>
+	<td><a href="https://www.youtube.com/results?search_query=乌苏里船歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=乌苏里船歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>五云登空</td>
+	<td>wǔ yún dēng kōng</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=五云登空古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=五云登空"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Casually Leaning on the Rail</td>
+	<td>无意凭栏</td>
+	<td>wúyì pínglán</td>
+	<td>5</td>
+	<td>Minnan/Fujian</td>
+	<td><a href="https://www.youtube.com/results?search_query=无意凭栏古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=无意凭栏"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Brook</td>
+	<td>溪</td>
+	<td>xī</td>
+	<td></td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=溪古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=溪"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>西汀月 (又名《一点红》) </td>
+	<td>xī tīng yuè (yòu míng 《yīdiǎn hóng》)</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=西汀月 (又名《一点红》) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=西汀月 (又名《一点红》) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The West Wing's Tale</td>
+	<td>西廂詞</td>
+	<td>xī xiāng cí</td>
+	<td>2</td>
+	<td>Chaozhou, Hakka, Handiao</td>
+	<td><a href="https://www.youtube.com/results?search_query=西廂詞古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=西廂詞"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>戏韵</td>
+	<td>xì yùn</td>
+	<td></td>
+	<td>Wang Jianmin 王建民, C</td>
+	<td><a href="https://www.youtube.com/results?search_query=戏韵古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=戏韵"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Descending Stairs</td>
+	<td>下楼</td>
+	<td>xià lóu</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=下楼古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=下楼"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Glittering Pearl Canyon</td>
+	<td>峡谷明珠放异彩</td>
+	<td>xiágǔ míngzhū fàng yìcǎi</td>
+	<td>7</td>
+	<td>People: Liu Weishan, Xu Nengqian</td>
+	<td><a href="https://www.youtube.com/results?search_query=峡谷明珠放异彩古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=峡谷明珠放异彩"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>湘妃泪</td>
+	<td>xiāng fēi lèi</td>
+	<td>4</td>
+	<td>Pipa</td>
+	<td><a href="https://www.youtube.com/results?search_query=湘妃泪古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=湘妃泪"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Tears of Xiang Queen</td>
+	<td>香妃泪/湘妃泪</td>
+	<td>xiāng fēi lèi</td>
+	<td>9, 8</td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=香妃泪/湘妃泪古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=香妃泪/湘妃泪"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Xiang love</td>
+	<td>湘情</td>
+	<td>xiāng qíng</td>
+	<td>6</td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=湘情古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=湘情"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Xiangshan drum</td>
+	<td>香山射鼓</td>
+	<td>xiāngshān shè gǔ</td>
+	<td>6, 8</td>
+	<td>Person, Qu Yun</td>
+	<td><a href="https://www.youtube.com/results?search_query=香山射鼓古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=香山射鼓"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>小斑鸠</td>
+	<td>xiǎo bānjiū</td>
+	<td>3</td>
+	<td>Jiangxi Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=小斑鸠古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小斑鸠"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>小放牛</td>
+	<td>xiǎo fàng niú</td>
+	<td>2</td>
+	<td>Hebei Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=小放牛古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小放牛"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>A Little Dance in the Wind</td>
+	<td>小飞舞</td>
+	<td>xiǎo fēiwǔ</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=小飞舞古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小飞舞"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>小剪剪花</td>
+	<td>xiǎo jiǎn jiǎn huā</td>
+	<td>1</td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=小剪剪花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小剪剪花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>小金钱</td>
+	<td>xiǎo jīnqián</td>
+	<td>1</td>
+	<td>Luqin Shuqu</td>
+	<td><a href="https://www.youtube.com/results?search_query=小金钱古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小金钱"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Small start</td>
+	<td>小开手</td>
+	<td>xiǎo kāi shǒu</td>
+	<td>1, 2</td>
+	<td>Zhongzhou Folk Music</td>
+	<td><a href="https://www.youtube.com/results?search_query=小开手古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小开手"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>小猫钓鱼</td>
+	<td>xiǎo māo diàoyú</td>
+	<td>1</td>
+	<td>Person, Huang Zhun</td>
+	<td><a href="https://www.youtube.com/results?search_query=小猫钓鱼古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小猫钓鱼"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Little Bird Crossing the Wind</td>
+	<td>小鸟朝凤</td>
+	<td>xiǎo niǎo cháo fèng</td>
+	<td>1, 3</td>
+	<td>Zhongzhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=小鸟朝凤古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小鸟朝凤"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Gossamer Song</td>
+	<td>小霓裳曲</td>
+	<td>xiǎo níshang qū</td>
+	<td>7</td>
+	<td>Hangzhou Sizhu*</td>
+	<td><a href="https://www.youtube.com/results?search_query=小霓裳曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小霓裳曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Red Little Peach</td>
+	<td>小桃红</td>
+	<td>xiǎo táohóng</td>
+	<td></td>
+	<td>Hakka (kejia), Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=小桃红古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小桃红"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>小溪流水</td>
+	<td>Xiǎo xī liúshuǐ</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=小溪流水古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小溪流水"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>小小船</td>
+	<td>xiǎo xiǎochuán</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=小小船古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小小船"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>小小竹排</td>
+	<td>xiǎo xiǎozhú pái</td>
+	<td>4</td>
+	<td>Person, Fu Yuchen</td>
+	<td><a href="https://www.youtube.com/results?search_query=小小竹排古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小小竹排"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>little stars</td>
+	<td>小星星</td>
+	<td>xiǎo xīngxīng</td>
+	<td>2, 3</td>
+	<td>French Children's Song adapted by Fu Mingjian</td>
+	<td><a href="https://www.youtube.com/results?search_query=小星星古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小星星"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Story of a Small Town</td>
+	<td>小城故事</td>
+	<td>xiǎochéng gùshì</td>
+	<td>3</td>
+	<td>From the film The Story of a Small Town "小城故事"</td>
+	<td><a href="https://www.youtube.com/results?search_query=小城故事古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小城故事"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Bird toward Phoenix</td>
+	<td>小鳥朝鳳</td>
+	<td>xiǎoniǎo cháo fèng</td>
+	<td>1</td>
+	<td>Henan*</td>
+	<td><a href="https://www.youtube.com/results?search_query=小鳥朝鳳古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=小鳥朝鳳"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Moon Shining Over the West River</td>
+	<td>西江月</td>
+	<td>xījiāng yuè</td>
+	<td>5, 3, 2</td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=西江月古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=西江月"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>西江月 (又名《一点红》)  (轻六调) </td>
+	<td>xījiāng yuè (yòu míng 《yīdiǎn hóng》)(qīng liù diào)</td>
+	<td>2</td>
+	<td>Chaozhou Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=西江月 (又名《一点红》)  (轻六调) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=西江月 (又名《一点红》)  (轻六调) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>西京调</td>
+	<td>xījīng diào</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=西京调古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=西京调"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>新开板</td>
+	<td>xīn kāi bǎn</td>
+	<td>6, 7</td>
+	<td>Henan, adapted by Ren Qingzhi</td>
+	<td><a href="https://www.youtube.com/results?search_query=新开板古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=新开板"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>幸福渠</td>
+	<td>xìngfú qú</td>
+	<td>6</td>
+	<td>Person, Ren Qingzhi</td>
+	<td><a href="https://www.youtube.com/results?search_query=幸福渠古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=幸福渠"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Happy canal water to my village</td>
+	<td>幸福渠水到俺村</td>
+	<td>xìngfú qú shuǐ dào ǎn cūn</td>
+	<td>9</td>
+	<td>People: Chen Liliang, Xiang Sihua, Fan Shange (Shangyu)</td>
+	<td><a href="https://www.youtube.com/results?search_query=幸福渠水到俺村古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=幸福渠水到俺村"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>心愿</td>
+	<td>xīnyuàn</td>
+	<td>8</td>
+	<td>Person, Zhu Xiaogu</td>
+	<td><a href="https://www.youtube.com/results?search_query=心愿古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=心愿"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Embroidered purse</td>
+	<td>绣荷包</td>
+	<td>xiù hébāo</td>
+	<td>4, 5, 7</td>
+	<td>Sichuan folk, adapted by Qiu Dacheng</td>
+	<td><a href="https://www.youtube.com/results?search_query=绣荷包古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=绣荷包"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Embroidery gold plaque</td>
+	<td>绣金匾</td>
+	<td>xiù jīn biǎn</td>
+	<td>3, 4</td>
+	<td>Northern Shaanxi Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=绣金匾古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=绣金匾"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>绣金匾随想曲</td>
+	<td>xiù jīn biǎn suíxiǎng qǔ</td>
+	<td>10</td>
+	<td>Person, Zhao Manqin</td>
+	<td><a href="https://www.youtube.com/results?search_query=绣金匾随想曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=绣金匾随想曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Twilight</td>
+	<td>希望</td>
+	<td>xīwàng</td>
+	<td>1</td>
+	<td>From Korean Drama Dà zhǎng jīn (大长今)</td>
+	<td><a href="https://www.youtube.com/results?search_query=希望古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=希望"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>西域随想</td>
+	<td>xīyù suíxiǎng</td>
+	<td>10</td>
+	<td>Person, Wang Ianmin</td>
+	<td><a href="https://www.youtube.com/results?search_query=西域随想古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=西域随想"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>雪雁南飞</td>
+	<td>xuě yàn nán fēi</td>
+	<td></td>
+	<td>Hakka (kejia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=雪雁南飞古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=雪雁南飞"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Spring on Snowy Mountain</td>
+	<td>雪山春晓</td>
+	<td>xuěshān chūnxiǎo</td>
+	<td>7, 8, 9</td>
+	<td>People, Fan Shangyu, Gesang Daji</td>
+	<td><a href="https://www.youtube.com/results?search_query=雪山春晓古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=雪山春晓"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Music of a Warm Southernly Breeze</td>
+	<td></td>
+	<td>xun feng qu</td>
+	<td></td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q="target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>熏风曲 (又名《大八板》或《西调》) </td>
+	<td>xūnfēng qū (yòu míng 《dà bā bǎn》 huò 《xī diào》)</td>
+	<td></td>
+	<td>Hakka (kejia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=熏风曲 (又名《大八板》或《西调》) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=熏风曲 (又名《大八板》或《西调》) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>雁南归 (活五) </td>
+	<td>yàn nán guī (huó wǔ)</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=雁南归 (活五) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=雁南归 (活五) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>延边之歌</td>
+	<td>yánbiān zhī gē</td>
+	<td>4</td>
+	<td>Person, Jin Fenghao</td>
+	<td><a href="https://www.youtube.com/results?search_query=延边之歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=延边之歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>阳调</td>
+	<td>yáng diào</td>
+	<td>1</td>
+	<td>Henan Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=阳调古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=阳调"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Big Farewell To a Departing Friend</td>
+	<td>阳关三叠</td>
+	<td>yáng guān sān dié</td>
+	<td>8</td>
+	<td>Ancient*</td>
+	<td><a href="https://www.youtube.com/results?search_query=阳关三叠古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=阳关三叠"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>阳山道</td>
+	<td>yáng shāndào</td>
+	<td>2</td>
+	<td>Gaya Qin, or the Korean Gayageum</td>
+	<td><a href="https://www.youtube.com/results?search_query=阳山道古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=阳山道"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>洋娃娃和小熊跳舞。</td>
+	<td>yángwáwá hé xiǎoxióng tiàowǔ.</td>
+	<td>3</td>
+	<td>Polish Folk Song</td>
+	<td><a href="https://www.youtube.com/results?search_query=洋娃娃和小熊跳舞。古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=洋娃娃和小熊跳舞。"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>扬州花</td>
+	<td>yángzhōu huā</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=扬州花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=扬州花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>摇得摆阿斯尔</td>
+	<td>yáo dé bǎi ā sī ěr</td>
+	<td></td>
+	<td>Mongolian Yatga</td>
+	<td><a href="https://www.youtube.com/results?search_query=摇得摆阿斯尔古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=摇得摆阿斯尔"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="also Yao Dance">The Dance of the Yao People</dfn></td>
+	<td>瑶族舞曲</td>
+	<td>yáozú wǔqǔ</td>
+	<td>5, 6</td>
+	<td>Person, Liu Tieshan / Mao Wei</td>
+	<td><a href="https://www.youtube.com/results?search_query=瑶族舞曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=瑶族舞曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>A Lamentation on the Mountain Cliffs</td>
+	<td>崖山哀</td>
+	<td>yáshān āi</td>
+	<td>6, 8</td>
+	<td>Guandong Han Music, Hakka</td>
+	<td><a href="https://www.youtube.com/results?search_query=崖山哀古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=崖山哀"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Tinkling Bells in the Still of the Night</td>
+	<td>夜静銮铃</td>
+	<td>yè jìng luán líng</td>
+	<td>6</td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=夜静銮铃古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=夜静銮铃"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Deep Night</td>
+	<td>夜深沉</td>
+	<td>yè shēnchén</td>
+	<td></td>
+	<td>Beijing Opera*</td>
+	<td><a href="https://www.youtube.com/results?search_query=夜深沉古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=夜深沉"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>以康定情歌</td>
+	<td>yǐ kāngdìng qínggē</td>
+	<td>3</td>
+	<td>Sichuan folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=以康定情歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=以康定情歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>倚秋</td>
+	<td>yǐ qiū</td>
+	<td>8</td>
+	<td>Person, Xu Xiaolin</td>
+	<td><a href="https://www.youtube.com/results?search_query=倚秋古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=倚秋"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>檍嵩岚</td>
+	<td>yì sōng lán</td>
+	<td></td>
+	<td>Ancient Tune</td>
+	<td><a href="https://www.youtube.com/results?search_query=檍嵩岚古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=檍嵩岚"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>A Touch of Red</td>
+	<td>一点红</td>
+	<td>yīdiǎn hóng</td>
+	<td>5, 3, 2</td>
+	<td></td>
+	<td><a href="https://www.youtube.com/results?search_query=一点红古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=一点红"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>A Piece of Gold</td>
+	<td>一点金 (又名《秋芙蓉》)  (轻六调) </td>
+	<td>yīdiǎn jīn (yòu míng 《qiū fúróng》)(qīng liù diào)</td>
+	<td>3</td>
+	<td>Chaozhou Folk, Hakka</td>
+	<td><a href="https://www.youtube.com/results?search_query=一点金 (又名《秋芙蓉》)  (轻六调) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=一点金 (又名《秋芙蓉》)  (轻六调) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>一点油</td>
+	<td>yīdiǎn yóu</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=一点油古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=一点油"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td></td>
+	<td>伊犁河畔</td>
+	<td>yīlí hépàn</td>
+	<td>8</td>
+	<td>Person, Cheng Gongliang</td>
+	<td><a href="https://www.youtube.com/results?search_query=伊犁河畔古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=伊犁河畔"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>隐公自叹</td>
+	<td>yǐn gōng zì tàn</td>
+	<td></td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=隐公自叹古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=隐公自叹"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>银纽丝</td>
+	<td>yín niǔ sī</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=银纽丝古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=银纽丝"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>迎仙客</td>
+	<td>yíng xiān kè</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=迎仙客古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=迎仙客"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>硬越调</td>
+	<td>yìng yuè diào</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=硬越调古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=硬越调"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>莺啭黄鹂</td>
+	<td>yīng zhuàn huánglí</td>
+	<td>7</td>
+	<td>Shandong</td>
+	<td><a href="https://www.youtube.com/results?search_query=莺啭黄鹂古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=莺啭黄鹂"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>莺啭桃李</td>
+	<td>yīng zhuàn táolǐ</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=莺啭桃李古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=莺啭桃李"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>迎春舞曲</td>
+	<td>yíngchūn wǔqǔ</td>
+	<td>4</td>
+	<td>Xinjiang Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=迎春舞曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=迎春舞曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>樱花</td>
+	<td>yīnghuā</td>
+	<td>6</td>
+	<td>Japanese Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=樱花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=樱花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>櫻花</td>
+	<td>yīnghuā</td>
+	<td>6</td>
+	<td>Japanese Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=櫻花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=櫻花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>英雄们战胜了大渡河</td>
+	<td>yīngxióngmen zhànshèngle dà dùhé</td>
+	<td>7</td>
+	<td>People: Luo Zongxian, Shi Lemeng</td>
+	<td><a href="https://www.youtube.com/results?search_query=英雄们战胜了大渡河古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=英雄们战胜了大渡河"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Milky Blue Water</td>
+	<td>银河碧波</td>
+	<td>yínhé bìbō</td>
+	<td>9</td>
+	<td>Person, Fan Shange (Shangyu)</td>
+	<td><a href="https://www.youtube.com/results?search_query=银河碧波古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=银河碧波"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Dance Music of Yi        </td>
+	<td>彝族舞曲</td>
+	<td>yízú wǔqǔ</td>
+	<td>7, 10</td>
+	<td>People: Wang Huiran (7), Wang Zhongshan (10)</td>
+	<td><a href="https://www.youtube.com/results?search_query=彝族舞曲古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=彝族舞曲"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>永寿庵</td>
+	<td>yǒngshòu ān</td>
+	<td></td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=永寿庵古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=永寿庵"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>有缘千里</td>
+	<td>yǒuyuán qiānlǐ</td>
+	<td>4</td>
+	<td>Hakka (kejia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=有缘千里古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=有缘千里"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>玉壶买春 (四十八板) </td>
+	<td>yù hú mǎichūn (sìshíbā bǎn)</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=玉壶买春 (四十八板) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=玉壶买春 (四十八板) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>雨溅海棠花 (活五) </td>
+	<td>yǔ jiàn hǎitáng huā (huó wǔ)</td>
+	<td></td>
+	<td>Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=雨溅海棠花 (活五) 古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=雨溅海棠花 (活五) "target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Jade Ring</td>
+	<td>玉连环</td>
+	<td>yù liánhuán</td>
+	<td></td>
+	<td>Hakka (kejia)</td>
+	<td><a href="https://www.youtube.com/results?search_query=玉连环古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=玉连环"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Beautiful Lady Yu</td>
+	<td>虞美人</td>
+	<td>yú měirén</td>
+	<td>1, 3</td>
+	<td>Shaanxi Opera (Meihu)</td>
+	<td><a href="https://www.youtube.com/results?search_query=虞美人古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=虞美人"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>虞美人态</td>
+	<td>yú měirén tài</td>
+	<td>1</td>
+	<td>Shaanxi</td>
+	<td><a href="https://www.youtube.com/results?search_query=虞美人态古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=虞美人态"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>怨红</td>
+	<td>yuàn hóng</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=怨红古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=怨红"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>原板三六</td>
+	<td>yuánbǎn sānliù</td>
+	<td>5</td>
+	<td>Zhejiang</td>
+	<td><a href="https://www.youtube.com/results?search_query=原板三六古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=原板三六"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The High Moon</td>
+	<td>月儿高</td>
+	<td>yuè er gāo</td>
+	<td>8, 9</td>
+	<td>Zhejiang</td>
+	<td><a href="https://www.youtube.com/results?search_query=月儿高古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=月儿高"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Fragrance of the Moon Plum Filling the Yuetao Mountain</td>
+	<td>月桃香满月桃山</td>
+	<td>yuè táoxiāng mǎnyuè táoshān</td>
+	<td></td>
+	<td>Person, Wei Dedong</td>
+	<td><a href="https://www.youtube.com/results?search_query=月桃香满月桃山古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=月桃香满月桃山"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Full Moon and Beautiful Flower</td>
+	<td>月圆花好</td>
+	<td>yuè yuán huā hǎo</td>
+	<td></td>
+	<td>Person, Yan Hua</td>
+	<td><a href="https://www.youtube.com/results?search_query=月圆花好古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=月圆花好"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Moon Lute</td>
+	<td>月琴</td>
+	<td>yuèqín</td>
+	<td></td>
+	<td>Person, Su Lai</td>
+	<td><a href="https://www.youtube.com/results?search_query=月琴古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=月琴"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>月夜情歌</td>
+	<td>yuèyè qínggē</td>
+	<td>5</td>
+	<td>Person, Yang Nani</td>
+	<td><a href="https://www.youtube.com/results?search_query=月夜情歌古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=月夜情歌"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Cloud Celebration</td>
+	<td>云庆</td>
+	<td>yún qìng</td>
+	<td>5, 7, 8</td>
+	<td>Zhejiang, Shanghai jiangnan sizhu</td>
+	<td><a href="https://www.youtube.com/results?search_query=云庆古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=云庆"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="or Fisherman's song at Eventide">Fisherman's Evening Song</dfn></td>
+	<td>渔舟唱晚</td>
+	<td>yúzhōu chàng wǎn</td>
+	<td>3, 4, 6</td>
+	<td>Lou Shuhua, C, Recorded by Cao Zheng, various adaptations, possibly Ancient, Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=渔舟唱晚古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=渔舟唱晚"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>在北京的金山上</td>
+	<td>zài běijīng de jīnshān shàng</td>
+	<td>1</td>
+	<td>Tibet Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=在北京的金山上古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=在北京的金山上"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>扎紧中莫里</td>
+	<td>zhā jǐn zhōng mò lǐ</td>
+	<td></td>
+	<td>Gaya Qin, or the Korean Gayageum</td>
+	<td><a href="https://www.youtube.com/results?search_query=扎紧中莫里古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=扎紧中莫里"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="or Fighting">Battling</dfn> the Typhoon</td>
+	<td>战台风</td>
+	<td>zhàn táifēng</td>
+	<td>7</td>
+	<td>Wang Changyuan 王昌元</td>
+	<td><a href="https://www.youtube.com/results?search_query=战台风古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=战台风"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>战台风态</td>
+	<td>zhàn táifēng tài</td>
+	<td>7</td>
+	<td>Person, Wang Changyuan</td>
+	<td><a href="https://www.youtube.com/results?search_query=战台风态古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=战台风态"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>长相思</td>
+	<td>zhǎng xiàng sī</td>
+	<td>9</td>
+	<td>Person, Wang Jianmin</td>
+	<td><a href="https://www.youtube.com/results?search_query=长相思古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=长相思"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Zhao Jun and the Barbarians</td>
+	<td>昭君和番</td>
+	<td>zhāojūn hé fān</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=昭君和番古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=昭君和番"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Lady Zhaojun's Lament</td>
+	<td>昭君怨</td>
+	<td>zhāojūn yuàn</td>
+	<td></td>
+	<td>Hakka (kejia), Chaozhou</td>
+	<td><a href="https://www.youtube.com/results?search_query=昭君怨古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=昭君怨"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>筝韵</td>
+	<td>zhēng yùn</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=筝韵古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=筝韵"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>正月梅花</td>
+	<td>zhēngyuè méihuā</td>
+	<td></td>
+	<td>Henan</td>
+	<td><a href="https://www.youtube.com/results?search_query=正月梅花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=正月梅花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>中中莫里</td>
+	<td>zhōng zhōng mò lǐ</td>
+	<td></td>
+	<td>Gaya Qin, or the Korean Gayageum</td>
+	<td><a href="https://www.youtube.com/results?search_query=中中莫里古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=中中莫里"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Autumn Recollections</td>
+	<td>妝台秋思</td>
+	<td>zhuāng tái qiūsī</td>
+	<td>2, 5</td>
+	<td>Pipa*</td>
+	<td><a href="https://www.youtube.com/results?search_query=妝台秋思古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=妝台秋思"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>-</td>
+	<td>祝福</td>
+	<td>zhùfú</td>
+	<td></td>
+	<td>Mongolian Yatga</td>
+	<td><a href="https://www.youtube.com/results?search_query=祝福古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=祝福"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>Free Flower</td>
+	<td>自由花</td>
+	<td>zìyóu huā</td>
+	<td>1, 2</td>
+	<td>Henan Folk</td>
+	<td><a href="https://www.youtube.com/results?search_query=自由花古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=自由花"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td><dfn data-info="also Black">Purple</dfn> Bamboo Melody</td>
+	<td>紫竹调</td>
+	<td>zǐzhú diào</td>
+	<td>2, 4</td>
+	<td>Shanghai Opera (huju)</td>
+	<td><a href="https://www.youtube.com/results?search_query=紫竹调古筝" target="_blank"><u>YouTube</u></a></td>
+	<td><a href="http://www.guzheng.cn/search/?q=紫竹调"target="_blank"><u>Guzheng.cn</u></a></td></tr>
+	<tr class="item">
+	<td>The Ditty of Guizhou</td>
+	<td>-</td>
+	<td>-</td>
+	<td></td>
+	<td>Person, Yao Ningxing</td>
+	<td></td>
+	<td></td></tr>
+	  </tbody>
+	</table>
+	{{ partial "collapsible-blind" .Params}}
+</div>
+{{ end }}

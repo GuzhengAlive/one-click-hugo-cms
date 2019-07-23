@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{ partial "jumbotron" .Params }}
+<div class="tc mw-100">
+{{ range $element := .Params.sections }}
+	{{ partial "jump-to-menu" $element }}
+{{end}}
+{{ range $element := .Params.sections2 }}
+	{{ partial "jump-to-menu" $element }}
+{{end}}
+</div>
+{{ range $index, $element := .Params.sections }}
+{{ partial "media-block-1-to-3" $element }}
+{{end}}
+
+{{partial "image-block-4w" .Params}}
+
+{{ range $index, $element := .Params.sections2 }}
+{{ partial "media-block-1-to-3" $element }}
+{{end}}
+{{ end }}

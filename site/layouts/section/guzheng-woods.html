@@ -1,0 +1,71 @@
+{{ define "main" }}
+{{partial "table-search"}}
+{{ partial "jumbotron" .Params }}
+<div class="tc mw-100">
+{{ range $element := .Params.sections }}
+	{{ partial "jump-to-menu" $element }}
+{{end}}
+</div>
+	{{ range $index, $element := .Params.sections }}
+	{{ partial "basic-sections" $element }}
+	{{end}}
+
+<!-- Hardcoded html table  -->
+<div class="mw8 center">
+	<input type="text" id="myInput" placeholder="Search wood list...">
+	<button onclick="searchTable()">Search</button><button onclick="reset()">Reset</button><p />
+	<button onclick="tableSorter()">Enable Sort</button><p />
+	<div style="overflow-x:auto;">
+	<table class="GeneratedTable" id="usersTable">
+	  <thead>
+	  <tr id="header">
+	    <th style="cursor:pointer">Name</th>
+	    <th style="cursor:pointer">Genus and Species</th>
+		<th style="cursor:pointer">汉字</th>
+	    <th style="cursor:pointer">Pinyin</th>
+		<th style="cursor:pointer">Instrument Tier</th>
+		<th style="cursor:pointer">Red List</th>
+		<th style="cursor:pointer">CITES</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr class="item"><td></td>	<td></td><td></td><td></td>	<td></td><td></td><td></td></tr>
+	<tr class="item"><td>African Blackwood</td><td>Dalbergia melanoxylon</td><td>黑檀</td><td>Hēi tán</td><td>4-5</td><td>Not Threatened</td><td>II</td></tr>
+	<tr class="item"><td>African Padauk</td><td>Pterocarpus soyauxii</td><td>非檀木</td><td>Fēi tán mù</td><td>1-2</td><td>Not Threatened</td><td>-</td></tr>
+	<tr class="item"><td>"African Sandalwood"</td><td>Pterocarpus soyauxii</td><td>非檀木</td><td>Fēi tán mù</td><td>1-2</td><td>Not Threatened</td><td>-</td></tr>
+	<tr class="item"><td>"Aged Rosewood" 1</td><td>Dalbergia cultrata</td><td>老红木</td><td>Lǎo hóngmù</td><td>3-4</td><td><a href="http://www.iucnredlist.org/details/62496/0" target="_blank"><u>Near Threatened</u></a></td><td>II</td></tr>
+	<tr class="item"><td>"Aged Rosewood" 2</td><td>Dalbergia cochinchinensis</td><td>老红木</td><td>Lǎo hóngmù</td><td>4</td><td><a href="http://www.iucnredlist.org/details/32625/0" target="_blank"><u>Vulnerable</u></a></td><td>II</td></tr>
+	<tr class="item"><td>Black Sandalwood</td><td>Dalbergia cultrata</td><td>黑檀</td><td>Hēi tán</td><td>3-4</td><td><a href="http://www.iucnredlist.org/details/62496/0" target="_blank"><u>Near Threatened</u></a></td><td>II</td></tr>
+	<tr class="item"><td>Bois de Rose</td><td>Dalbergia louvelii</td><td>玫瑰檀</td><td>Méiguī tán</td><td>5</td><td><a href="http://www.iucnredlist.org/details/38244/0" target="_blank"><u>Endangered</u></a></td><td>II</td></tr>
+	<tr class="item"><td>Brazilian Rosewood</td><td>Dalbergia nigra</td><td>巴西紫檀</td><td>Bāxī zǐtán</td><td>5+</td><td><a href="http://www.iucnredlist.org/details/32985/0" target="_blank"><u>Vulnerable</u></a></td><td>-</td></tr>
+	<tr class="item"><td>Bubinga</td><td>Guibourtia tessmannii</td><td>特式古夷苏木</td><td>Tè shì gǔ yí sū mù</td><td>3-4</td><td>Not Threatened</td><td>II</td></tr>
+	<tr class="item"><td>Burma Blackwood</td><td>Dalbergia cultrata</td><td>黑酸枝</td><td>Hēi suān zhī</td><td>3-4</td><td><a href="http://www.iucnredlist.org/details/62496/0" target="_blank"><u>Near Threatened</u></a></td><td>II</td></tr>
+	<tr class="item"><td>Burma Padauk</td><td>Pterocarpus macrocarpus</td><td>花梨木</td><td>Huālí mù</td><td>1-2</td><td>Not Threatened</td><td>-</td></tr>
+	<tr class="item"><td>Burmese Rosewood 1</td><td>Dalbergia bariensis</td><td>缅酸枝</td><td>Miǎn suān zhī</td><td>3</td><td><a href="http://www.iucnredlist.org/details/33247/0" target="_blank"><u>Endangered</u></a></td><td>II</td></tr>
+	<tr class="item"><td>Burmese Rosewood 2</td><td>Dalbergia oliveri</td><td>缅酸枝</td><td>Miǎn suān zhī</td><td>3</td><td><a href="http://www.iucnredlist.org/details/32306/0" target="_blank"><u>Endangered</u></a></td><td>II</td></tr>
+	<tr class="item"><td>Chinese Catalpa</td><td>Catalpa ovata</td><td>梓树</td><td>Zǐ shù</td><td>Used for backboards</td><td>Not Listed</td><td>-</td></tr>
+	<tr class="item"><td><a href="http://www.catalogueoflife.org/col/details/species/id/22696171ce250f484fd0ff6b4d6653d9" target="_blank"><u>Chinese Fir</u></a></td><td>Cunninghamia lanceolata</td><td>广叶杉<br />杉木<br />白衫<br />赤衫<br />杉木</td><td>Guǎng yè shān<br />Shānmù<br />Bái shān<br />Chì shān<br />shānmù</td><td>Used for soundboards of Chaozhou zhengs</td><td>Not Listed</td><td>-</td></tr>
+	<tr class="item"><td>East Indian Rosewood</td><td>Dalbergia latifolia</td><td>紫檀</td><td>Zǐtán</td><td>4-5</td><td><a href="http://www.iucnredlist.org/details/32098/0" target="_blank"><u>Vulnerable</u></a></td><td>II</td></tr>
+	<tr class="item"><td><a href="http://www.catalogueoflife.org/col/details/species/id/d70e28af7503b5e2045d77da91a5f287" target="_blank"><u>Chinese Parasol Tree</u></a></td><td>Firmiana simplex</td><td>梧桐<br />青桐</td><td>Wútóng<br />Qīngtóng</td><td>Not typically used</td><td>Not Listed</td><td>-</td></tr>
+	<tr class="item"><td>Golden-thread Nanmu</td><td>Phoebe zhennan</td><td>金丝楠木</td><td>Jīn sī nánmù</td><td>4</td><td><a href="http://www.iucnredlist.org/details/32440/0" target="_blank"><u>Vulnerable</u></a></td><td>II</td></tr>
+	<tr class="item"><td>Madagascar Rosewood</td><td>Dalbergia baronii</td><td>紫檀</td><td>Zǐtán</td><td>5</td><td><a href ="http://www.iucnredlist.org/details/33955/0" target="_blank"><u>Vulnerable</u></a></td><td>II</td></tr>
+	<tr class="item"><td>Pau Rosa</td><td>Bobgunnia fistuloides</td><td>红檀</td><td>Hóng tán</td><td>4</td><td>Not Threatened</td><td><a href="http://www.iucnredlist.org/details/33061/0" target="_blank"><u>Least Concern</u></a></td></tr>
+	<tr class="item"><td>Paulownia 1</td><td>Paulownia elongata</td><td>兰考泡桐</td><td>Lánkǎo Pāotóng</td><td>Used for most modern soundboards</td><td>Not Listed</td><td>-</td></tr>
+	<tr class="item"><td>Paulownia 2</td><td>Paulownia fortunei</td><td>白花泡桐</td><td>Báihuā pāotóng</td><td>Used for pre-1965 soundboards</td><td>Not Listed</td><td>-</td></tr>
+	<tr class="item"><td>Golden Thread Nanmu</td><td>Phoebe nanmu, Machilus nanmu</td><td>滇楠</td><td>Diān nán</td><td>Used for backboards</td><td>Not Listed</td><td>-</td></tr>
+	<tr class="item"><td>"Pear wood"</td><td>Pterocarpus macrocarpus</td><td>花梨木</td><td>Huālí mù</td><td>1-2</td><td>Not Threatened</td><td>-</td></tr>
+	<tr class="item"><td>"Purple Sandalwood" 1</td><td>Dalbergia latifolia</td><td>紫檀</td><td>Zǐtán</td><td>4-5</td><td><a href="http://www.iucnredlist.org/details/32098/0" target="_blank"><u>Vulnerable</u></a></td><td>II</td></tr>
+	<tr class="item"><td>"Purple Sandalwood" 2</td><td>Dalbergia baronii</td><td>紫檀</td><td>Zǐtán</td><td>5</td><td><a href="http://www.iucnredlist.org/details/33955/0" target="_blank"><u>Vulnerable</u></a></td><td>II</td></tr>
+	<tr class="item"><td>"Red Sandalwood"</td><td>Bobgunnia fistuloides</td><td>红檀</td><td>Hóng tán</td><td>4</td><td>Not Threatened</td><td><a href="http://www.iucnredlist.org/details/33061/0" target="_blank"><u>Least Concern</u></a></td></tr>
+	<tr class="item"><td>Red Sander</td><td>Pterocarpus santalinus</td><td>小葉紫檀</td><td>Xiǎoyè zǐtán</td><td>5</td><td>highly prized</td><td><a href ="http://www.iucnredlist.org/details/32104/0" target="_blank"><u>Endangered</u></a></td></tr>
+	<tr class="item"><td>"Rose Purple Sandalwood"</td><td>Dalbergia louvelii</td><td>玫瑰檀</td><td>Méiguī tán</td><td>5</td><td><a href="http://www.iucnredlist.org/details/38244/0" target="_blank"><u>Endangered</u></a></td><td>II</td></tr>
+	<tr class="item"><td>Rosewood</td><td>Generic</td><td>红木</td><td>Hóngmù</td><td>1-2</td><td>Generic</td><td>-</td></tr>
+	<tr class="item"><td>Siamese Rosewood</td><td>Dalbergia cochinchinensis</td><td>老红木</td><td>Lǎo hóngmù</td><td>4</td><td><a href="http://www.iucnredlist.org/details/32625/0" target="_blank"><u>Vulnerable</u></a></td><td>II</td></tr>
+	<tr class="item"><td>Thailand Rosewood</td><td>Dalbergia cochinchinensis</td><td>老红木</td><td>Lǎo hóngmù</td><td>4</td><td><a href="http://www.iucnredlist.org/details/32625/0" target="_blank"><u>Vulnerable</u></a></td><td>II</td></tr>
+	<tr class="item"><td>Wutong</td><td>generic</td><td>梧桐</td><td>Wútóng</td><td>1-3</td><td>generic</td><td>-</td></tr>
+	<tr class="item"><td>"Zitan wood" 1</td><td>Dalbergia latifolia</td><td>紫檀</td><td>Zǐtán</td><td>4-5</td><td><a href="http://www.iucnredlist.org/details/32098/0" target="_blank"><u>Vulnerable</u></a></td><td>II</td></tr>
+	<tr class="item"><td>"Zitan wood" 2</td><td>Dalbergia baronii</td><td>紫檀</td><td>Zǐtán</td><td>5</td><td><a href="http://www.iucnredlist.org/details/33955/0" target="_blank"><u>Vulnerable</u></a></td><td>II</td></tr>
+</tbody>
+</table>
+</div>
+{{ end }}

@@ -1,0 +1,23 @@
+{{range .pmtimeline}}
+<div class="mw8 center f4">
+<p>{{ .kingdom }}</p>
+</div>
+<div class="flex-m mhn3-m mb4 mw8 center">
+  <div class="db ph3-m w-33-m" style="max-width: 350px;">
+  <p>{{ .period }}</p>
+  <p>{{ .daterange }}</p>
+  {{if .image}}<img src="{{.image}}" class="w-100-m">
+  <p class="f6">{{ .imagecredit | markdownify}}</p>{{end}}
+  </div>
+
+  <div class="ph3-m w-66-m">
+    <div class="db">
+    {{ if .region }}<p>Region: {{ .region }}</p> {{end}}
+    {{ if .strings }}<p>Strings: {{ .strings }}</p>{{end}}
+    {{ if .event }}<p>Event: {{ .event }}</p>{{end}}
+    {{ if .usage }}<p>Usage: {{ .usage }}</p>{{end}}
+    </div>
+  </div>
+</div>
+<hr class="mw8 mb3"/>
+{{end}}

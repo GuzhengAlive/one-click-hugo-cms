@@ -1,0 +1,11 @@
+{{ define "main" }}
+{{ partial "jumbotron" .Params }}
+<div class="tc mw-100">
+{{ range $element := .Params.sections }}
+	{{ partial "jump-to-menu" $element }}
+{{end}}
+</div>
+	{{ range $element := .Params.sections }}
+		{{ partial "basic-sections" $element }}
+	{{end}}
+{{ end }}

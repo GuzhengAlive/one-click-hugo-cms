@@ -1,0 +1,11 @@
+<div class="pv4">
+	<div class="ph3 mw8 center">
+
+		<div class="mhn2-l">
+					{{ $anchortarget := replaceRE " " "" .heading }}
+				<h2 class="f2 b lh-title mb2" id="{{$anchortarget}}">{{.heading}}</h2>
+
+{{ if .text }}				<p>{{.text | markdownify}}</p> {{end}}
+		</div>
+	</div>
+</div>

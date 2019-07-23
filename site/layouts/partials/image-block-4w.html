@@ -1,0 +1,16 @@
+<div class="bg-off-white pv4">
+  <div class="ph3 mw8 center">
+    <div class="flex-ns flex-wrap mhn2-ns mb3">
+      {{ range .images }}
+      <div class="ph2-ns w-25-ns mb3">
+{{if .downloadUrl}}
+<a href="{{.downloadUrl}}"><img src="{{.image}}" alt="" class="left db mb3"></a>
+{{else}}
+      <img src="{{.image}}" alt="" class="left db mb3">
+        <p class="f6">{{.caption}}</p>
+      </div>
+      {{end}}
+      {{ end }}
+    </div>
+  </div>
+</div>

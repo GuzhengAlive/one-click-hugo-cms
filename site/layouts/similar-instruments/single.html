@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+  <div class="mw8 center ph3 pv4">
+    <h1 class="f1 lh-title b mb3">G----g Expert</h1>
+    <h1 class="f2 lh-title b mb3">{{.Title}}</h1>
+    <div class="flex justify-between grey-3">
+    </div>
+    <div class="cms mw8">
+      <p>{{ .Description }}</p>
+      {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" class="fl"/>{{ end }}
+      {{ .Content }}
+    </div>
+  </div>
+{{ end }}

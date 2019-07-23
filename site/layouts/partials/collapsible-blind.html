@@ -1,0 +1,17 @@
+<div class="mw8 center">
+<div class="wrap-collapsible">
+  {{range .blinds}}
+	{{ $target := replaceRE " " "" .heading }}
+  {{  $target2 := slice $target "2"}}
+  <input id="{{$target2}}" class="toggle" type="checkbox">
+  <label for="{{$target2}}" class="lbl-toggle" id="{{$target}}">{{.heading}}</label>
+  <div class="collapsible-content">
+    <div class="content-inner">
+      <p>
+      {{.text | markdownify}}
+      </p>
+    </div>
+  </div>
+  {{end}}
+</div>
+</div>

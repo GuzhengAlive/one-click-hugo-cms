@@ -1,0 +1,14 @@
+<h3 class="f4"><a href="{{ .Params.avarname }}">{{ .Params.Title }}</a></h3>
+<div class="flex-m mhn3-m mb4">
+<!--<a href="{{ .Permalink }}" class="no-underline pa3 bg-grey-1 br1 mb2 db raise w-100">
+	<h3 class="f4 b lh-title mb1 primary">{{ .Title }}</h3> -->
+
+ <!-- <p class="mid-gray lh-title mb2">{{ .Date.Format "Mon, Jan 2, 2006" }}</p>-->
+   <div class="ph3-m w-25-m">
+     <img src="{{ .Params.image }}" alt="{{ .Params.Title }}" class="db mb2">
+   </div>
+
+   <div class="ph3-m w-75-m">
+     <p>{{.Params.text | markdownify}}</p>
+   </div>
+ </div>

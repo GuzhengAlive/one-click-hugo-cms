@@ -1,0 +1,6 @@
+<div class="di">
+{{if .heading}}
+	{{ $anchor := replaceRE " " "" .heading }}
+<a href="#{{$anchor}}">{{.heading}}</a> |
+{{end}}
+</div>

@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{ partial "jumbotron" .Params }}
+<div class="tc mw-100">
+{{ range $element := .Params.sections }}
+	{{ partial "jump-to-menu" $element }}
+{{end}}
+{{ range $element := .Params.sections2 }}
+	{{ partial "jump-to-menu" $element }}
+{{end}}
+{{ range $element := .Params.blinds }}
+	{{ partial "jump-to-menu" $element }}
+{{end}}
+</div>
+	{{ range $element := .Params.sections }}
+		{{ partial "basic-sections" $element }}
+	{{end}}
+	{{ partial "pre-modern-timeline" .Params}}
+	{{ range $element := .Params.sections2 }}
+		{{ partial "basic-sections" $element }}
+	{{end}}
+  {{ partial "modern-timeline" .Params}}
+	{{ partial "collapsible-blind" .Params}}
+
+{{ end }}

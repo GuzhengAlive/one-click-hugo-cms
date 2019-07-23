@@ -1,0 +1,42 @@
+/** Need to replace all values with global variables. **/
+
+.dropdown{
+  position: relative;
+  display: inline-block;
+  /**font-family: var(--h3-font-family);
+  font-size: var(--h3-font-size);
+  font-style: var(--h3-font-style);
+  font-weight: var(--h3-font-weight);**/
+}
+.folderItem{
+  padding: 5px 10px;
+}
+.folderItem a{
+    text-decoration: none;
+    color: black;
+}
+
+.dropdownLinks{
+  display: none;
+    position: absolute;
+    background-color: black;
+    padding-right: 20px;
+    min-width: 250px;
+
+}
+.dropdownLinks ul{
+  list-style: none;
+  padding-left: 20px;
+  /*margin-top: 0;*/
+}
+
+.dropdownLinks ul li{
+  margin-bottom: 5px;
+  color: white;
+}
+.dropdownLinks ul li a{
+  text-decoration: none;
+  color: white;
+}
+
+.dropdown:hover .dropdownLinks {display: block; z-index: 1;}

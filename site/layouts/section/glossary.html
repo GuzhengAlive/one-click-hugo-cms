@@ -1,0 +1,6132 @@
+{{ define "main" }}
+{{partial "table-search"}}
+{{ partial "jumbotron" .Params }}
+<div class="tc mw-100">
+{{ range $element := .Params.sections }}
+	{{ partial "jump-to-menu" $element }}
+{{end}}
+{{ range $element := .Params.sections2 }}
+	{{ partial "jump-to-menu" $element }}
+{{end}}
+</div>
+	{{ range $index, $element := .Params.sections }}
+	{{ partial "basic-sections" $element }}
+	{{end}}
+
+<!-- Hardcoded html table  -->
+<div class="mw8 center">
+<input type="text" id="myInput" placeholder="Search glossary...">
+<button onclick="searchTable()">Search</button><button onclick="reset()">Reset</button><p />
+<button onclick="tableSorter()">Enable Sort</button><p />
+<div style="overflow-x:auto;">
+		<table class="GeneratedTable" id="usersTable">
+		  <thead>
+		  <tr id="header">
+		    <th style="cursor:pointer">Original Entry</th>
+		    <th style="cursor:pointer">Pinyin</th>
+			<th style="cursor:pointer">Description</th>
+		    <th style="cursor:pointer">Simplified 汉字</th>
+			<th style="cursor:pointer">Traditional 汉字</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr class="item"><td></td><td></td><td></td><td></td><td></td></tr>
+		<tr class="item">
+		<td>Ai Tong Alumni</td>
+		<td>Ài tóng xiàoyǒu huì</td>
+		<td>Alumini Of School In Singapore</td>
+		<td>爱同校友会</td>
+		<td>愛同校友會</td></tr>
+		<tr class="item">
+		<td>an</td>
+		<td>Àn</td>
+		<td>A Left-Hand Technique For Depressing A String On The Zheng</td>
+		<td>按</td>
+		<td>按</td></tr>
+		<tr class="item">
+		<td>anyin</td>
+		<td>Àn yīn</td>
+		<td>Zheng Technique</td>
+		<td>按音</td>
+		<td>按音</td></tr>
+		<tr class="item">
+		<td>Au Yong Eang</td>
+		<td>ōuyáng liáng róng</td>
+		<td>Singapore Zheng Musician</td>
+		<td>欧阳良荣</td>
+		<td>歐陽良榮</td></tr>
+		<tr class="item">
+		<td>baban</td>
+		<td>bā bǎn</td>
+		<td>A Traditional Chinese Compositional Form, Often Referred To As A "Mother Tune"</td>
+		<td>八板</td>
+		<td>八板</td></tr>
+		<tr class="item">
+		<td>Baban Mingyuan</td>
+		<td>bā bǎn míng yuán</td>
+		<td>An Eighteenth-Century Text On Baban</td>
+		<td>八板名源</td>
+		<td>八板名源</td></tr>
+		<tr class="item">
+		<td>babantou</td>
+		<td>bā bǎn tóu</td>
+		<td>Literally "Baban Head," The First Few Phrases Of Baban</td>
+		<td>八板头</td>
+		<td>八板頭</td></tr>
+		<tr class="item">
+		<td>babanwei</td>
+		<td>bā bǎnwěi</td>
+		<td>Literally "Baban Tail," The Last Few Phrases Of Baban</td>
+		<td>八板尾</td>
+		<td>八板尾</td></tr>
+		<tr class="item">
+		<td>badulun</td>
+		<td>bā dù lún</td>
+		<td>Zheng Technique</td>
+		<td>八度轮</td>
+		<td>八度輪</td></tr>
+		<tr class="item">
+		<td>Bafa</td>
+		<td>bā fǎ</td>
+		<td>Eight Combinations Of Traditional Zheng Fingering Techniques</td>
+		<td>八法</td>
+		<td>八法</td></tr>
+		<tr class="item">
+		<td>Bagua</td>
+		<td>bāguà</td>
+		<td>The Eight Trigrams Of The Yi Jing</td>
+		<td>八卦</td>
+		<td>八卦</td></tr>
+		<tr class="item">
+		<td>Bai Chengren</td>
+		<td>bái chéngrén</td>
+		<td>Twentieth-Century Composer</td>
+		<td>白诚仁</td>
+		<td>白誠仁</td></tr>
+		<tr class="item">
+		<td>Bai Juyi</td>
+		<td>bái jú yì</td>
+		<td>Tang Dynasty Poet</td>
+		<td>白局易</td>
+		<td>白局易</td></tr>
+		<tr class="item">
+		<td>Bai Juyi</td>
+		<td>báijūyì</td>
+		<td>Tang Dynasty Poet</td>
+		<td>白居易</td>
+		<td>白居易</td></tr>
+		<tr class="item">
+		<td>Baihu qifang, Tuichen chuxin</td>
+		<td>bǎihuāqífàng, tuīchénchūxīn</td>
+		<td>Let A Hundred Flowers Bloom And Create The New Through The Evolution Ofthe Old, Quotation From Mao Zedong, 1951</td>
+		<td>百花齐放，推陈出新</td>
+		<td>百花齊放，推陳出新</td></tr>
+		<tr class="item">
+		<td>Baihua Zhengyan</td>
+		<td>bǎihuā zhēng yàn</td>
+		<td>Hundred Flowers Blooming, A 1976 Documentary Film</td>
+		<td>百花争艳</td>
+		<td>百花爭艷</td></tr>
+		<tr class="item">
+		<td>ban</td>
+		<td>bǎn</td>
+		<td>Wooden Clapper, Emphasized Beat, Or Section</td>
+		<td>板</td>
+		<td>板</td></tr>
+		<tr class="item">
+		<td>bantou qu</td>
+		<td>bǎn tóu qū</td>
+		<td>Henan Instrumental Music Genre</td>
+		<td>板头曲</td>
+		<td>板頭曲</td></tr>
+		<tr class="item">
+		<td>Bapu Mingyuan</td>
+		<td>bā pǔ míng yuán</td>
+		<td>An Eighteenth-Century Text Discussing Eight Pieces Created From Baban</td>
+		<td>八谱名源</td>
+		<td>八譜名源</td></tr>
+		<tr class="item">
+		<td>bayin</td>
+		<td>bā yuē</td>
+		<td>An Ancient Chinese Instrumental Categorization</td>
+		<td>八音</td>
+		<td>八音</td></tr>
+		<tr class="item">
+		<td>beiguan</td>
+		<td>běi guǎn</td>
+		<td>Northem Pipes</td>
+		<td>北管</td>
+		<td>北管</td></tr>
+		<tr class="item">
+		<td>Beijing</td>
+		<td>běijīng</td>
+		<td>Capital Of The Mainland</td>
+		<td>北京</td>
+		<td>北京</td></tr>
+		<tr class="item">
+		<td>Beijing Dianying Zhipian Chang</td>
+		<td>běijīng diànyǐng zhì piàn chǎng</td>
+		<td>A Chinese Film Factory</td>
+		<td>北京电影制片厂</td>
+		<td>北京電影製片廠</td></tr>
+		<tr class="item">
+		<td>beipai</td>
+		<td>běi pài</td>
+		<td>Northern Zheng Style</td>
+		<td>北派</td>
+		<td>北派</td></tr>
+		<tr class="item">
+		<td>beiqu</td>
+		<td>běi qǔ</td>
+		<td>Yuan Dynasty Vocal Genre</td>
+		<td>北曲</td>
+		<td>北曲</td></tr>
+		<tr class="item">
+		<td>Beizheng Gong</td>
+		<td>běi zhènggōng</td>
+		<td>Zheng Piece</td>
+		<td>北正宫</td>
+		<td>北正宮</td></tr>
+		<tr class="item">
+		<td>Bentuhua</td>
+		<td>běntǔ huà</td>
+		<td>Indigenisation</td>
+		<td>本土化</td>
+		<td>本土化</td></tr>
+		<tr class="item">
+		<td>biangong</td>
+		<td>biàn gōng</td>
+		<td>A Semitone Lower Than A Tonic</td>
+		<td>变宫</td>
+		<td>變宫</td></tr>
+		<tr class="item">
+		<td>Bianjiang Wuqu</td>
+		<td>biānjiāng wǔqǔ</td>
+		<td>Zheng Piece - Dancing Song At The Frontiers</td>
+		<td>边疆舞曲</td>
+		<td>邊疆舞曲</td></tr>
+		<tr class="item">
+		<td>Bianliang</td>
+		<td>biàn liáng</td>
+		<td>Capital Of The Northern Song Dynasty</td>
+		<td>汴梁</td>
+		<td>汴梁</td></tr>
+		<tr class="item">
+		<td>bianzhi</td>
+		<td>biàn zhǐ</td>
+		<td>A Semitone Lower Than The Fifth</td>
+		<td>变徵</td>
+		<td>變徵</td></tr>
+		<tr class="item">
+		<td>bianzou</td>
+		<td>biànzòu</td>
+		<td>Variation</td>
+		<td>变奏</td>
+		<td>變奏</td></tr>
+		<tr class="item">
+		<td>biaoyan</td>
+		<td>biǎoyǎn</td>
+		<td>Performance, Performing</td>
+		<td>表演</td>
+		<td>表演</td></tr>
+		<tr class="item">
+		<td>Bo Ya</td>
+		<td>bó yá</td>
+		<td>A Character In A Famous Musical Story</td>
+		<td>伯牙</td>
+		<td>伯牙</td></tr>
+		<tr class="item">
+		<td>budaixi</td>
+		<td>duì bùdài xì</td>
+		<td>Puppet Show</td>
+		<td>对布袋戏</td>
+		<td>對布袋戲</td></tr>
+		<tr class="item">
+		<td>Cai</td>
+		<td>cǎi</td>
+		<td>A Qin Aesthetic Of Brilliance</td>
+		<td>采</td>
+		<td>采</td></tr>
+		<tr class="item">
+		<td>Cai Zhongde</td>
+		<td>càizhòngdé</td>
+		<td>Musicologist</td>
+		<td>蔡仲德</td>
+		<td>蔡仲德</td></tr>
+		<tr class="item">
+		<td>caifeng</td>
+		<td>cǎifēng</td>
+		<td>Academic Activity Focusing On Collecting Folk Tunes</td>
+		<td>采风</td>
+		<td>采風</td></tr>
+		<tr class="item">
+		<td>Cao Dongfu</td>
+		<td>cáo dōng fú</td>
+		<td>Traditional Henan Zheng Performer</td>
+		<td>曹东扶</td>
+		<td>曹東扶</td></tr>
+		<tr class="item">
+		<td>Cao Guifen</td>
+		<td>cáo guì</td>
+		<td>Mainland Zheng Musician</td>
+		<td>曹桂</td>
+		<td>曹桂</td></tr>
+		<tr class="item">
+		<td>Cao Zheng</td>
+		<td>cáo zhèng</td>
+		<td>Traditional Zheng Performer And Scholar</td>
+		<td>曹正</td>
+		<td>曹正</td></tr>
+		<tr class="item">
+		<td>Cao Zhi</td>
+		<td>cáozhí</td>
+		<td>Han Dynasty Poet In The Three Kingdoms Period</td>
+		<td>曹植</td>
+		<td>曹植</td></tr>
+		<tr class="item">
+		<td>Caoyuan Shangde Hongweibing Jiandaole Mao Zhuxi</td>
+		<td>cǎoyuán shàng de hóng wèi pāng jiàn dàole máo zhǔ []</td>
+		<td>Zheng Piece - The Red Guard On The Plain Saw Chairman Mao</td>
+		<td>草原上的红卫乓见到了毛主[]</td>
+		<td>草原上的紅衛乓見到了毛主[]</td></tr>
+		<tr class="item">
+		<td>Caoyuan Xiongying</td>
+		<td>cǎoyuán xióng yīng</td>
+		<td>Zheng Piece - Eagles On The Plain</td>
+		<td>草原雄鹰</td>
+		<td>草原雄鷹</td></tr>
+		<tr class="item">
+		<td>Caoyuan Yingxiong Xiao Jiemei</td>
+		<td>cǎoyuán yīngxióng xiǎo jiěmèi</td>
+		<td>Twentieth-Century Composition For Film</td>
+		<td>草原英雄小姐妹</td>
+		<td>草原英雄小姐妹</td></tr>
+		<tr class="item">
+		<td>Ch\'en Ch\'inglung</td>
+		<td>chén qìnglóng</td>
+		<td>Taiwanese Musician</td>
+		<td>陈庆隆</td>
+		<td>陳慶隆</td></tr>
+		<tr class="item">
+		<td>Ch\'en Hsinhua</td>
+		<td>chén xìnhuá</td>
+		<td>Taiwanese Zheng Musician</td>
+		<td>陈信华</td>
+		<td>陳信華</td></tr>
+		<tr class="item">
+		<td>Ch\'en Wen</td>
+		<td>chén wén</td>
+		<td>Taiwanese Musician</td>
+		<td>陈雯</td>
+		<td>陳雯</td></tr>
+		<tr class="item">
+		<td>Ch\'engkung Tahsüeh </td>
+		<td>chénggōng dàxué</td>
+		<td>National Cheng Kung University</td>
+		<td>成功大学</td>
+		<td>成功大學</td></tr>
+		<tr class="item">
+		<td>Ch\'engta p\'ai</td>
+		<td>chéng dà pài</td>
+		<td>Ch\'Engta Zheng School</td>
+		<td>成大派</td>
+		<td>成大派</td></tr>
+		<tr class="item">
+		<td>Chan</td>
+		<td>chàn</td>
+		<td>Zheng Fingering Technique For Heavy Vibrato</td>
+		<td>颤</td>
+		<td>顫</td></tr>
+		<tr class="item">
+		<td>Chan Kwok Hing</td>
+		<td>chénguóxìng</td>
+		<td>Malaysian Zheng Musician</td>
+		<td>陈国兴</td>
+		<td>陳國興</td></tr>
+		<tr class="item">
+		<td>Chang Jing</td>
+		<td>cháng jìng</td>
+		<td>Zheng Performer</td>
+		<td>常静</td>
+		<td>常靜</td></tr>
+		<tr class="item">
+		<td>Chang Xiangsi</td>
+		<td>cháng xiāngsī</td>
+		<td>Twentieth-Century Zheng Composition - Also "Sauvignon Blanc"</td>
+		<td>长相思</td>
+		<td>長相思</td></tr>
+		<tr class="item">
+		<td>Changsha</td>
+		<td>chángshā</td>
+		<td>A Place On The Mainland</td>
+		<td>长沙</td>
+		<td>長沙</td></tr>
+		<tr class="item">
+		<td>chanyin</td>
+		<td>chànyīn</td>
+		<td>Zheng Technique</td>
+		<td>颤音</td>
+		<td>顫音</td></tr>
+		<tr class="item">
+		<td>Chaoju</td>
+		<td>cháojù</td>
+		<td>Chaozhou Opera</td>
+		<td>潮剧</td>
+		<td>潮劇</td></tr>
+		<tr class="item">
+		<td>Chaomei Yinyue She</td>
+		<td>cháo méi yīnyuè shè</td>
+		<td>Hakka Music Club Formed In 1930</td>
+		<td>潮梅音乐社</td>
+		<td>潮梅音樂社</td></tr>
+		<tr class="item">
+		<td>Chaoxian</td>
+		<td>cháoxiǎn</td>
+		<td>Minority Tribe On The Mainland</td>
+		<td>朝鲜</td>
+		<td>朝鮮</td></tr>
+		<tr class="item">
+		<td>chaozheng</td>
+		<td>cháo zhèng</td>
+		<td>Follow The Correct Directionl</td>
+		<td>朝正</td>
+		<td>朝正</td></tr>
+		<tr class="item">
+		<td>Chaozhou</td>
+		<td>cháozhōu</td>
+		<td>Region In Guangdong Province, A Regional Zheng Style</td>
+		<td>潮州</td>
+		<td>潮州</td></tr>
+		<tr class="item">
+		<td>Chek Siew Meng</td>
+		<td>qīzhàomíng</td>
+		<td>Singaporean Zheng Musician</td>
+		<td>戚兆铭</td>
+		<td>戚兆銘</td></tr>
+		<tr class="item">
+		<td>Chen Anhua</td>
+		<td>chén\'ānhuá</td>
+		<td>Traditional Chaozhou Zheng Performer</td>
+		<td>陈安华</td>
+		<td>陳安華</td></tr>
+		<tr class="item">
+		<td>Chen Chuanyin</td>
+		<td>chénchuányīn</td>
+		<td>Hong Kong Zheng Musician</td>
+		<td>陈传音</td>
+		<td>陳傳音</td></tr>
+		<tr class="item">
+		<td>Chen Guoquan</td>
+		<td>chénguóquán</td>
+		<td>Mainland Composer</td>
+		<td>陈国荃</td>
+		<td>陳國荃</td></tr>
+		<tr class="item">
+		<td>Chen Haozhu</td>
+		<td>chén hào zhù</td>
+		<td>Qing Dynasty Scholar</td>
+		<td>陈浩注</td>
+		<td>陳浩注</td></tr>
+		<tr class="item">
+		<td>Chen Hong</td>
+		<td>chén hóng</td>
+		<td>Early Twentieth Century Chinese Scholar</td>
+		<td>陈洪</td>
+		<td>陳洪</td></tr>
+		<tr class="item">
+		<td>Chen Huilan</td>
+		<td>chénhuìlán</td>
+		<td>Mainland Zheng Musician</td>
+		<td>陈慧兰</td>
+		<td>陳慧蘭</td></tr>
+		<tr class="item">
+		<td>Chen Kangshi</td>
+		<td>chén kāngshì</td>
+		<td>Tang Dynasty Author</td>
+		<td>陈康士</td>
+		<td>陳康士</td></tr>
+		<tr class="item">
+		<td>Chen Leishi</td>
+		<td>chénléi shì</td>
+		<td>Twentieth-Century Zheng Performer And Scholar</td>
+		<td>陈雷士</td>
+		<td>陳雷士</td></tr>
+		<tr class="item">
+		<td>Chen Leishi (Louis Chen)</td>
+		<td>chén lěi shì</td>
+		<td>Malaysian Chinese Zheng Musician</td>
+		<td>陈蕾士</td>
+		<td>陳蕾士</td></tr>
+		<tr class="item">
+		<td>Chen Maojin</td>
+		<td>chénmàojǐn</td>
+		<td>Traditional Fujian Zheng Performer</td>
+		<td>陈茂锦</td>
+		<td>陳茂錦</td></tr>
+		<tr class="item">
+		<td>Chen Xingyuan Hefan</td>
+		<td>chénxìngyuán hé fān</td>
+		<td>Traditional Zheng Composition</td>
+		<td>陈杏元和番</td>
+		<td>陳杏元和番</td></tr>
+		<tr class="item">
+		<td>Chen Xingyuan Luoyuan</td>
+		<td>chénxìngyuán luò yuàn</td>
+		<td>Traditional Zheng Composition — The Courtyard</td>
+		<td>陈杏元落院</td>
+		<td>陳杏元落院</td></tr>
+		<tr class="item">
+		<td>Chen Yi</td>
+		<td>chén yí</td>
+		<td>Chinese/American Composer</td>
+		<td>陈怡</td>
+		<td>陳怡</td></tr>
+		<tr class="item">
+		<td>Chen Youzhang</td>
+		<td>chén yǒuzhāng</td>
+		<td>Traditional Fujian Zheng Performer</td>
+		<td>陈友章</td>
+		<td>陳友章</td></tr>
+		<tr class="item">
+		<td>Cheng</td>
+		<td>chéng</td>
+		<td>Continuation</td>
+		<td>承</td>
+		<td>承</td></tr>
+		<tr class="item">
+		<td>Cheng Ch\'engkung</td>
+		<td>zhèngchénggōng</td>
+		<td>Ming Dynasty General</td>
+		<td>郑成功</td>
+		<td>鄭成功</td></tr>
+		<tr class="item">
+		<td>Cheng Gongliang</td>
+		<td>chéng gōngliàng</td>
+		<td>Scholar And Performer Of The Qin And Zheng</td>
+		<td>程公亮</td>
+		<td>程公亮</td></tr>
+		<tr class="item">
+		<td>Cheng P\'eiyi</td>
+		<td>zhèngpèiyí</td>
+		<td>Taiwanese Zheng Teacher</td>
+		<td>郑佩仪</td>
+		<td>鄭佩儀</td></tr>
+		<tr class="item">
+		<td>Cheng Teyuan</td>
+		<td>zhèngdéyuān</td>
+		<td>Taiwanese Zheng Musician</td>
+		<td>郑德渊</td>
+		<td>鄭德淵</td></tr>
+		<tr class="item">
+		<td>Chicheng</td>
+		<td>chíchěng</td>
+		<td>Zheng Piece - Speeding</td>
+		<td>驰骋</td>
+		<td>馳騁</td></tr>
+		<tr class="item">
+		<td>Chien Hsienkuang</td>
+		<td>jiǎnxiǎnguāng</td>
+		<td>Taiwanese Zheng Musician</td>
+		<td>简显光</td>
+		<td>簡顯光</td></tr>
+		<tr class="item">
+		<td>Chinch\'englien</td>
+		<td>jīnchéng lián</td>
+		<td>Army Camp In Taiwan</td>
+		<td>金城连</td>
+		<td>金城連</td></tr>
+		<tr class="item">
+		<td>Chinmen</td>
+		<td>jīnmén</td>
+		<td>Quemoy</td>
+		<td>金门</td>
+		<td>金門</td></tr>
+		<tr class="item">
+		<td>Chong Fu Alumni</td>
+		<td>chóng fú xiàoyǒu huì</td>
+		<td>Alumnus Ofa School In Singapore</td>
+		<td>崇福校友会</td>
+		<td>崇福校友會</td></tr>
+		<tr class="item">
+		<td>Chong Yee Music Centre</td>
+		<td>zhōngyì yīnyuè zhōngxīn</td>
+		<td>Zheng Music Shop In Singapore</td>
+		<td>忠义音乐中心</td>
+		<td>忠義音樂中心</td></tr>
+		<tr class="item">
+		<td>Chou Ying</td>
+		<td>chóuyīng</td>
+		<td>Ming Dynasty Artist</td>
+		<td>仇英</td>
+		<td>仇英</td></tr>
+		<tr class="item">
+		<td>Chu</td>
+		<td>chǔ</td>
+		<td>A Kingdom In Ancient China</td>
+		<td>楚</td>
+		<td>楚</td></tr>
+		<tr class="item">
+		<td>Chuang Kuonien</td>
+		<td>zhuāngguónián</td>
+		<td>Taiwanese Zheng Musician</td>
+		<td>庄国年</td>
+		<td>莊國年</td></tr>
+		<tr class="item">
+		<td>chuanpu</td>
+		<td>chuán pǔ</td>
+		<td>Transmitted Score</td>
+		<td>传谱</td>
+		<td>傳譜</td></tr>
+		<tr class="item">
+		<td>chuantong</td>
+		<td>chuántǒng</td>
+		<td>Tradition, Traditional</td>
+		<td>传统</td>
+		<td>傳統</td></tr>
+		<tr class="item">
+		<td>Chundao Lasa</td>
+		<td>chūn dào lāsà</td>
+		<td>Zheng Piece - Spring In Lhasa</td>
+		<td>春到拉萨</td>
+		<td>春到拉薩</td></tr>
+		<tr class="item">
+		<td>Chung Cheng High School</td>
+		<td>zhōngzhèng mín yuèduì</td>
+		<td>Chinese Orchestra In Singapore</td>
+		<td>中正民乐队</td>
+		<td>中正民樂隊</td></tr>
+		<tr class="item">
+		<td>Chunghua</td>
+		<td>zhōnghuá</td>
+		<td>Zheng Factory In Taiwan</td>
+		<td>中华</td>
+		<td>中華</td></tr>
+		<tr class="item">
+		<td>Chungkuo Ch\'eng</td>
+		<td>zhōngguó chéng</td>
+		<td>Shopping Centre In Tainan</td>
+		<td>中国城</td>
+		<td>中國城</td></tr>
+		<tr class="item">
+		<td>Chunjiang Huayueye</td>
+		<td>chūnjiāng huā yuèyè</td>
+		<td>Zheng Piece - Flowers By The River At Moonlit Night In Spring</td>
+		<td>春江花月夜</td>
+		<td>春江花月夜</td></tr>
+		<tr class="item">
+		<td>Chunqiu zhanguo shidai</td>
+		<td>chūnqiū zhànguó shídài</td>
+		<td>The Spring And Autumn Period </td>
+		<td>春秋战国时代</td>
+		<td>春秋戰國時代</td></tr>
+		<tr class="item">
+		<td>Chushui Lian</td>
+		<td>chūshuǐ lián</td>
+		<td>Traditional Hakka Zheng Composition - The Lotus</td>
+		<td>出水莲</td>
+		<td>出水蓮</td></tr>
+		<tr class="item">
+		<td>cipai</td>
+		<td>cípái</td>
+		<td>Poetic Form</td>
+		<td>词牌</td>
+		<td>詞牌</td></tr>
+		<tr class="item">
+		<td>cui</td>
+		<td>cuī</td>
+		<td>Tempo Marking In Tang Banquet Music, A Technique For Variation In Chaozhou Zheng</td>
+		<td>催</td>
+		<td>催</td></tr>
+		<tr class="item">
+		<td>Cui Qi</td>
+		<td>cuī qī</td>
+		<td>A Character In Tang Poetry</td>
+		<td>崔七</td>
+		<td>崔七</td></tr>
+		<tr class="item">
+		<td>Cuo</td>
+		<td>cuō</td>
+		<td>Zheng Technique</td>
+		<td>撮</td>
+		<td>撮</td></tr>
+		<tr class="item">
+		<td>cuoyao</td>
+		<td>cuō yáo</td>
+		<td>Zheng Technique</td>
+		<td>撮摇</td>
+		<td>撮搖</td></tr>
+		<tr class="item">
+		<td>da</td>
+		<td>dā</td>
+		<td>Zheng Fingering Technique For Plucking Outward With The Thumb</td>
+		<td>搭</td>
+		<td>搭</td></tr>
+		<tr class="item">
+		<td>Da baban</td>
+		<td>dà bā bǎn</td>
+		<td>Traditional Zheng Composition</td>
+		<td>大八板</td>
+		<td>大八板</td></tr>
+		<tr class="item">
+		<td>da pipan</td>
+		<td>dà pīpàn</td>
+		<td>Mass Criticism In The Cultural Revolution</td>
+		<td>大批判</td>
+		<td>大批判</td></tr>
+		<tr class="item">
+		<td>Dabu</td>
+		<td>dà bù</td>
+		<td>Region In Guangdong Province</td>
+		<td>大埔</td>
+		<td>大埔</td></tr>
+		<tr class="item">
+		<td>dadiao</td>
+		<td>dà diào</td>
+		<td>A Collective Term For All The Hakka Compositions Written On The Baban Form</td>
+		<td>大调</td>
+		<td>大調</td></tr>
+		<tr class="item">
+		<td>dadiao quzi</td>
+		<td>dà diào qǔzi</td>
+		<td>A Collective Term For All The Henan Compositions Written On The Baban Form</td>
+		<td>大调曲子</td>
+		<td>大調曲子</td></tr>
+		<tr class="item">
+		<td>Dadu He</td>
+		<td>dà dù hé</td>
+		<td>River Dadu</td>
+		<td>大肚河</td>
+		<td>大肚河</td></tr>
+		<tr class="item">
+		<td>Dahu Shangshan</td>
+		<td>dǎ hǔ shàngshān</td>
+		<td>Twentieth-Century Composition Within One Of The Eight Revolutionary Model Operas</td>
+		<td>打虎上山</td>
+		<td>打虎上山</td></tr>
+		<tr class="item">
+		<td>Dai Chuang</td>
+		<td>dài chuǎng</td>
+		<td>Instrument Maker From Shanghai</td>
+		<td>戴闯</td>
+		<td>戴闖</td></tr>
+		<tr class="item">
+		<td>Dalu</td>
+		<td>dàlù</td>
+		<td>The Mainland</td>
+		<td>大陆</td>
+		<td>大陸</td></tr>
+		<tr class="item">
+		<td>dan baban</td>
+		<td>dān bā bǎn</td>
+		<td>A Composition On The Baban Form</td>
+		<td>单八板</td>
+		<td>單八板</td></tr>
+		<tr class="item">
+		<td>Danchu</td>
+		<td>dànchū</td>
+		<td>Faded Out</td>
+		<td>淡出</td>
+		<td>淡出</td></tr>
+		<tr class="item">
+		<td>dancui</td>
+		<td>dān cuī</td>
+		<td>A Chaozhou Fingering Variation</td>
+		<td>单催</td>
+		<td>單催</td></tr>
+		<tr class="item">
+		<td>Danmaxi</td>
+		<td>dànmǎxī</td>
+		<td>Temasek — Old Name Of Singapore</td>
+		<td>淡马锡</td>
+		<td>淡馬錫</td></tr>
+		<tr class="item">
+		<td>danqu</td>
+		<td>dàn qū</td>
+		<td>A Han Dynasty Instrumental Genre</td>
+		<td>旦曲</td>
+		<td>旦曲</td></tr>
+		<tr class="item">
+		<td>Daode Jing</td>
+		<td>dàodé jīng</td>
+		<td>Lao Zi\'S Treatise On Taoism</td>
+		<td>道德经</td>
+		<td>道德經</td></tr>
+		<tr class="item">
+		<td>Daode Xueshe</td>
+		<td>dàodé xué shè</td>
+		<td>School In Beijing</td>
+		<td>道德学社</td>
+		<td>道德學社</td></tr>
+		<tr class="item">
+		<td>Daoyi Qu</td>
+		<td>dǎo yī qū</td>
+		<td>Zheng Piece - Lament Of A Washer Woman</td>
+		<td>捣衣曲</td>
+		<td>擣衣曲</td></tr>
+		<tr class="item">
+		<td>Daoyi Zhilue</td>
+		<td>dǎo yí zhì lüè</td>
+		<td>Ancient Chinese Text</td>
+		<td>岛夷志略</td>
+		<td>島夷志略</td></tr>
+		<tr class="item">
+		<td>daqu</td>
+		<td>dàqū</td>
+		<td>Tang Dynasty Music Genre</td>
+		<td>大曲</td>
+		<td>大曲</td></tr>
+		<tr class="item">
+		<td>dashi</td>
+		<td>dàshī</td>
+		<td>Great Teacher</td>
+		<td>大师</td>
+		<td>大師</td></tr>
+		<tr class="item">
+		<td>Datong Yuehui</td>
+		<td>dàtóng yuè huì</td>
+		<td>Twentieth-Century Music Organization</td>
+		<td>大同乐会</td>
+		<td>大同樂會</td></tr>
+		<tr class="item">
+		<td>daxing xiaofu, zhongfa qingsui</td>
+		<td>dàxīng xiǎo fù, zhòng fā qīng suí</td>
+		<td>A Poetic Description Of Zheng Fingering</td>
+		<td>大兴小附，重发轻随</td>
+		<td>大興小附，重發輕隨</td></tr>
+		<tr class="item">
+		<td>dayin xisheng</td>
+		<td>dà yīn xī shēng</td>
+		<td>The Taoist Phrase Of "Great Music Has No Sound"</td>
+		<td>大音希声</td>
+		<td>大音希聲</td></tr>
+		<tr class="item">
+		<td>Dayuejin</td>
+		<td>dà yuèjìn</td>
+		<td>The Great Leap Forward</td>
+		<td>大跃进</td>
+		<td>大躍進</td></tr>
+		<tr class="item">
+		<td>Dazhu xiaozhu luoyupan</td>
+		<td>dà zhū xiǎo zhū luò yù pán</td>
+		<td>Large Pearls And Small Pearls Falling On A Jade</td>
+		<td>大珠小珠落玉盘</td>
+		<td>大珠小珠落玉盤</td></tr>
+		<tr class="item">
+		<td>Deng Haiqiong</td>
+		<td>dènghǎiqióng</td>
+		<td>Zheng Performer</td>
+		<td>邓海琼</td>
+		<td>鄧海瓊</td></tr>
+		<tr class="item">
+		<td>Deng Xiaoping</td>
+		<td>dèngxiǎopíng</td>
+		<td>Paramount Leader Of The Mainland</td>
+		<td>邓小平</td>
+		<td>鄧小平</td></tr>
+		<tr class="item">
+		<td>Dengyue Jiaohui</td>
+		<td>dēng yuè jiāo huī</td>
+		<td>Zheng Piece - Lanterns And Moonlight Vying For Brilliance</td>
+		<td>灯月交辉</td>
+		<td>燈月交輝</td></tr>
+		<tr class="item">
+		<td>Dengzhou</td>
+		<td>dèng zhōu</td>
+		<td>A City In Henan Province</td>
+		<td>邓州</td>
+		<td>鄧州</td></tr>
+		<tr class="item">
+		<td>di</td>
+		<td>dí</td>
+		<td>Chinese Transverse Flute</td>
+		<td>笛</td>
+		<td>笛</td></tr>
+		<tr class="item">
+		<td>dian</td>
+		<td>diǎn</td>
+		<td>A Zheng Fingering Technique That Momentarily Alters The Pitch Of A String</td>
+		<td>点</td>
+		<td>點</td></tr>
+		<tr class="item">
+		<td>dian tan</td>
+		<td>diǎn tán</td>
+		<td>A Zheng Fingering Technique Alternating Between The Index Finger Of Both Hands</td>
+		<td>点弹</td>
+		<td>點彈</td></tr>
+		<tr class="item">
+		<td>dianyin</td>
+		<td>diǎn yīn</td>
+		<td>Point Note</td>
+		<td>点音</td>
+		<td>點音</td></tr>
+		<tr class="item">
+		<td>Dianying Yuetuan</td>
+		<td>diànyǐng yuètuán</td>
+		<td>Film Orchestra</td>
+		<td>电影乐团</td>
+		<td>電影樂團</td></tr>
+		<tr class="item">
+		<td>diao</td>
+		<td>diào</td>
+		<td>Key, Mode, Tonic, Scale</td>
+		<td>调</td>
+		<td>调</td></tr>
+		<tr class="item">
+		<td>Dieshi Zheng</td>
+		<td>dié shì zhēng</td>
+		<td>Butterfly Zheng</td>
+		<td>蝶式筝</td>
+		<td>蝶式箏</td></tr>
+		<tr class="item">
+		<td>Ding Boling</td>
+		<td>dīngbólíng</td>
+		<td>Mainland Composer</td>
+		<td>丁伯苓</td>
+		<td>丁伯苓</td></tr>
+		<tr class="item">
+		<td>dizi</td>
+		<td>dízi</td>
+		<td>Chinese Flute</td>
+		<td>笛子</td>
+		<td>笛子</td></tr>
+		<tr class="item">
+		<td>Dong Bei Luxun Yishu Xueyuan</td>
+		<td>dōngběi lǔxùn yìshù xuéyuàn</td>
+		<td>Former Art School In Northeast China</td>
+		<td>东北鲁迅艺术学院</td>
+		<td>東北魯迅藝術學院</td></tr>
+		<tr class="item">
+		<td>Dongbei</td>
+		<td>dōngběi</td>
+		<td>A Region On The Mainland</td>
+		<td>东北</td>
+		<td>東北</td></tr>
+		<tr class="item">
+		<td>Dongfang Gewutuan</td>
+		<td>dōngfāng gēwǔ tuán</td>
+		<td>Oriental Music Troupe</td>
+		<td>东方歌舞团</td>
+		<td>東方歌舞團</td></tr>
+		<tr class="item">
+		<td>Donghai Yuge</td>
+		<td>dōnghǎi yúgē</td>
+		<td>Zheng Piece - Fisherman\'S Song At Eastern Sea</td>
+		<td>东海渔歌</td>
+		<td>東海漁歌</td></tr>
+		<tr class="item">
+		<td>donglu yayue tuan</td>
+		<td>dōng lǔ yǎ yuètuán</td>
+		<td>Shandong Traditional Ensemble</td>
+		<td>东鲁雅乐团</td>
+		<td>東魯雅樂團</td></tr>
+		<tr class="item">
+		<td>Dongshan</td>
+		<td>dōngshān</td>
+		<td>A County In Fujian Province</td>
+		<td>东山</td>
+		<td>東山</td></tr>
+		<tr class="item">
+		<td>Dongting Xinge</td>
+		<td>dòngtíng xīngē</td>
+		<td>Twentieth-Century Zheng Composition - The New Song Of Dongting</td>
+		<td>洞庭新歌</td>
+		<td>洞庭新歌</td></tr>
+		<tr class="item">
+		<td>Dongzu Wuqu</td>
+		<td>dòngzú wǔqǔ</td>
+		<td>Twentieth-Century Zheng Composition</td>
+		<td>侗族舞曲</td>
+		<td>侗族舞曲</td></tr>
+		<tr class="item">
+		<td>dui</td>
+		<td>duì</td>
+		<td>One Of The Eight Trigrams Of The Yi Jing</td>
+		<td>兑</td>
+		<td>兑</td></tr>
+		<tr class="item">
+		<td>duilian</td>
+		<td>duìlián</td>
+		<td>Calligraphy On Either Side Of A Traditional Chinese Doorway</td>
+		<td>对联</td>
+		<td>對聯</td></tr>
+		<tr class="item">
+		<td>dunhuang</td>
+		<td>dūnhuáng</td>
+		<td>A Stop On The Silk Road Famous For Cave Murals; A Commercial Brand Of Zheng Made In Shanghai</td>
+		<td>敦煌</td>
+		<td>敦煌</td></tr>
+		<tr class="item">
+		<td>Dunhuang Tangren Wu</td>
+		<td>dūnhuáng tángrén wǔ</td>
+		<td>Dance Of Dunhuang</td>
+		<td>敦煌唐人舞</td>
+		<td>敦煌唐人舞</td></tr>
+		<tr class="item">
+		<td>duosheng Zheng</td>
+		<td>duō shēng zhēng</td>
+		<td>The Multiple-Tuning Zheng</td>
+		<td>多声筝</td>
+		<td>多聲箏</td></tr>
+		<tr class="item">
+		<td>Er Woo / Yuyu Ruyueshe</td>
+		<td>yúyúrú yuè shè</td>
+		<td>Er Woo Amateur Musical & Dramatic Association</td>
+		<td>余娱儒乐社</td>
+		<td>餘娛儒樂社</td></tr>
+		<tr class="item">
+		<td>erban</td>
+		<td>èr bǎn</td>
+		<td>The Fourth Section Of The Shandong First Great Suite</td>
+		<td>二板</td>
+		<td>二板</td></tr>
+		<tr class="item">
+		<td>erbian</td>
+		<td>èr biàn</td>
+		<td>Two Additional Pitches To A Pentatonic Scale</td>
+		<td>二变</td>
+		<td>二變</td></tr>
+		<tr class="item">
+		<td>erhu</td>
+		<td>èrhú</td>
+		<td>A Chinese Two-String Stick Fiddle</td>
+		<td>二胡</td>
+		<td>二胡</td></tr>
+		<tr class="item">
+		<td>ersi pu</td>
+		<td>èrsì pǔ</td>
+		<td>A Traditional Chaozhou Notational System</td>
+		<td>二四谱</td>
+		<td>二四譜</td></tr>
+		<tr class="item">
+		<td>erxian</td>
+		<td>èr xián</td>
+		<td>A Chaozhou Two-String Fiddle</td>
+		<td>二弦</td>
+		<td>二弦</td></tr>
+		<tr class="item">
+		<td>fan payin</td>
+		<td>fǎn pá yīn</td>
+		<td>Zheng Technique</td>
+		<td>反琶音</td>
+		<td>反琶音</td></tr>
+		<tr class="item">
+		<td>Fan Shang\'e</td>
+		<td>fànshàng\'é</td>
+		<td>Mainland Zheng Musician</td>
+		<td>范上娥</td>
+		<td>範上娥</td></tr>
+		<tr class="item">
+		<td>Fan Zuyin</td>
+		<td>fánzǔyīn</td>
+		<td>Musicologist</td>
+		<td>樊祖荫</td>
+		<td>樊祖蔭</td></tr>
+		<tr class="item">
+		<td>Fang Zhixun</td>
+		<td>fāngzhìxùn</td>
+		<td>Mainland Composer</td>
+		<td>方智训</td>
+		<td>方智訓</td></tr>
+		<tr class="item">
+		<td>fangmanjiahua</td>
+		<td>fàng màn jiā huā</td>
+		<td>A Compositional Method To Slow Down And Add Flowers</td>
+		<td>放慢加花</td>
+		<td>放慢加花</td></tr>
+		<tr class="item">
+		<td>fangtang yuewu</td>
+		<td>fǎng táng yuèwǔ</td>
+		<td>Twentieth-Century Song And Dance Composition</td>
+		<td>仿唐乐舞</td>
+		<td>仿唐樂舞</td></tr>
+		<tr class="item">
+		<td>Fangzhi Mang</td>
+		<td>fǎngzhī máng</td>
+		<td>Zheng Piece - Busy Weaving</td>
+		<td>纺织忙</td>
+		<td>紡織忙</td></tr>
+		<tr class="item">
+		<td>fanxian</td>
+		<td>fǎn xiàn</td>
+		<td>A Hakka Mode</td>
+		<td>反线</td>
+		<td>反線</td></tr>
+		<tr class="item">
+		<td>fanyin</td>
+		<td>fànyīn</td>
+		<td>Zheng Technique</td>
+		<td>泛音</td>
+		<td>泛音</td></tr>
+		<tr class="item">
+		<td>Fei Shi</td>
+		<td>fěi shí</td>
+		<td>Early Twentieth-Century Scholar</td>
+		<td>匪石</td>
+		<td>匪石</td></tr>
+		<tr class="item">
+		<td>Fengbai Cuizhu</td>
+		<td>fēng bǎi cuì zhú</td>
+		<td>Traditional Shandong Zheng Composition</td>
+		<td>风摆翠竹</td>
+		<td>风摆翠竹</td></tr>
+		<tr class="item">
+		<td>Fengshou Luogu</td>
+		<td>fēngshōu luógǔ</td>
+		<td>Zheng Piece - Harvest Drums</td>
+		<td>丰收锣鼓</td>
+		<td>豐收鑼鼓</td></tr>
+		<tr class="item">
+		<td>Fengsu Tongyi</td>
+		<td>fēngsú tōngyì</td>
+		<td>Han Dynasty Book Of Records</td>
+		<td>风俗通译</td>
+		<td>风俗通译</td></tr>
+		<tr class="item">
+		<td>Fengxiang Ge Bianzou Qu</td>
+		<td>fēng xiáng gē biànzòuqǔ</td>
+		<td>Traditional Shandong Zheng Composition</td>
+		<td>风翔歌变奏曲</td>
+		<td>风翔歌变奏曲</td></tr>
+		<tr class="item">
+		<td>fengyun</td>
+		<td>fēngyùn</td>
+		<td>Inner Gracefulness</td>
+		<td>风韵</td>
+		<td>風韻</td></tr>
+		<tr class="item">
+		<td>Fenhonglian Zhugongdiao</td>
+		<td>fěn hónglián zhū gōngdiào</td>
+		<td>Traditional Chaozhou Zheng Composition</td>
+		<td>粉红莲诸宫调</td>
+		<td>粉紅蓮諸宮調</td></tr>
+		<tr class="item">
+		<td>Fenqi Zhige</td>
+		<td>fènqǐ zhī gē</td>
+		<td>Zheng Piece - Song Of Dilligence</td>
+		<td>奋起之歌</td>
+		<td>奮起之歌</td></tr>
+		<tr class="item">
+		<td>Fu Jichun</td>
+		<td>fújīchún</td>
+		<td>Zheng Student In Singapore</td>
+		<td>符绩淳</td>
+		<td>符績淳</td></tr>
+		<tr class="item">
+		<td>Fu Xuan</td>
+		<td>fù xuán</td>
+		<td>Han Dynasty Poet And Scholar In Ancient China</td>
+		<td>傅玄</td>
+		<td>傅玄</td></tr>
+		<tr class="item">
+		<td>Fujian</td>
+		<td>fújiàn</td>
+		<td>Province In Southern China</td>
+		<td>福建</td>
+		<td>福建</td></tr>
+		<tr class="item">
+		<td>fuzhi</td>
+		<td>fú zhǐ</td>
+		<td>Zheng Technique</td>
+		<td>拂指</td>
+		<td>拂指</td></tr>
+		<tr class="item">
+		<td>Fuzhou Minzu Yueqi Youxian Gongsi</td>
+		<td>fúzhōu mínzú yuèqì yǒuxiàn gōngsī</td>
+		<td>Fuzhou National Musical Instruments Ltd.</td>
+		<td>福州民族乐器有限公司</td>
+		<td>福州民族樂器有限公司</td></tr>
+		<tr class="item">
+		<td>gaibian</td>
+		<td>gǎibiān</td>
+		<td>Rearranged</td>
+		<td>改编</td>
+		<td>改編</td></tr>
+		<tr class="item">
+		<td>gaige</td>
+		<td>gǎigé</td>
+		<td>To Reform, A Reform</td>
+		<td>改革</td>
+		<td>改革</td></tr>
+		<tr class="item">
+		<td>gaige kaifang</td>
+		<td>gǎigé kāifàng</td>
+		<td>To Open The Door And Reform</td>
+		<td>改革开放</td>
+		<td>改革開放</td></tr>
+		<tr class="item">
+		<td>gailiang</td>
+		<td>gǎiliáng</td>
+		<td>To Improve</td>
+		<td>改良</td>
+		<td>改良</td></tr>
+		<tr class="item">
+		<td>Gangshui Benliu</td>
+		<td>gāngshuǐ bēnliú</td>
+		<td>Zheng Piece - Running Of The Steel Flow</td>
+		<td>钢水奔流</td>
+		<td>鋼水奔流</td></tr>
+		<tr class="item">
+		<td>gangzhi Zheng</td>
+		<td>gǎng zhì zhēng</td>
+		<td>A Brand Of Zheng</td>
+		<td>港智筝</td>
+		<td>港智箏</td></tr>
+		<tr class="item">
+		<td>Gao Zherui</td>
+		<td>gāozhéruì</td>
+		<td>Traditional Zheng Performer</td>
+		<td>高哲睿</td>
+		<td>高哲睿</td></tr>
+		<tr class="item">
+		<td>Gao Zicheng</td>
+		<td>gāozìchéng</td>
+		<td>Traditional Zheng Performer</td>
+		<td>高自成</td>
+		<td>高自成</td></tr>
+		<tr class="item">
+		<td>Gaoshan Liushui</td>
+		<td>gāoshānliúshuǐ</td>
+		<td>Traditional Zheng Composition - High Mountain Flowing Stream</td>
+		<td>高山流水</td>
+		<td>高山流水</td></tr>
+		<tr class="item">
+		<td>Gaoyang</td>
+		<td>gāoyáng</td>
+		<td>Region In Henan Province</td>
+		<td>高阳</td>
+		<td>高陽</td></tr>
+		<tr class="item">
+		<td>geming hua</td>
+		<td>gémìng huà</td>
+		<td>Communist Term For Revolutionization</td>
+		<td>革命化</td>
+		<td>革命化</td></tr>
+		<tr class="item">
+		<td>gen</td>
+		<td>gěn</td>
+		<td>One Of The Eight Trigrams Of The Yi Jing</td>
+		<td>艮</td>
+		<td>艮</td></tr>
+		<tr class="item">
+		<td>Gezaixi</td>
+		<td>gēzǐxì</td>
+		<td>Native Opera Of Taiwan</td>
+		<td>歌仔戏</td>
+		<td>歌仔戲</td></tr>
+		<tr class="item">
+		<td>Goh Ek Meng</td>
+		<td>wúyìmíng</td>
+		<td>Singaporean Pipa Musician</td>
+		<td>吴奕明</td>
+		<td>吳奕明</td></tr>
+		<tr class="item">
+		<td>Goh Eng Chang</td>
+		<td>wú yīng zàn</td>
+		<td>Singaporean Pipa Musician</td>
+		<td>吴膺赞</td>
+		<td>吳膺贊</td></tr>
+		<tr class="item">
+		<td>gong</td>
+		<td>gōng</td>
+		<td>Tonic Or First Pitch Of A Scale, Note On Ancient Musical Scale</td>
+		<td>宫</td>
+		<td>宮</td></tr>
+		<tr class="item">
+		<td>gongche pu</td>
+		<td>gōng chě pǔ</td>
+		<td>A Traditional Chinese Musical Notation System</td>
+		<td>工尺谱</td>
+		<td>工尺譜</td></tr>
+		<tr class="item">
+		<td>Gongche Shangshu</td>
+		<td>gōngchē shàng shū</td>
+		<td>Qing Dynasty Petition For Reform</td>
+		<td>公车上书</td>
+		<td>公車上書</td></tr>
+		<tr class="item">
+		<td>gongfei</td>
+		<td>gòngfěi</td>
+		<td>Communist Robbers</td>
+		<td>共匪</td>
+		<td>共匪</td></tr>
+		<tr class="item">
+		<td>Gongsun Nizi</td>
+		<td>gōngsūn nízi</td>
+		<td>Han Dynasty Author Of The Yue Ji Book Of Music</td>
+		<td>公孙尼子</td>
+		<td>公孫尼子</td></tr>
+		<tr class="item">
+		<td>gou</td>
+		<td>gōu</td>
+		<td>Zheng Fingering Technique For Middle Finger Plucking Inward</td>
+		<td>勾</td>
+		<td>勾</td></tr>
+		<tr class="item">
+		<td>Guan</td>
+		<td>guǎn</td>
+		<td>Tubular Double Reed Instrument</td>
+		<td>管</td>
+		<td>管</td></tr>
+		<tr class="item">
+		<td>Guangbo Wengongtuan</td>
+		<td>guǎngbò wéngōngtuán</td>
+		<td>Broadcast Cultural Group</td>
+		<td>广播文工团</td>
+		<td>廣播文工團</td></tr>
+		<tr class="item">
+		<td>Guangdong</td>
+		<td>guǎngdōng</td>
+		<td>A Province On The Mainland</td>
+		<td>广东</td>
+		<td>廣東</td></tr>
+		<tr class="item">
+		<td>Guangling San</td>
+		<td>guǎnglíng sàn</td>
+		<td>Traditional Qin Composition</td>
+		<td>广陵散</td>
+		<td>廣陵散</td></tr>
+		<tr class="item">
+		<td>Guangxi Yishu Xueyuan</td>
+		<td>guǎngxī yìshù xuéyuàn</td>
+		<td>Guangxi Arts Academy</td>
+		<td>广西艺术学院</td>
+		<td>廣西藝術學院</td></tr>
+		<tr class="item">
+		<td>Guangzhou</td>
+		<td>guǎngzhōu</td>
+		<td>One Of The Five National Central Cities Of China, And Capital Of Guangdong Province</td>
+		<td>广州</td>
+		<td>廣州</td></tr>
+		<tr class="item">
+		<td>Guanshan Yue</td>
+		<td>guān shān yuè</td>
+		<td>Zheng Piece - The Moon In Guan Shan</td>
+		<td>关山月</td>
+		<td>關山月</td></tr>
+		<tr class="item">
+		<td>Guanzi</td>
+		<td>guǎnzi</td>
+		<td>Ancient Chinese Philosopher</td>
+		<td>管子</td>
+		<td>管了</td></tr>
+		<tr class="item">
+		<td>guazou</td>
+		<td>guā zòu</td>
+		<td>Zheng Technique</td>
+		<td>刮奏</td>
+		<td>刮奏</td></tr>
+		<tr class="item">
+		<td>gudai</td>
+		<td>gǔdài</td>
+		<td>Ancient Period</td>
+		<td>古代</td>
+		<td>古代</td></tr>
+		<tr class="item">
+		<td>gudian</td>
+		<td>gǔdiǎn</td>
+		<td>Classical</td>
+		<td>古典</td>
+		<td>古典</td></tr>
+		<tr class="item">
+		<td>gudiao</td>
+		<td>gǔ diào</td>
+		<td>Bone Tune</td>
+		<td>骨调</td>
+		<td>骨調</td></tr>
+		<tr class="item">
+		<td>Guixi</td>
+		<td>guì xī</td>
+		<td>A County In Jiangxi Province, Southern China</td>
+		<td>贵溪</td>
+		<td>貴溪</td></tr>
+		<tr class="item">
+		<td>Guixixian</td>
+		<td>guì xī xiàn</td>
+		<td>A Place On The Mainland</td>
+		<td>贵溪县</td>
+		<td>貴溪縣</td></tr>
+		<tr class="item">
+		<td>Guiyang Yaji</td>
+		<td>guìyáng wéi jí</td>
+		<td>Gathering In Guiyang</td>
+		<td>贵阳帷集</td>
+		<td>貴陽帷集</td></tr>
+		<tr class="item">
+		<td>Guo Jiguang</td>
+		<td>guōjīguāng</td>
+		<td>Original Name Of Cao Zheng</td>
+		<td>郭缉光</td>
+		<td>郭緝光</td></tr>
+		<tr class="item">
+		<td>Guo Ying</td>
+		<td>guō yīng</td>
+		<td>Traditional Chaozhou Zheng Performer</td>
+		<td>郭鹰</td>
+		<td>郭鷹</td></tr>
+		<tr class="item">
+		<td>Guoli Yinzhuan</td>
+		<td>guólì yīn zhuān</td>
+		<td>National Conservatory Of Music</td>
+		<td>国立音专</td>
+		<td>国立音專</td></tr>
+		<tr class="item">
+		<td>Guomindang</td>
+		<td>guómíndǎng</td>
+		<td>Nationalist Party</td>
+		<td>国民党</td>
+		<td>國民黨</td></tr>
+		<tr class="item">
+		<td>Guoyu Zhouyu</td>
+		<td>guóyǔ zhōu yǔ</td>
+		<td>Earliest Chinese History Book</td>
+		<td>国语周语</td>
+		<td>國語周語</td></tr>
+		<tr class="item">
+		<td>Guoyue / Kuoyue</td>
+		<td>guó yuè</td>
+		<td>National Music</td>
+		<td>国乐</td>
+		<td>國樂</td></tr>
+		<tr class="item">
+		<td>Guoyue Gaijin She</td>
+		<td>guó yuè gǎijìn shè</td>
+		<td>Twentieth-Century Music Organization In Beijing</td>
+		<td>国乐改进社</td>
+		<td>國樂改進社</td></tr>
+		<tr class="item">
+		<td>guqin</td>
+		<td>gǔqín</td>
+		<td>Qin - Ancient Instrument</td>
+		<td>古琴</td>
+		<td>古琴</td></tr>
+		<tr class="item">
+		<td>guwei jinyong, yangwei zhongyong</td>
+		<td>gǔwéijīnyòng, yáng wéi zhōng yòng</td>
+		<td>Let The Past Serve The Present, Let Foreign Things Serve China, Quotation From Mao Zedong, 1956</td>
+		<td>古为今用，洋为中用</td>
+		<td>古為今用，洋為中用</td></tr>
+		<tr class="item">
+		<td>guzheng</td>
+		<td>gǔzhēng</td>
+		<td>Zheng</td>
+		<td>古筝</td>
+		<td>古箏</td></tr>
+		<tr class="item">
+		<td>Guzheng Jiaocai Bianxuan Zuotan Hui</td>
+		<td>gǔzhēng jiàocái biānxuǎn zuò tán huì</td>
+		<td>1961 Forum To Standardize The Zheng</td>
+		<td>古筝教材编选座谈会</td>
+		<td>古箏教材編選座談會</td></tr>
+		<tr class="item">
+		<td>Guzheng Mihu Quxuan</td>
+		<td>gǔzhēng mí húqūxuǎn</td>
+		<td>Book Of Opera Tunes</td>
+		<td>古筝迷胡曲选</td>
+		<td>古箏迷胡曲選</td></tr>
+		<tr class="item">
+		<td>Guzheng Pu</td>
+		<td>gǔzhēng pǔ</td>
+		<td>Zheng Score Book</td>
+		<td>古筝谱</td>
+		<td>古箏譜</td></tr>
+		<tr class="item">
+		<td>Guzheng Xinyun</td>
+		<td>gǔzhēng xīn yùn</td>
+		<td>New Expressions Of Zheng</td>
+		<td>古筝新韵</td>
+		<td>古箏新韻</td></tr>
+		<tr class="item">
+		<td>Guzheng Yanzou Fa</td>
+		<td>gǔzhēng yǎnzòu fǎ</td>
+		<td>Zheng Instruction Book</td>
+		<td>古筝演奏法</td>
+		<td>古箏演奏法</td></tr>
+		<tr class="item">
+		<td>guzi ci</td>
+		<td>gǔ zǐ cí</td>
+		<td>Henan Narrative Genre</td>
+		<td>鼓子词</td>
+		<td>鼓子詞</td></tr>
+		<tr class="item">
+		<td>Hai\'ou</td>
+		<td>hǎi\'ōu</td>
+		<td>Taiwanese Pop Song - Seagull</td>
+		<td>海鸥</td>
+		<td>海鷗</td></tr>
+		<tr class="item">
+		<td>Haiqing Nahe</td>
+		<td>hǎi qīng ná hè</td>
+		<td>Traditional Composition</td>
+		<td>海青拿鹤</td>
+		<td>海青拿鶴</td></tr>
+		<tr class="item">
+		<td>Haiqing Natian\'e</td>
+		<td>hǎi qīng ná tiān\'é</td>
+		<td>Zheng Piece - Falcon Catching A Swan</td>
+		<td>海青拿天鹅</td>
+		<td>海青拿天鵝</td></tr>
+		<tr class="item">
+		<td>Haiwai</td>
+		<td>hǎiwài</td>
+		<td>Overseas</td>
+		<td>海外</td>
+		<td>海外</td></tr>
+		<tr class="item">
+		<td>Han</td>
+		<td>hàn</td>
+		<td>Dynasty Of China And Majority Ethnic Group On The Mainland</td>
+		<td>汉</td>
+		<td>漢</td></tr>
+		<tr class="item">
+		<td>Han Kuo-huang</td>
+		<td>hánguó huáng</td>
+		<td>Ethnomusicologist</td>
+		<td>韩国潢</td>
+		<td>韓國潢</td></tr>
+		<tr class="item">
+		<td>Han Tinggui</td>
+		<td>hántíngguì</td>
+		<td>Traditional Shandong Zheng Performer</td>
+		<td>韩庭贵</td>
+		<td>韓庭貴</td></tr>
+		<tr class="item">
+		<td>Han Yu</td>
+		<td>hányù</td>
+		<td>Scholar Of Ancient China</td>
+		<td>韩愈</td>
+		<td>韓愈</td></tr>
+		<tr class="item">
+		<td>Handai Zajiji Banzou Yuedui</td>
+		<td>hàndài zá jì jí bànzòuyuèduì</td>
+		<td>Han Dynasty Porcelain Sculptures Of Acrobat Troupe And Accompanying Musicians</td>
+		<td>汉代杂技及伴奏乐队</td>
+		<td>漢代雜技及伴奏樂隊</td></tr>
+		<tr class="item">
+		<td>Handiao</td>
+		<td>hàn diào</td>
+		<td>Hakka / Kejia Music</td>
+		<td>汉调</td>
+		<td>漢調</td></tr>
+		<tr class="item">
+		<td>Hangao Jiupu</td>
+		<td>hàn gāo jiù pǔ</td>
+		<td>Hakka Score Book</td>
+		<td>汉皋旧谱</td>
+		<td>漢皋舊譜</td></tr>
+		<tr class="item">
+		<td>Hangong Qiuyue</td>
+		<td>hàn gōng qiūyuè</td>
+		<td>Traditional Shandong Zheng Composition - Moon In Autumn At The Han Dynasty Palace</td>
+		<td>汉宫秋月</td>
+		<td>漢宮秋月</td></tr>
+		<tr class="item">
+		<td>Hangzhou</td>
+		<td>hángzhōu</td>
+		<td>Capital City Of Zejiang Province</td>
+		<td>杭州</td>
+		<td>杭州</td></tr>
+		<tr class="item">
+		<td>Hanjiang Sizhu</td>
+		<td>hànjiāng sīzhú</td>
+		<td>Silk And Bamboo Music Of River Han</td>
+		<td>汉江丝竹</td>
+		<td>漢江絲竹</td></tr>
+		<tr class="item">
+		<td>Hanya Xishui</td>
+		<td>hán yā xì shuǐ</td>
+		<td>Traditional Chaozhou Zheng Composition - Winter Crows Playing In Water</td>
+		<td>寒鸦戏水</td>
+		<td>寒鴉戲水</td></tr>
+		<tr class="item">
+		<td>Hanyue</td>
+		<td>hàn yué</td>
+		<td>Traditional Hakka / Kejia Music</td>
+		<td>汉乐</td>
+		<td>漢樂</td></tr>
+		<tr class="item">
+		<td>Hanyue Zhengqu Sishi Shou</td>
+		<td>hàn lè zhēngqū sìshí shǒu</td>
+		<td>Hakka Score Book</td>
+		<td>汉乐筝曲四十首</td>
+		<td>漢樂箏曲四十首</td></tr>
+		<tr class="item">
+		<td>haokan, haoting, haoxue </td>
+		<td>hǎokàn hǎotīng hào xué</td>
+		<td>Popular Saying About The Zheng: "Easy On The Eyes, Easy On The Ears, Easy To Play"</td>
+		<td>好看好听好学</td>
+		<td>好看好聽好學</td></tr>
+		<tr class="item">
+		<td>he</td>
+		<td>hé</td>
+		<td>Unity, Unification</td>
+		<td>合</td>
+		<td>合</td></tr>
+		<tr class="item">
+		<td>he</td>
+		<td>hé</td>
+		<td>Harmony, Harmonious</td>
+		<td>和</td>
+		<td>和</td></tr>
+		<tr class="item">
+		<td>he</td>
+		<td>hé</td>
+		<td>River</td>
+		<td>河</td>
+		<td>河</td></tr>
+		<tr class="item">
+		<td>He Baoquan</td>
+		<td>hébǎoquán</td>
+		<td>Zheng Performer And Educator</td>
+		<td>何宝泉</td>
+		<td>何寶泉</td></tr>
+		<tr class="item">
+		<td>He Beibei</td>
+		<td>hé bèi bèi</td>
+		<td>Zheng Performer</td>
+		<td>何贝贝</td>
+		<td>何貝貝</td></tr>
+		<tr class="item">
+		<td>he dang</td>
+		<td>hé dāng</td>
+		<td>Hakka Zheng Fingering Technique Of Plucking With Middle Finger And Thumb</td>
+		<td>合当</td>
+		<td>合當</td></tr>
+		<tr class="item">
+		<td>He Xiaotong</td>
+		<td>héxiǎotóng</td>
+		<td>Mainland Zheng Musician</td>
+		<td>何小彤</td>
+		<td>何小彤</td></tr>
+		<tr class="item">
+		<td>He Yuzhai</td>
+		<td>héyùzhāi</td>
+		<td>Traditional Hakka Zheng Performer</td>
+		<td>何育斋</td>
+		<td>何育齋</td></tr>
+		<tr class="item">
+		<td>He Zhanhao</td>
+		<td>hézhànháo</td>
+		<td>Composer</td>
+		<td>何占豪</td>
+		<td>何占豪</td></tr>
+		<tr class="item">
+		<td>Hebei</td>
+		<td>héběi</td>
+		<td>Province On The Mainland</td>
+		<td>河北</td>
+		<td>河北</td></tr>
+		<tr class="item">
+		<td>hefan</td>
+		<td>hé fān</td>
+		<td>To Appease The Barbarians</td>
+		<td>和番</td>
+		<td>和番</td></tr>
+		<tr class="item">
+		<td>Heilongjiang</td>
+		<td>hēilóngjiāng</td>
+		<td>Province On The Mainland</td>
+		<td>黑龙江</td>
+		<td>黑龍江</td></tr>
+		<tr class="item">
+		<td>Henan</td>
+		<td>hénán</td>
+		<td>Province In Northern China</td>
+		<td>河南</td>
+		<td>河南</td></tr>
+		<tr class="item">
+		<td>Henan dadiao</td>
+		<td>hénán dà diào</td>
+		<td>A Musical Form On The Mainland</td>
+		<td>河南大调</td>
+		<td>河南大調</td></tr>
+		<tr class="item">
+		<td>heyue</td>
+		<td>héyué</td>
+		<td>Traditional Fujian Ensemble Music</td>
+		<td>和乐</td>
+		<td>和樂</td></tr>
+		<tr class="item">
+		<td>Heze</td>
+		<td>hézé</td>
+		<td>A County In Shandong Province</td>
+		<td>菏泽</td>
+		<td>菏澤</td></tr>
+		<tr class="item">
+		<td>Hezheren de Chuntian</td>
+		<td>hèzhé rén de chūn tiān</td>
+		<td>Twentieth-Century Zheng Composition</td>
+		<td>赫哲人的春天</td>
+		<td>赫哲人的春天</td></tr>
+		<tr class="item">
+		<td>Hong Peichen</td>
+		<td>hóngpèichén</td>
+		<td>Traditional Chaozhou Zheng Performer</td>
+		<td>洪沛臣</td>
+		<td>洪沛臣</td></tr>
+		<tr class="item">
+		<td>Honghu Shui</td>
+		<td>hónghú shuǐ</td>
+		<td>Twentieth-Century Zheng Composition</td>
+		<td>洪湖水</td>
+		<td>洪湖水</td></tr>
+		<tr class="item">
+		<td>hongmu</td>
+		<td>hóngmù</td>
+		<td>A Type Of Padauk Wood</td>
+		<td>红木</td>
+		<td>紅木</td></tr>
+		<tr class="item">
+		<td>Hongsheng Guoyueqi Gonuishe</td>
+		<td>hóng shēng guó yuèqì gōngyì shè</td>
+		<td>Hongsheng National Musical Instruments Factory</td>
+		<td>宏声国乐器工艺社</td>
+		<td>宏聲國樂器工藝社</td></tr>
+		<tr class="item">
+		<td>Hongshuihe Kuangxiang</td>
+		<td>hóng shuǐ hé kuángxiǎng</td>
+		<td>Zheng Composition</td>
+		<td>红水河狂想</td>
+		<td>紅水河狂想</td></tr>
+		<tr class="item">
+		<td>Hou</td>
+		<td>hòu</td>
+		<td>Thick - Description Of Zheng Sound Quality</td>
+		<td>厚</td>
+		<td>厚</td></tr>
+		<tr class="item">
+		<td>Hsinghsien Chinienjih</td>
+		<td>xíng xiàn jìniàn rì</td>
+		<td>Constitution Memorial Dayl</td>
+		<td>行宪纪念日</td>
+		<td>行憲紀念日</td></tr>
+		<tr class="item">
+		<td>Hu Bingxu</td>
+		<td>húbǐngxù</td>
+		<td>Mainland Musician</td>
+		<td>胡柄旭</td>
+		<td>胡柄旭</td></tr>
+		<tr class="item">
+		<td>hua</td>
+		<td>huá</td>
+		<td>Zheng Fingering Technique Of Bending Notes With The Left Hand</td>
+		<td>滑</td>
+		<td>滑</td></tr>
+		<tr class="item">
+		<td>hua</td>
+		<td>huā</td>
+		<td>Flower</td>
+		<td>花</td>
+		<td>花</td></tr>
+		<tr class="item">
+		<td>Hua Liuban</td>
+		<td>huā liù bǎn</td>
+		<td>Traditional Composition On The Baban Form</td>
+		<td>花六板</td>
+		<td>花六板</td></tr>
+		<tr class="item">
+		<td>Huang Haoyin</td>
+		<td>huáng hǎo yín</td>
+		<td>Taiwanese Zheng Musician</td>
+		<td>黄好吟</td>
+		<td>黃好吟</td></tr>
+		<tr class="item">
+		<td>Huang Jinliang</td>
+		<td>huángjǐnliàng</td>
+		<td>Singaporean Zheng Musician</td>
+		<td>黄锦亮</td>
+		<td>黃錦亮</td></tr>
+		<tr class="item">
+		<td>Huang Meich\'in</td>
+		<td>huáng měiqín</td>
+		<td>Taiwanese Zheng Musician</td>
+		<td>黄美琴</td>
+		<td>黃美琴</td></tr>
+		<tr class="item">
+		<td>Huangpu Junxiao</td>
+		<td>huángbù jūnxiào</td>
+		<td>Military Academy On The Mainland</td>
+		<td>黄埔军校</td>
+		<td>黃埔軍校</td></tr>
+		<tr class="item">
+		<td>huangzhong</td>
+		<td>huáng zhōng</td>
+		<td>Tonic Of Ancient Chinese Equal Tempered Twelve Tone Scale</td>
+		<td>黄钟</td>
+		<td>黃鐘</td></tr>
+		<tr class="item">
+		<td>Huanxiang Qu</td>
+		<td>huànxiǎng qǔ</td>
+		<td>Zheng Composition</td>
+		<td>幻想曲</td>
+		<td>幻想曲</td></tr>
+		<tr class="item">
+		<td>huayin</td>
+		<td>huáyīn</td>
+		<td>Zheng Technique</td>
+		<td>滑音</td>
+		<td>滑音</td></tr>
+		<tr class="item">
+		<td>Huayin Yinyue Zhongxin</td>
+		<td>huáyīn yīnyuè zhōngxīn</td>
+		<td>The Music Shop Of Huayinl</td>
+		<td>华音音乐中心</td>
+		<td>華音音樂中心</td></tr>
+		<tr class="item">
+		<td>Huayue Diao</td>
+		<td>huā yuè diào</td>
+		<td>Zheng Piece - Melody Of Flowers And Moonl</td>
+		<td>花月调</td>
+		<td>花月調</td></tr>
+		<tr class="item">
+		<td>Huayue Jie</td>
+		<td>huá yuè jié</td>
+		<td>Chinese Music Festival</td>
+		<td>华乐节</td>
+		<td>華樂節</td></tr>
+		<tr class="item">
+		<td>Huazhi</td>
+		<td>huà zhǐ</td>
+		<td>Zheng Technique</td>
+		<td>划指</td>
+		<td>劃指</td></tr>
+		<tr class="item">
+		<td>huazi gongche pu</td>
+		<td>huā zì gōng chě pǔ</td>
+		<td>Shandong Zheng Notation</td>
+		<td>花字工尺谱</td>
+		<td>花字工尺譜</td></tr>
+		<tr class="item">
+		<td>Hubei</td>
+		<td>húběi</td>
+		<td>Province In Southern China</td>
+		<td>湖北</td>
+		<td>湖北</td></tr>
+		<tr class="item">
+		<td>Hunan</td>
+		<td>húnán</td>
+		<td>Province On The Mainland</td>
+		<td>湖南</td>
+		<td>湖南</td></tr>
+		<tr class="item">
+		<td>Hung Yingju</td>
+		<td>hóng yíng rú</td>
+		<td>Piano Teacher At Huayin Music Centre In Tainan</td>
+		<td>洪莹如</td>
+		<td>洪瑩如</td></tr>
+		<tr class="item">
+		<td>huo sanwu</td>
+		<td>huó sānwǔ</td>
+		<td>Another Term For Huowu</td>
+		<td>活三五</td>
+		<td>活三五</td></tr>
+		<tr class="item">
+		<td>huowu</td>
+		<td>huó wǔ</td>
+		<td>A Type Of Musical Scale</td>
+		<td>活五</td>
+		<td>活五</td></tr>
+		<tr class="item">
+		<td>huowu</td>
+		<td>huó wǔ</td>
+		<td>Chaozhou Scale</td>
+		<td>活五</td>
+		<td>活五</td></tr>
+		<tr class="item">
+		<td>huqin</td>
+		<td>húqín</td>
+		<td>Family Of Bowed Fiddles</td>
+		<td>胡琴</td>
+		<td>胡琴</td></tr>
+		<tr class="item">
+		<td>Ji Kang</td>
+		<td>jī kāng</td>
+		<td>Jin Dynasty Qin Performer And Philosopher</td>
+		<td>嵇康</td>
+		<td>嵇康</td></tr>
+		<tr class="item">
+		<td>Ji Wei</td>
+		<td>jí wěi</td>
+		<td>Zheng Performer And Educator</td>
+		<td>吉炜</td>
+		<td>吉煒</td></tr>
+		<tr class="item">
+		<td>Jiahua</td>
+		<td>jiā huā</td>
+		<td>Compositional Method To Add Flowers</td>
+		<td>加花</td>
+		<td>加花</td></tr>
+		<tr class="item">
+		<td>jian</td>
+		<td>jiān</td>
+		<td>A Qin Aesthetic Of Solidness</td>
+		<td>坚</td>
+		<td>堅</td></tr>
+		<tr class="item">
+		<td>Jianchang Yue</td>
+		<td>jiàn chāng yuè</td>
+		<td>Zheng Piece</td>
+		<td>建昌月</td>
+		<td>建昌月</td></tr>
+		<tr class="item">
+		<td>jiang</td>
+		<td>jiāng</td>
+		<td>River</td>
+		<td>江</td>
+		<td>江</td></tr>
+		<tr class="item">
+		<td>Jiang Qing </td>
+		<td>jiāngqīng</td>
+		<td>Mao Zedong\'S Wife</td>
+		<td>江青</td>
+		<td>江青</td></tr>
+		<tr class="item">
+		<td>Jiang Yinchun</td>
+		<td>jiǎngyīnchūn</td>
+		<td>Traditional Musician</td>
+		<td>蒋荫椿</td>
+		<td>蔣蔭椿</td></tr>
+		<tr class="item">
+		<td>Jiangjun Ling</td>
+		<td>jiāngjūn lìng</td>
+		<td>Traditional Composition</td>
+		<td>将军令</td>
+		<td>將軍令</td></tr>
+		<tr class="item">
+		<td>Jiangsu</td>
+		<td>jiāngsū</td>
+		<td>Province On The Mainland</td>
+		<td>江苏</td>
+		<td>江蘇</td></tr>
+		<tr class="item">
+		<td>Jiangxi</td>
+		<td>jiāngxī</td>
+		<td>Province On The Mainland</td>
+		<td>江西</td>
+		<td>江西</td></tr>
+		<tr class="item">
+		<td>jianwu</td>
+		<td>jiàn wǔ</td>
+		<td>Tang Dynasty Dance</td>
+		<td>剑舞</td>
+		<td>劍舞</td></tr>
+		<tr class="item">
+		<td>jianzi</td>
+		<td>jiǎn zì</td>
+		<td>A Compositional Method To Subtract</td>
+		<td>减字</td>
+		<td>减字</td></tr>
+		<tr class="item">
+		<td>Jiao Jinhai</td>
+		<td>jiāo jīnhǎi</td>
+		<td>Zheng Performer And Educator</td>
+		<td>焦金海</td>
+		<td>焦金海</td></tr>
+		<tr class="item">
+		<td>Jiaochuang Yeyü</td>
+		<td>jiāo chuāng yè yǔ</td>
+		<td>Traditional Hakka Zheng Composition - Banana Tree By The Window On Rainy Night</td>
+		<td>蕉窗夜雨</td>
+		<td>蕉窗夜雨</td></tr>
+		<tr class="item">
+		<td>jiaofang</td>
+		<td>jiào fāng</td>
+		<td>Song Dynasty Music Bureau</td>
+		<td>教坊</td>
+		<td>教坊</td></tr>
+		<tr class="item">
+		<td>Jiaolong Tuzhu</td>
+		<td>jiāolóng tǔ zhū</td>
+		<td>Traditional Fujian Zheng Composition</td>
+		<td>蛟龙吐珠</td>
+		<td>蛟龍吐珠</td></tr>
+		<tr class="item">
+		<td>Jiaoshou</td>
+		<td>jiàoshòu</td>
+		<td>Professor</td>
+		<td>教授</td>
+		<td>教授</td></tr>
+		<tr class="item">
+		<td>jiatanfa</td>
+		<td>jiā tán fǎ</td>
+		<td>Zheng Technique</td>
+		<td>夹弹法</td>
+		<td>夾彈法</td></tr>
+		<tr class="item">
+		<td>jie</td>
+		<td>jié</td>
+		<td>A Phrase Of Baban</td>
+		<td>节</td>
+		<td>節</td></tr>
+		<tr class="item">
+		<td>Jiexian Zhuandiaozheng</td>
+		<td>jié xián zhuǎndiào zhēng</td>
+		<td>The "Cut-Off String" Modulated Zheng</td>
+		<td>截弦转调筝</td>
+		<td>截弦轉調箏</td></tr>
+		<tr class="item">
+		<td>Jiji Gu</td>
+		<td>jījī gū</td>
+		<td>Zheng Pience - On Bird Sounds</td>
+		<td>唧唧咕</td>
+		<td>唧唧咕</td></tr>
+		<tr class="item">
+		<td>Jilin</td>
+		<td>jílín</td>
+		<td>Province On The Mainland</td>
+		<td>吉林</td>
+		<td>吉林</td></tr>
+		<tr class="item">
+		<td>Jin</td>
+		<td>jīn</td>
+		<td>A Dynasty Of China</td>
+		<td>金</td>
+		<td>金</td></tr>
+		<tr class="item">
+		<td>Jin Cuntian</td>
+		<td>jīn cūntián</td>
+		<td>Shanghai Conservatory Party Leader In The 1950S</td>
+		<td>金村田</td>
+		<td>金村田</td></tr>
+		<tr class="item">
+		<td>Jindai Zouyuetu</td>
+		<td>jìn dài zòuyuè tú</td>
+		<td>Jin Dynasty Drawing Of Music Performance</td>
+		<td>晋代奏乐图</td>
+		<td>晉代奏樂圖</td></tr>
+		<tr class="item">
+		<td>jing</td>
+		<td>jìng</td>
+		<td>A Qin Aesthetic Of Quietness, Environment</td>
+		<td>静</td>
+		<td>靜</td></tr>
+		<tr class="item">
+		<td>Jinggang Shanshang Taiyang Hong</td>
+		<td>jǐnggāngshān shàng tàiyáng hóng</td>
+		<td>Zheng Composition</td>
+		<td>井冈山上太阳红</td>
+		<td>井岡山上太阳紅</td></tr>
+		<tr class="item">
+		<td>Jingmeng Caotang</td>
+		<td>jīng mèng cǎotáng</td>
+		<td>Qing Dynasty Publishing House</td>
+		<td>京梦草堂</td>
+		<td>京夢草堂</td></tr>
+		<tr class="item">
+		<td>Jinping Mei</td>
+		<td>jīnpíngméi</td>
+		<td>Golden Lotus - Ancient Chinese Novel</td>
+		<td>金瓶梅</td>
+		<td>金瓶梅</td></tr>
+		<tr class="item">
+		<td>Jinzhong Jiang</td>
+		<td>jīn zhōng jiǎng</td>
+		<td>Golden Bell Award—A National Instrumental Music Competition</td>
+		<td>金钟奖</td>
+		<td>金鐘奬</td></tr>
+		<tr class="item">
+		<td>Jiu Ge</td>
+		<td>jiǔ gē</td>
+		<td>Warring States Poem</td>
+		<td>九歌</td>
+		<td>九歌</td></tr>
+		<tr class="item">
+		<td>Jiu Tang Shu</td>
+		<td>jiù táng shū</td>
+		<td>Old Record Of The Tang Dynasty</td>
+		<td>旧唐书</td>
+		<td>舊唐書</td></tr>
+		<tr class="item">
+		<td>jue</td>
+		<td>jué</td>
+		<td>The Third Pitch In The Common Chinese Pentatonic Scale</td>
+		<td>角</td>
+		<td>角</td></tr>
+		<tr class="item">
+		<td>jueju</td>
+		<td>juéjù</td>
+		<td>Poetry Form</td>
+		<td>绝句</td>
+		<td>絶句</td></tr>
+		<tr class="item">
+		<td>K\'enting</td>
+		<td>kěn dīng</td>
+		<td>A Place In Taiwan</td>
+		<td>恳丁</td>
+		<td>懇丁</td></tr>
+		<tr class="item">
+		<td>K\'ungtzu Tanch\'en Chinienjih</td>
+		<td>kǒngzǐ yán chén jìniàn rì</td>
+		<td>Confucius Birthday</td>
+		<td>孔子延辰纪念日</td>
+		<td>孔子延辰紀念日</td></tr>
+		<tr class="item">
+		<td>Kaifeng</td>
+		<td>kāifēng</td>
+		<td>A City In Henan Province</td>
+		<td>开封</td>
+		<td>開封</td></tr>
+		<tr class="item">
+		<td>kan</td>
+		<td>kǎn</td>
+		<td>One Of The Eight Trigrams Of The Yi Jing</td>
+		<td>坎</td>
+		<td>坎</td></tr>
+		<tr class="item">
+		<td>Kang Le</td>
+		<td>kāng lè yīnyuè yánjiū huì</td>
+		<td>A Music Group In Singapore</td>
+		<td>康乐音乐研究会</td>
+		<td>康樂音樂研究會</td></tr>
+		<tr class="item">
+		<td>Kang Mianzong</td>
+		<td>kāng mián zǒng</td>
+		<td>Zheng Performer</td>
+		<td>康绵总</td>
+		<td>康綿總</td></tr>
+		<tr class="item">
+		<td>Kang Youwei</td>
+		<td>kāngyǒuwéi</td>
+		<td>Qing Dynasty Reformer</td>
+		<td>康有为</td>
+		<td>康有為</td></tr>
+		<tr class="item">
+		<td>Kangshan</td>
+		<td>gāng shān</td>
+		<td>A Place In Taiwan</td>
+		<td>冈山</td>
+		<td>岡山</td></tr>
+		<tr class="item">
+		<td>kaoda</td>
+		<td>kǎodǎ</td>
+		<td>A Term Denoting A Section In Chaozhou Music</td>
+		<td>拷打</td>
+		<td>拷打</td></tr>
+		<tr class="item">
+		<td>Kaohsiung</td>
+		<td>gāoxióng</td>
+		<td>A City In Taiwan</td>
+		<td>高雄</td>
+		<td>高雄</td></tr>
+		<tr class="item">
+		<td>kaopai</td>
+		<td>kǎo pāi</td>
+		<td>A Term Denoting A Section In Chaozhou Music</td>
+		<td>拷拍</td>
+		<td>拷拍</td></tr>
+		<tr class="item">
+		<td>Karl Heng</td>
+		<td>jiāxìng</td>
+		<td>A Chinese Instrument Shop In Singapore</td>
+		<td>嘉兴</td>
+		<td>嘉興</td></tr>
+		<tr class="item">
+		<td>kaxi</td>
+		<td>kǎ xì</td>
+		<td>A Technique Used In Traditional Music To Mimic Operatic Melodies</td>
+		<td>卡戏</td>
+		<td>卡戲</td></tr>
+		<tr class="item">
+		<td>Kejia</td>
+		<td>kèjiā</td>
+		<td>A Chinese Term For Hakka</td>
+		<td>客家</td>
+		<td>客家</td></tr>
+		<tr class="item">
+		<td>keju</td>
+		<td>kējǔ</td>
+		<td>Historic Imperial Examination System</td>
+		<td>科举</td>
+		<td>科舉</td></tr>
+		<tr class="item">
+		<td>Koh Siew Huat</td>
+		<td>xǔxiùfà</td>
+		<td>Singaporean Musician</td>
+		<td>许秀发</td>
+		<td>許秀發</td></tr>
+		<tr class="item">
+		<td>kong</td>
+		<td>kōng</td>
+		<td>Hollow - A Qin Aesthetic Of Emptiness, Zheng Sound Quality</td>
+		<td>空</td>
+		<td>空</td></tr>
+		<tr class="item">
+		<td>Konggu Liushui</td>
+		<td>kōng gǔ liúshuǐ</td>
+		<td>Twentieth-Century Composition</td>
+		<td>空谷流水</td>
+		<td>空谷流水</td></tr>
+		<tr class="item">
+		<td>Kongque Dongnan Fei</td>
+		<td>kǒngquè dōngnán fēi</td>
+		<td>Twentieth-Century Composition - The Peacock Flies Southeast</td>
+		<td>孔雀东南飞</td>
+		<td>孔雀東南飛</td></tr>
+		<tr class="item">
+		<td>Kongzi</td>
+		<td>kǒngzǐ</td>
+		<td>Confucius</td>
+		<td>孔子</td>
+		<td>孔子</td></tr>
+		<tr class="item">
+		<td>Kongzi Gaizhi Kao</td>
+		<td>kǒngzǐ gǎizhì kǎo</td>
+		<td>Qing Dynasty Essay By Kang Youwei</td>
+		<td>孔子改制考</td>
+		<td>孔子改制考</td></tr>
+		<tr class="item">
+		<td>kou</td>
+		<td>kòu</td>
+		<td>Zheng Technique</td>
+		<td>扣</td>
+		<td>扣</td></tr>
+		<tr class="item">
+		<td>kouchuan xinshou</td>
+		<td>kǒuchuán xīn shòu</td>
+		<td>The Process Of Oral Teaching</td>
+		<td>口传心授</td>
+		<td>口傳心授</td></tr>
+		<tr class="item">
+		<td>Ku Zhouyu</td>
+		<td>kū zhōuyú</td>
+		<td>Traditional Henan Zheng Composition - Crying For Zhou Yu</td>
+		<td>哭周瑜</td>
+		<td>哭周瑜</td></tr>
+		<tr class="item">
+		<td>kuai sidian</td>
+		<td>kuài sì diǎn</td>
+		<td>Traditional Zhejiang Fingering Technique Using Thumb And Two Fingers</td>
+		<td>快四点</td>
+		<td>快四點</td></tr>
+		<tr class="item">
+		<td>Kuaisu zhixu</td>
+		<td>kuàisù zhǐ xù</td>
+		<td>Fast Fingering Sequence</td>
+		<td>快速指序</td>
+		<td>快速指序</td></tr>
+		<tr class="item">
+		<td>kun</td>
+		<td>kūn</td>
+		<td>One Of The Eight Trigrams Of The Yi Jing</td>
+		<td>坤</td>
+		<td>坤</td></tr>
+		<tr class="item">
+		<td>kunqu</td>
+		<td>kūnqǔ</td>
+		<td>Operatic Genre</td>
+		<td>昆曲</td>
+		<td>崑曲</td></tr>
+		<tr class="item">
+		<td>kuonei</td>
+		<td>guónèi</td>
+		<td>Domestic</td>
+		<td>国内</td>
+		<td>國內</td></tr>
+		<tr class="item">
+		<td>kuyin</td>
+		<td>kǔ yīn</td>
+		<td>Neutral Seventh, "Bitter Tone"</td>
+		<td>苦音</td>
+		<td>苦音</td></tr>
+		<tr class="item">
+		<td>kuyin</td>
+		<td>kū yīn</td>
+		<td>Neutral Seventh, "Crying Tone"</td>
+		<td>哭音</td>
+		<td>哭音</td></tr>
+		<tr class="item">
+		<td>Lang Lang</td>
+		<td>lǎnglǎng</td>
+		<td>Pianist</td>
+		<td>朗朗</td>
+		<td>朗朗</td></tr>
+		<tr class="item">
+		<td>lao baban</td>
+		<td>lǎo bā bǎn</td>
+		<td>Traditional Tune And Compositional Form</td>
+		<td>老八板</td>
+		<td>老八板</td></tr>
+		<tr class="item">
+		<td>lao liuban</td>
+		<td>lǎo liù bǎn</td>
+		<td>Traditional Tune And Compositional Form</td>
+		<td>老六板</td>
+		<td>老六板</td></tr>
+		<tr class="item">
+		<td>Laozi</td>
+		<td>lǎozi</td>
+		<td>Taoist Philosopher</td>
+		<td>老子</td>
+		<td>老子</td></tr>
+		<tr class="item">
+		<td>Lat Pau</td>
+		<td>lè bào</td>
+		<td>Obsolete Newspaper In Singapore</td>
+		<td>叻报</td>
+		<td>叻報</td></tr>
+		<tr class="item">
+		<td>Lee Kuan Yew</td>
+		<td>lǐguāngyào</td>
+		<td>Former Prime Minister Of Singapore</td>
+		<td>李光耀</td>
+		<td>李光耀</td></tr>
+		<tr class="item">
+		<td>leiqin</td>
+		<td>léi qín</td>
+		<td>Two-String Shandong Stick Fiddle</td>
+		<td>擂琴</td>
+		<td>擂琴</td></tr>
+		<tr class="item">
+		<td>li</td>
+		<td>lí</td>
+		<td>One Of The Eight Trigrams Of The Yi Jing</td>
+		<td>离</td>
+		<td>離</td></tr>
+		<tr class="item">
+		<td>li</td>
+		<td>lǐ</td>
+		<td>Confucian Concept Of Societal Hierarchy</td>
+		<td>礼</td>
+		<td>禮</td></tr>
+		<tr class="item">
+		<td>Li Bai</td>
+		<td>lǐbái</td>
+		<td>Tang Dynasty Poet</td>
+		<td>李白</td>
+		<td>李白</td></tr>
+		<tr class="item">
+		<td>Li Chen</td>
+		<td>lǐ chén</td>
+		<td>Xiao Performer</td>
+		<td>李晨</td>
+		<td>李晨</td></tr>
+		<tr class="item">
+		<td>Li Han</td>
+		<td>lǐ hán</td>
+		<td>Zheng Performer And Educator</td>
+		<td>李晗</td>
+		<td>李晗</td></tr>
+		<tr class="item">
+		<td>Li Huanzhi</td>
+		<td>lǐ huàn zhī</td>
+		<td>Twentieth-Century Composer</td>
+		<td>李唤之</td>
+		<td>李喚之</td></tr>
+		<tr class="item">
+		<td>Li Jiating</td>
+		<td>lǐ jiā tīng</td>
+		<td>Traditional Chaozhou Zheng Performer</td>
+		<td>李嘉听</td>
+		<td>李嘉聽</td></tr>
+		<tr class="item">
+		<td>Li Ling</td>
+		<td>lǐ líng</td>
+		<td>Twentieth-Century Music Critic</td>
+		<td>李凌</td>
+		<td>李凌</td></tr>
+		<tr class="item">
+		<td>Li Mei</td>
+		<td>lǐ méi</td>
+		<td>Ethnomusicologist And Composer</td>
+		<td>李枚</td>
+		<td>李枚</td></tr>
+		<tr class="item">
+		<td>Li Meng</td>
+		<td>lǐ méng</td>
+		<td>Zheng Performer And Educator</td>
+		<td>李萌</td>
+		<td>李萌</td></tr>
+		<tr class="item">
+		<td>Li Shangyin</td>
+		<td>lǐshāngyǐn</td>
+		<td>Poet In Ancient China</td>
+		<td>李商隐</td>
+		<td>李商隱</td></tr>
+		<tr class="item">
+		<td>Li Shutong</td>
+		<td>lǐshūtóng</td>
+		<td>Mainland Composer</td>
+		<td>李叔同</td>
+		<td>李叔同</td></tr>
+		<tr class="item">
+		<td>Li Si</td>
+		<td>lǐsī</td>
+		<td>Warring States Official, Minister Of The Kingdom Of Qin</td>
+		<td>李斯</td>
+		<td>李斯</td></tr>
+		<tr class="item">
+		<td>Li Si Liezhuan</td>
+		<td>lǐsī lièzhuàn</td>
+		<td>Biography Of Li Si Written In Han Dynasty</td>
+		<td>李斯列传</td>
+		<td>李斯列傳</td></tr>
+		<tr class="item">
+		<td>Li Tai\'an</td>
+		<td>lǐ tài\'ān</td>
+		<td>Yinkou Zheng Maker</td>
+		<td>李泰安</td>
+		<td>李泰安</td></tr>
+		<tr class="item">
+		<td>Li Wei</td>
+		<td>lǐ wěi</td>
+		<td>Zheng Performer</td>
+		<td>李炜</td>
+		<td>李煒</td></tr>
+		<tr class="item">
+		<td>Li Xi\'an</td>
+		<td>lǐ xī\'ān</td>
+		<td>Ethnomusicologist</td>
+		<td>李西安</td>
+		<td>李西安</td></tr>
+		<tr class="item">
+		<td>Li Xueqin</td>
+		<td>lǐxuěqín</td>
+		<td>Mainland Zheng Musician</td>
+		<td>李雪芹</td>
+		<td>李雪芹</td></tr>
+		<tr class="item">
+		<td>Li Yi</td>
+		<td>lǐ yì</td>
+		<td>Mainland Musician</td>
+		<td>李毅</td>
+		<td>李毅</td></tr>
+		<tr class="item">
+		<td>Li Zhi</td>
+		<td>lǐzhì</td>
+		<td>Ming Dynasty Philosopher And Historian</td>
+		<td>李贽</td>
+		<td>李贄</td></tr>
+		<tr class="item">
+		<td>lian taoqu</td>
+		<td>lián tàoqǔ</td>
+		<td>A Set Of Compositions</td>
+		<td>联套曲</td>
+		<td>聯套曲</td></tr>
+		<tr class="item">
+		<td>Lian Yoong Liang</td>
+		<td>lián róng shǐ</td>
+		<td>Singapore Zheng Musician</td>
+		<td>连荣史</td>
+		<td>連榮史</td></tr>
+		<tr class="item">
+		<td>liang</td>
+		<td>liàng</td>
+		<td>A Qin Aesthetic Of Brightness</td>
+		<td>亮</td>
+		<td>亮</td></tr>
+		<tr class="item">
+		<td>Liang Mingyue</td>
+		<td>liángmíngyuè</td>
+		<td>Musician, Ethnomusicologist, And Son Of Liang Tsai\'Ping.</td>
+		<td>梁铭越</td>
+		<td>梁銘越</td></tr>
+		<tr class="item">
+		<td>Liang Qichao</td>
+		<td>liángqǐchāo</td>
+		<td>Scholar In Qing Dynasty</td>
+		<td>梁启超</td>
+		<td>梁啟超</td></tr>
+		<tr class="item">
+		<td>Liang Tsai-ping</td>
+		<td>liángzàipíng</td>
+		<td>Twentieth-Century Zheng Performer And Educator</td>
+		<td>梁再平</td>
+		<td>梁再平</td></tr>
+		<tr class="item">
+		<td>Liang Tsaip\'ing Jiaoshou & Liang Mingvue Boshi Qin Zheng Xinshanghui</td>
+		<td>liángzàipíng jiàoshòu& liáng míng yuè bóshì qín zhēng xīnshǎng huì</td>
+		<td>Concert For The Appreciation Of Qin And Zheng By Prof. & Liang Tsaip\'Ing And Dr. Liang Mingyuel</td>
+		<td>梁在平教授 & 梁铭越博士琴筝欣赏会</td>
+		<td>梁在平教授 & 梁銘越博士琴箏欣賞會</td></tr>
+		<tr class="item">
+		<td>Liang Zhu</td>
+		<td>liángzhù</td>
+		<td>Zheng Piece - The Butterfly Lovers</td>
+		<td>梁祝</td>
+		<td>梁祝</td></tr>
+		<tr class="item">
+		<td>Lianhe Zaobao</td>
+		<td>liánhé zǎobào</td>
+		<td>Singapore Chinese Newspaper</td>
+		<td>联合早报</td>
+		<td>聯合早報</td></tr>
+		<tr class="item">
+		<td>Lianhua Yao</td>
+		<td>liánhuā yáo</td>
+		<td>Zheng Composition</td>
+		<td>莲花谣</td>
+		<td>蓮花謠</td></tr>
+		<tr class="item">
+		<td>Liao Wenchang</td>
+		<td>liào wénzhāng</td>
+		<td>Taiwanese Zheng Musician</td>
+		<td>廖文章</td>
+		<td>廖文章</td></tr>
+		<tr class="item">
+		<td>Liaocheng</td>
+		<td>liáochéng</td>
+		<td>A Place On The Mainland</td>
+		<td>聊城</td>
+		<td>聊城</td></tr>
+		<tr class="item">
+		<td>Liaoning</td>
+		<td>liáoníng</td>
+		<td>Province On The Mainland</td>
+		<td>辽宁</td>
+		<td>遼寧</td></tr>
+		<tr class="item">
+		<td>Liaozhai</td>
+		<td>liáozhāi</td>
+		<td>Ancient Chinese Novel</td>
+		<td>聊斋</td>
+		<td>聊齋</td></tr>
+		<tr class="item">
+		<td>Lijing Ji</td>
+		<td>lì jìng jì</td>
+		<td>Ancient Chinese Opera</td>
+		<td>荔镜记</td>
+		<td>荔鏡記</td></tr>
+		<tr class="item">
+		<td>Lim Min Kiam</td>
+		<td>línmíngqiān</td>
+		<td>Singaporean Musician</td>
+		<td>林明谦</td>
+		<td>林明謙</td></tr>
+		<tr class="item">
+		<td>Lin \'an Yihen</td>
+		<td>lín\'ān yíhèn</td>
+		<td>Zheng Composition</td>
+		<td>临安遗恨</td>
+		<td>臨安遺恨</td></tr>
+		<tr class="item">
+		<td>Lin Chong Yeben</td>
+		<td>lín chōng yè bēn</td>
+		<td>Traditional Zheng Composition</td>
+		<td>林冲夜奔</td>
+		<td>林衝夜奔</td></tr>
+		<tr class="item">
+		<td>Lin Ling</td>
+		<td>lín líng</td>
+		<td>Mainland Zheng Musician</td>
+		<td>林玲</td>
+		<td>林玲</td></tr>
+		<tr class="item">
+		<td>Lin Maogen</td>
+		<td>lín máogēn</td>
+		<td>Traditional Chaozhou Zheng Performer</td>
+		<td>林毛根</td>
+		<td>林毛根</td></tr>
+		<tr class="item">
+		<td>Lin Yonghong</td>
+		<td>línyǒnghóng</td>
+		<td>Malaysia Musician</td>
+		<td>林永宏</td>
+		<td>林永宏</td></tr>
+		<tr class="item">
+		<td>Lin Yongzhi</td>
+		<td>lín yŏng zhī</td>
+		<td>Traditional Chaozhou Zheng Performer</td>
+		<td>林永之</td>
+		<td>林永之</td></tr>
+		<tr class="item">
+		<td>Lin Zi</td>
+		<td>línzī</td>
+		<td>A Place On The Mainland</td>
+		<td>临淄</td>
+		<td>臨淄</td></tr>
+		<tr class="item">
+		<td>Linchong Yeben</td>
+		<td>línchōng yè bēn</td>
+		<td>Lin Chong Hurrying At Night</td>
+		<td>林冲夜奔</td>
+		<td>林沖夜奔</td></tr>
+		<tr class="item">
+		<td>Linyamen</td>
+		<td>líng yá mén</td>
+		<td>Ancient Name Of Singapore</td>
+		<td>凌牙门</td>
+		<td>凌牙門</td></tr>
+		<tr class="item">
+		<td>Lisao</td>
+		<td>lísāo</td>
+		<td>Warring States Poem, Qin Composition</td>
+		<td>离骚</td>
+		<td>離騷</td></tr>
+		<tr class="item">
+		<td>liu</td>
+		<td>liū</td>
+		<td>A Qin Aesthetic Of Fluidity</td>
+		<td>溜</td>
+		<td>溜</td></tr>
+		<tr class="item">
+		<td>Liu Bang</td>
+		<td>liúbāng</td>
+		<td>Founding Emperor Of Han Dynasty</td>
+		<td>刘邦</td>
+		<td>劉邦</td></tr>
+		<tr class="item">
+		<td>Liu Dehai</td>
+		<td>liúdéhǎi</td>
+		<td>Contemporary Pipa Performer</td>
+		<td>刘德海</td>
+		<td>劉德海</td></tr>
+		<tr class="item">
+		<td>Liu Qingnian</td>
+		<td>liúqīngniáng</td>
+		<td>Zheng Piece</td>
+		<td>刘青娘</td>
+		<td>劉青娘</td></tr>
+		<tr class="item">
+		<td>Liu Shikun</td>
+		<td>liúshīkūn</td>
+		<td>Pianist</td>
+		<td>刘诗昆</td>
+		<td>劉詩昆</td></tr>
+		<tr class="item">
+		<td>Liu Tieshan</td>
+		<td>liútiěshān</td>
+		<td>Mainland Composer</td>
+		<td>刘铁山</td>
+		<td>劉鐵山</td></tr>
+		<tr class="item">
+		<td>Liu Weishan</td>
+		<td>liúwéishān</td>
+		<td>Zheng Performer And Educator</td>
+		<td>刘维姗</td>
+		<td>劉維姗</td></tr>
+		<tr class="item">
+		<td>Liu Yichih</td>
+		<td>liú yìzhì</td>
+		<td>Taiwanese Zheng Musician</td>
+		<td>刘毅志</td>
+		<td>劉毅志</td></tr>
+		<tr class="item">
+		<td>Liu Yuxi</td>
+		<td>liúyǔxī</td>
+		<td>A Scholar In Ancient China</td>
+		<td>刘禹锡</td>
+		<td>劉禹錫</td></tr>
+		<tr class="item">
+		<td>Liu Zhuang</td>
+		<td>liú zhuāng</td>
+		<td>Twenty-Century Composer</td>
+		<td>刘庄</td>
+		<td>劉庄</td></tr>
+		<tr class="item">
+		<td>Liuban</td>
+		<td>liù bǎn</td>
+		<td>Six Beats</td>
+		<td>六板</td>
+		<td>六板</td></tr>
+		<tr class="item">
+		<td>liupai</td>
+		<td>liúpài</td>
+		<td>Style, Branch, School Of Musical Style</td>
+		<td>流派</td>
+		<td>流派</td></tr>
+		<tr class="item">
+		<td>Liuqing Niang</td>
+		<td>liǔqīngniáng</td>
+		<td>Traditional Chaozhou Zheng Composition</td>
+		<td>柳青娘</td>
+		<td>柳青娘</td></tr>
+		<tr class="item">
+		<td>Liuyang He</td>
+		<td>liúyáng hé</td>
+		<td>Twentieth-Century Zheng Composition - River Liu Yang</td>
+		<td>浏阳河</td>
+		<td>瀏陽河</td></tr>
+		<tr class="item">
+		<td>Liyuan Tang</td>
+		<td>líyuán táng</td>
+		<td>Opera Group In Singapore</td>
+		<td>梨园堂</td>
+		<td>梨園堂</td></tr>
+		<tr class="item">
+		<td>Longyamen</td>
+		<td>lóng yá mén</td>
+		<td>Place Name In Ancient Singapore</td>
+		<td>龙牙门</td>
+		<td>龍牙門</td></tr>
+		<tr class="item">
+		<td>Lou Shuhua</td>
+		<td>lóu shù huá</td>
+		<td>Twentieth-Century Zheng Performer And Composer</td>
+		<td>楼树华</td>
+		<td>樓樹華</td></tr>
+		<tr class="item">
+		<td>Lou Shuhua</td>
+		<td>lóushùhuá</td>
+		<td>Mainland Zheng Musician</td>
+		<td>娄树华</td>
+		<td>婁樹華</td></tr>
+		<tr class="item">
+		<td>Lü dao</td>
+		<td>lǜ dǎo</td>
+		<td>An Island Of Taiwan</td>
+		<td>绿岛</td>
+		<td>綠島</td></tr>
+		<tr class="item">
+		<td>Lü Ji</td>
+		<td>lǚ jì</td>
+		<td>Twentieth-Century Musicologist And Music Critic</td>
+		<td>吕骥</td>
+		<td>呂驥</td></tr>
+		<tr class="item">
+		<td>Lü Jin</td>
+		<td>lǚ jīn</td>
+		<td>Zheng And Kayaküm Performer</td>
+		<td>吕金</td>
+		<td>呂金</td></tr>
+		<tr class="item">
+		<td>Lu Xiutang</td>
+		<td>lùxiūtáng</td>
+		<td>Mainland Composer</td>
+		<td>陆修棠</td>
+		<td>陸修棠</td></tr>
+		<tr class="item">
+		<td>Lülü Zhengyi</td>
+		<td>lǜlǚ zhèngyì</td>
+		<td>Ming Dynasty Text On Music Theory</td>
+		<td>律吕正义</td>
+		<td>律呂正義</td></tr>
+		<tr class="item">
+		<td>lun</td>
+		<td>lún</td>
+		<td>Pipa Fingering Technique Of A Roll</td>
+		<td>轮</td>
+		<td>輪</td></tr>
+		<tr class="item">
+		<td>Lunyu</td>
+		<td>lúnyǔ</td>
+		<td>The Analects</td>
+		<td>论语</td>
+		<td>論語</td></tr>
+		<tr class="item">
+		<td>lunzhi</td>
+		<td>lún zhǐ</td>
+		<td>Zheng And Pipa Technique</td>
+		<td>轮指</td>
+		<td>輪指</td></tr>
+		<tr class="item">
+		<td>Luo Guanzhong</td>
+		<td>luōguànzhōng</td>
+		<td>Novelist In Ancient China</td>
+		<td>罗贯中</td>
+		<td>羅貫中</td></tr>
+		<tr class="item">
+		<td>Luo Huiwen</td>
+		<td>luóhuìwén</td>
+		<td>Luo Jiuxiang\'S Granddaughter</td>
+		<td>罗惠文</td>
+		<td>羅惠文</td></tr>
+		<tr class="item">
+		<td>Luo Jiuxiang</td>
+		<td>luó jiǔ xiāng</td>
+		<td>Traditional Hakka Zheng Performer</td>
+		<td>罗九香</td>
+		<td>羅九香</td></tr>
+		<tr class="item">
+		<td>Luo Jiuxiang</td>
+		<td>luōjiǔxiāng</td>
+		<td>Mainland Zheng Musician</td>
+		<td>罗九香</td>
+		<td>羅九香</td></tr>
+		<tr class="item">
+		<td>luohou</td>
+		<td>luòhòu</td>
+		<td>Backward</td>
+		<td>落后</td>
+		<td>落後</td></tr>
+		<tr class="item">
+		<td>Luoyang</td>
+		<td>luòyáng</td>
+		<td>A Place On The Mainland</td>
+		<td>洛阳</td>
+		<td>洛陽</td></tr>
+		<tr class="item">
+		<td>Luoyuan</td>
+		<td>luò yuàn</td>
+		<td>The Courtyard</td>
+		<td>落院</td>
+		<td>落院</td></tr>
+		<tr class="item">
+		<td>lüshi</td>
+		<td>lǜshī</td>
+		<td>Poetry Form</td>
+		<td>律诗</td>
+		<td>律詩</td></tr>
+		<tr class="item">
+		<td>luyin luxiang xiaozu</td>
+		<td>lùyīn lù xiàng xiǎozǔ</td>
+		<td>Audio And Video Recording Unit For Mao Zedong, 1975</td>
+		<td>录音录像小组</td>
+		<td>録音録像小組</td></tr>
+		<tr class="item">
+		<td>Mang Choon Hong</td>
+		<td>wàng chūnfēng</td>
+		<td>Taiwanese Folk Song - Waiting For The Spring Wind</td>
+		<td>望春风</td>
+		<td>望春風</td></tr>
+		<tr class="item">
+		<td>Manzhou</td>
+		<td>mǎnzhōu</td>
+		<td>Manchuria</td>
+		<td>满洲</td>
+		<td>滿洲</td></tr>
+		<tr class="item">
+		<td>Mao Yuan</td>
+		<td>máo yuán</td>
+		<td>Mainland Composer</td>
+		<td>茅元</td>
+		<td>茅元</td></tr>
+		<tr class="item">
+		<td>Mao Zedong</td>
+		<td>máozédōng</td>
+		<td>The Founding Chairman Of The Chinese Communist Party</td>
+		<td>毛泽东</td>
+		<td>毛澤東</td></tr>
+		<tr class="item">
+		<td>Mawang Dui</td>
+		<td>mǎ wáng duī</td>
+		<td>An Archaeological Site In Hunan, Southern China</td>
+		<td>马王堆</td>
+		<td>馬王堆</td></tr>
+		<tr class="item">
+		<td>Meihua Sannong</td>
+		<td>méihuā sān nòng</td>
+		<td>Zheng And Qin Piece - Plum Blossom</td>
+		<td>梅花三弄</td>
+		<td>梅花三弄</td></tr>
+		<tr class="item">
+		<td>Meixian</td>
+		<td>méixiàn</td>
+		<td>A Region On The Mainland</td>
+		<td>梅县</td>
+		<td>梅縣</td></tr>
+		<tr class="item">
+		<td>Meizhou </td>
+		<td>méizhōu</td>
+		<td>Region In Guandong Province</td>
+		<td>梅州</td>
+		<td>梅州</td></tr>
+		<tr class="item">
+		<td>Menggu</td>
+		<td>ménggǔ</td>
+		<td>Mongolia</td>
+		<td>蒙古</td>
+		<td>蒙古</td></tr>
+		<tr class="item">
+		<td>mihu</td>
+		<td>mí hú</td>
+		<td>Shaanxi Operatic Genre</td>
+		<td>迷胡</td>
+		<td>迷胡</td></tr>
+		<tr class="item">
+		<td>Miluo Jiang Huanxiang Qu</td>
+		<td>mìluó jiāng huànxiǎng qǔ</td>
+		<td>Twentieth-Century Zheng Composition - Fantasy On The Miluo River</td>
+		<td>汨罗江幻想曲</td>
+		<td>汨羅江幻想曲</td></tr>
+		<tr class="item">
+		<td>min</td>
+		<td>mǐn</td>
+		<td>Historic Term For Fujian Province</td>
+		<td>闽</td>
+		<td>閩</td></tr>
+		<tr class="item">
+		<td>Min Huifen</td>
+		<td>mǐnhuìfēn</td>
+		<td>Erhu Performer And Educator</td>
+		<td>闵惠芬</td>
+		<td>閔惠芬</td></tr>
+		<tr class="item">
+		<td>Ming</td>
+		<td>míng</td>
+		<td>Chinese Dynasty From 1368-1644</td>
+		<td>明</td>
+		<td>明</td></tr>
+		<tr class="item">
+		<td>minjian</td>
+		<td>mínjiān</td>
+		<td>Folk</td>
+		<td>民间</td>
+		<td>民間</td></tr>
+		<tr class="item">
+		<td>Minnan</td>
+		<td>mǐnnán</td>
+		<td>Region On The Mainlnad</td>
+		<td>闽南</td>
+		<td>閩南</td></tr>
+		<tr class="item">
+		<td>Minnanyu</td>
+		<td>mǐnnán yǔ</td>
+		<td>Minnanese Dialect</td>
+		<td>闽南语</td>
+		<td>閩南語</td></tr>
+		<tr class="item">
+		<td>Minquan Lu</td>
+		<td>mínquán lù</td>
+		<td>A Road In Taiwan</td>
+		<td>民权路</td>
+		<td>民權路</td></tr>
+		<tr class="item">
+		<td>minyue</td>
+		<td>mínyuè</td>
+		<td>National Music</td>
+		<td>民乐</td>
+		<td>民樂</td></tr>
+		<tr class="item">
+		<td>Minzheng</td>
+		<td>mǐn zhēng</td>
+		<td>Zheng Of Minnan</td>
+		<td>闽筝</td>
+		<td>閩箏</td></tr>
+		<tr class="item">
+		<td>minzuhua</td>
+		<td>mínzú huà</td>
+		<td>Communist Term For Nationalization</td>
+		<td>民族化</td>
+		<td>民族化</td></tr>
+		<tr class="item">
+		<td>miyao</td>
+		<td>mì yáo</td>
+		<td>Zheng Technique</td>
+		<td>密摇</td>
+		<td>密搖</td></tr>
+		<tr class="item">
+		<td>mo</td>
+		<td>mǒ</td>
+		<td>Zheng Technique</td>
+		<td>抹</td>
+		<td>抹</td></tr>
+		<tr class="item">
+		<td>Moli Hua</td>
+		<td>mòlìhuā</td>
+		<td>Chinese Folk Song - Jasmine Flower</td>
+		<td>茉莉花</td>
+		<td>茉莉花</td></tr>
+		<tr class="item">
+		<td>Mukamu Sanxu yu Wuqu</td>
+		<td>mù kǎ mǔ sàn xù yǔ wǔqǔ</td>
+		<td>Twentieth-Century Zheng Composition</td>
+		<td>木卡姆散序与舞曲</td>
+		<td>木卡姆散序與舞曲</td></tr>
+		<tr class="item">
+		<td>muqu</td>
+		<td>mǔ qū</td>
+		<td>Mother Tune</td>
+		<td>母曲</td>
+		<td>母曲</td></tr>
+		<tr class="item">
+		<td>Nan Xiang Zi</td>
+		<td>nán xiāng zi</td>
+		<td>Classical Poetry Form, Composition</td>
+		<td>南乡子</td>
+		<td>南鄉子</td></tr>
+		<tr class="item">
+		<td>Nanbeipai Shisanlao Daqu Pipa Xinpu</td>
+		<td>nánběi pài shísān tào dàqū pípá xīn pǔ</td>
+		<td>New Scores For Thirteen Pipa Pieces Of The North And South Schools</td>
+		<td>南北派十三套大曲琵琶新谱</td>
+		<td>南北派十三套大曲琵琶新譜</td></tr>
+		<tr class="item">
+		<td>nanguan</td>
+		<td>nán guǎn</td>
+		<td>Southern Pipes</td>
+		<td>南管</td>
+		<td>南管</td></tr>
+		<tr class="item">
+		<td>Nanhai Yuge</td>
+		<td>nánhǎi yúgē</td>
+		<td>Zheng Piece - South Sea Fishermen\'S Songs</td>
+		<td>南海渔歌</td>
+		<td>南海漁歌</td></tr>
+		<tr class="item">
+		<td>Nanjing</td>
+		<td>nánjīng</td>
+		<td>City In Jiangsu Province</td>
+		<td>南京</td>
+		<td>南京</td></tr>
+		<tr class="item">
+		<td>Nanjing Guoli Yinyue Xueyuan</td>
+		<td>nánjīng guólì yīnyuè xuéyuàn</td>
+		<td>Nanjing National Music Conservatory</td>
+		<td>南京国立音乐学院</td>
+		<td>南京國立音樂學院</td></tr>
+		<tr class="item">
+		<td>Nanjing yaji</td>
+		<td>kě nánjīng yǎ jí</td>
+		<td>Gathering In Nanjing</td>
+		<td>可南京雅集</td>
+		<td>可南京雅集</td></tr>
+		<tr class="item">
+		<td>nanpai</td>
+		<td>nán pài</td>
+		<td>Southern Style</td>
+		<td>南派</td>
+		<td>南派</td></tr>
+		<tr class="item">
+		<td>nanting</td>
+		<td>nántīng</td>
+		<td>Unpleasant Sound</td>
+		<td>难听</td>
+		<td>難聽</td></tr>
+		<tr class="item">
+		<td>Nanyang</td>
+		<td>nányáng</td>
+		<td>City In Henan Province</td>
+		<td>南阳</td>
+		<td>南陽</td></tr>
+		<tr class="item">
+		<td>Nanyang Keshu Zonghui</td>
+		<td>nán fēng kè shǔ zǒng huì</td>
+		<td>Nanyang Khek - A Clan Association In Singapore</td>
+		<td>南沣客属总会</td>
+		<td>南灃客屬總會</td></tr>
+		<tr class="item">
+		<td>nao</td>
+		<td>náo</td>
+		<td>Left-Hand Technique For The Qin And Zheng For Momentary Pitch Bend</td>
+		<td>猱</td>
+		<td>猱</td></tr>
+		<tr class="item">
+		<td>naotai</td>
+		<td>nào tái</td>
+		<td>Enliven A Stage</td>
+		<td>闹台</td>
+		<td>鬧台</td></tr>
+		<tr class="item">
+		<td>NaoYuanxiao</td>
+		<td>nào yuánxiāo</td>
+		<td>Zheng Piece - Celebration Of The Lantern Festival</td>
+		<td>闹元宵</td>
+		<td>鬧元宵</td></tr>
+		<tr class="item">
+		<td>National Theatre</td>
+		<td>guójiā jùchǎng yìshù tuán</td>
+		<td></td>
+		<td>国家剧场艺术团</td>
+		<td>國家劇場藝術團</td></tr>
+		<tr class="item">
+		<td>Ng Liat Chow</td>
+		<td>huángruòjùn</td>
+		<td>Singaporean Musician</td>
+		<td>黄若俊</td>
+		<td>黃若俊</td></tr>
+		<tr class="item">
+		<td>Ni Cheng Pu</td>
+		<td>nǐ zhēng pǔ</td>
+		<td>Twentieth-Century Monograph On The Zheng</td>
+		<td>拟筝谱</td>
+		<td>擬箏譜</td></tr>
+		<tr class="item">
+		<td>Nianyi Xian Guzheng Mingqu Sanshisan shou</td>
+		<td>niàn yī xián gǔzhēng míngqǔ sānshísān shǒu</td>
+		<td>33 Famous Zheng Pieces</td>
+		<td>廿一弦古筝名曲三十三首</td>
+		<td>廿一弦古箏名曲三十三首</td></tr>
+		<tr class="item">
+		<td>Nie Er</td>
+		<td>niè\'ěr</td>
+		<td>Twentieth-Century Composer</td>
+		<td>聂耳</td>
+		<td>聶耳</td></tr>
+		<tr class="item">
+		<td>Nüwang Ch\'angp\'ien</td>
+		<td>nǚwáng chàngpiàn</td>
+		<td>Queens Record</td>
+		<td>女王唱片</td>
+		<td>女王唱片</td></tr>
+		<tr class="item">
+		<td>Ouyang Xiu</td>
+		<td>ōuyángxiū</td>
+		<td>Song Dynasty Poet</td>
+		<td>欧阳修</td>
+		<td>歐陽修</td></tr>
+		<tr class="item">
+		<td>Ouyang Xun</td>
+		<td>ōuyáng xún</td>
+		<td>Tang Dynasty Confucian Scholar And Calligrapher</td>
+		<td>欧阳旬</td>
+		<td>歐陽旬</td></tr>
+		<tr class="item">
+		<td>pai</td>
+		<td>pài</td>
+		<td>Style, School, Branch</td>
+		<td>派</td>
+		<td>派</td></tr>
+		<tr class="item">
+		<td>paizi qu</td>
+		<td>páizi qǔ</td>
+		<td></td>
+		<td>牌子曲</td>
+		<td>牌子曲</td></tr>
+		<tr class="item">
+		<td>Pan Haiwei</td>
+		<td>pānhǎiwěi</td>
+		<td>Zheng Maker</td>
+		<td>潘海伟</td>
+		<td>潘海偉</td></tr>
+		<tr class="item">
+		<td>Pan Haixin</td>
+		<td>pānhǎixīn</td>
+		<td>Zheng Maker</td>
+		<td>潘海新</td>
+		<td>潘海新</td></tr>
+		<tr class="item">
+		<td>payin</td>
+		<td>pá yīn</td>
+		<td>Zheng Technique</td>
+		<td>琶音</td>
+		<td>琶音</td></tr>
+		<tr class="item">
+		<td>Peishi Kuoyue</td>
+		<td>běishì guó yuè</td>
+		<td>National Music Of Taipei</td>
+		<td>北市国乐</td>
+		<td>北市國樂</td></tr>
+		<tr class="item">
+		<td>peng baban</td>
+		<td>pèng bā bǎn</td>
+		<td>Traditional Shandong Music Genre</td>
+		<td>碰八板</td>
+		<td>碰八板</td></tr>
+		<tr class="item">
+		<td>Peng Guangfu</td>
+		<td>péngguāngfǔ</td>
+		<td>Malaysian Zheng Musician</td>
+		<td>彭光甫</td>
+		<td>彭光甫</td></tr>
+		<tr class="item">
+		<td>Peng Xiuwen</td>
+		<td>péng tóng wén</td>
+		<td>Mainland Musician</td>
+		<td>彭佟文</td>
+		<td>彭佟文</td></tr>
+		<tr class="item">
+		<td>pi</td>
+		<td>pī</td>
+		<td>Zheng Technique</td>
+		<td>劈</td>
+		<td>劈</td></tr>
+		<tr class="item">
+		<td>Pingsha Luoyan</td>
+		<td>píng shā luòyàn</td>
+		<td>Zheng Piece - Geese Landing On Flat Sand</td>
+		<td>平沙落雁</td>
+		<td>平沙落雁</td></tr>
+		<tr class="item">
+		<td>Pingze</td>
+		<td>píngzè</td>
+		<td>Rule For Composing Ancient Chinese Poetry</td>
+		<td>平仄</td>
+		<td>平仄</td></tr>
+		<tr class="item">
+		<td>Pinyin</td>
+		<td>pīnyīn</td>
+		<td>Romanization</td>
+		<td>拼音</td>
+		<td>拼音</td></tr>
+		<tr class="item">
+		<td>pipa</td>
+		<td>pípá</td>
+		<td>Chinese Four-String Teardrop Lute</td>
+		<td>琵琶</td>
+		<td>琵琶</td></tr>
+		<tr class="item">
+		<td>PO</td>
+		<td>pò</td>
+		<td>Tang Dynasty Dance</td>
+		<td>破</td>
+		<td>破</td></tr>
+		<tr class="item">
+		<td>Pu Shuigang</td>
+		<td>pú shuǐ gāng</td>
+		<td>Qing Dynasty Novel</td>
+		<td>蒲水缸</td>
+		<td>蒲水缸</td></tr>
+		<tr class="item">
+		<td>Pu Songling</td>
+		<td>púsōnglíng</td>
+		<td>Novelist In Ancient China</td>
+		<td>蒲嵩龄</td>
+		<td>蒲崧齡</td></tr>
+		<tr class="item">
+		<td>Putian Tongqing</td>
+		<td>pǔtiāntóngqìng</td>
+		<td>Traditional Shandong Zheng Composition</td>
+		<td>普天同庆</td>
+		<td>普天同慶</td></tr>
+		<tr class="item">
+		<td>putonghua</td>
+		<td>pǔtōnghuà</td>
+		<td>Mandarin</td>
+		<td>普通话</td>
+		<td>普通話</td></tr>
+		<tr class="item">
+		<td>Qi</td>
+		<td>qí</td>
+		<td>Go, A Chinese Board Game</td>
+		<td>棋</td>
+		<td>棋</td></tr>
+		<tr class="item">
+		<td>Qi</td>
+		<td>qí</td>
+		<td>Kingdom In Warring States Period</td>
+		<td>齐</td>
+		<td>齊</td></tr>
+		<tr class="item">
+		<td>qi</td>
+		<td>qǐ</td>
+		<td>Initiation</td>
+		<td>起</td>
+		<td>起</td></tr>
+		<tr class="item">
+		<td>Qi Baishi</td>
+		<td>qíbáishí</td>
+		<td>Twentieth-Century Fine Artist</td>
+		<td>齐白石</td>
+		<td>齊白石</td></tr>
+		<tr class="item">
+		<td>Qi Yan Hui</td>
+		<td>qì yán huí</td>
+		<td>Zheng Piece - Crying For Yan Huil</td>
+		<td>泣颜回</td>
+		<td>泣顏回</td></tr>
+		<tr class="item">
+		<td>qian</td>
+		<td>qián</td>
+		<td>One Of The Eight Trigrams Of The Yi Jing</td>
+		<td>乾</td>
+		<td>乾</td></tr>
+		<tr class="item">
+		<td>qiang</td>
+		<td>qiāng</td>
+		<td>Vocal Tune</td>
+		<td>腔</td>
+		<td>腔</td></tr>
+		<tr class="item">
+		<td>Qiangxian</td>
+		<td>qiǎngxiǎn</td>
+		<td>Original Title For Battling The Typhoon</td>
+		<td>抢险</td>
+		<td>搶險</td></tr>
+		<tr class="item">
+		<td>Qianri pipa bairi zheng</td>
+		<td>qiān rì pípá bǎi rì zhēng</td>
+		<td>Thousand Days Pipa, Hundred Days Zheng</td>
+		<td>千日琵琶百日筝</td>
+		<td>千日琵琶百日箏</td></tr>
+		<tr class="item">
+		<td>Qianzhong Fu</td>
+		<td>qián zhōng fù</td>
+		<td>Twentieth-Century Zheng Composition</td>
+		<td>黔中赋</td>
+		<td>黔中賦</td></tr>
+		<tr class="item">
+		<td>qin</td>
+		<td>qín</td>
+		<td>Seven-String Fretless Chinese Zither</td>
+		<td>琴</td>
+		<td>琴</td></tr>
+		<tr class="item">
+		<td>Qin</td>
+		<td>qín</td>
+		<td>A State From The Warring States Period, First Dynasty Of China</td>
+		<td>秦</td>
+		<td>秦</td></tr>
+		<tr class="item">
+		<td>Qin Guo</td>
+		<td>qín guó</td>
+		<td>The Kingdom Of Qin</td>
+		<td>秦国</td>
+		<td>秦國</td></tr>
+		<tr class="item">
+		<td>qin sheng</td>
+		<td>qín shēng</td>
+		<td>The Sound Of Qin</td>
+		<td>秦声</td>
+		<td>秦聲</td></tr>
+		<tr class="item">
+		<td>Qin zheng pai</td>
+		<td>qín zhēng pài</td>
+		<td>Xi\'An Zheng School</td>
+		<td>秦筝派</td>
+		<td>秦箏派</td></tr>
+		<tr class="item">
+		<td>qing</td>
+		<td>qīng</td>
+		<td>A Qin Aesthetic Of Clarity</td>
+		<td>清</td>
+		<td>清</td></tr>
+		<tr class="item">
+		<td>Qing</td>
+		<td>qīng</td>
+		<td>A Dynasty Of China</td>
+		<td>清</td>
+		<td>清</td></tr>
+		<tr class="item">
+		<td>Qing Feng Nian</td>
+		<td>qìng fēng nián</td>
+		<td>Twentieth-Century Zheng Composition  - Celebrating A Year Of Good Harvest</td>
+		<td>庆丰年</td>
+		<td>慶豐年</td></tr>
+		<tr class="item">
+		<td>qing san</td>
+		<td>qīng sān</td>
+		<td>Chaozhou Scale Of Light Three</td>
+		<td>轻三</td>
+		<td>輕三</td></tr>
+		<tr class="item">
+		<td>qing sanliu</td>
+		<td>qīng sānliù</td>
+		<td>Chaozhou Scale Of Light Three Six</td>
+		<td>轻三六</td>
+		<td>輕三六</td></tr>
+		<tr class="item">
+		<td>Qing Zhu</td>
+		<td>qīng zhǔ</td>
+		<td>Composer And Music Educator</td>
+		<td>青主</td>
+		<td>青主</td></tr>
+		<tr class="item">
+		<td>Qingjiang Fangpai</td>
+		<td>qīngjiāng fàng pái</td>
+		<td>Zheng Piece - Rafting In The Qing River</td>
+		<td>清江放排</td>
+		<td>清江放排</td></tr>
+		<tr class="item">
+		<td>Qingjing Sanzhang</td>
+		<td>qíngjǐng sān zhāng</td>
+		<td>Zheng Piece - Beautiful Scenes: Three Movements</td>
+		<td>情景三章</td>
+		<td>情景三章</td></tr>
+		<tr class="item">
+		<td>qingsan zhongliu</td>
+		<td>qīng sānzhòng liù</td>
+		<td>Chaozhou Scale Of Light Three Heavy Six</td>
+		<td>轻三重六</td>
+		<td>輕三重六</td></tr>
+		<tr class="item">
+		<td>qingshang</td>
+		<td>qīng shāng</td>
+		<td>Tang Dynasty Banquet Music Scale</td>
+		<td>清商</td>
+		<td>清商</td></tr>
+		<tr class="item">
+		<td>qingshang yue</td>
+		<td>qīng shāng yuè</td>
+		<td>A Section Of Tang Banquet Music</td>
+		<td>清商乐</td>
+		<td>清商樂</td></tr>
+		<tr class="item">
+		<td>Qingting Dianshui</td>
+		<td>qīngtíngdiǎnshuǐ</td>
+		<td>Traditional Fujian Zheng Composition</td>
+		<td>蜻蜓点水</td>
+		<td>蜻蜓點水</td></tr>
+		<tr class="item">
+		<td>Qingtong Xia</td>
+		<td>qīngtóng xiá</td>
+		<td>Bronze Gorge In Northwest China, Site Of A Hydroelectric Dam</td>
+		<td>青铜峡</td>
+		<td>青銅峽</td></tr>
+		<tr class="item">
+		<td>qingyue</td>
+		<td>qīng yuè</td>
+		<td>Traditional Hakka Instrumental Genre</td>
+		<td>清乐</td>
+		<td>清樂</td></tr>
+		<tr class="item">
+		<td>qingyun</td>
+		<td>qíng yùn</td>
+		<td>Feeling Or Emotional Tone</td>
+		<td>情韵</td>
+		<td>情韻</td></tr>
+		<tr class="item">
+		<td>qinliu</td>
+		<td>qīng liù</td>
+		<td>A Type Of Scale</td>
+		<td>轻六</td>
+		<td>輕六</td></tr>
+		<tr class="item">
+		<td>Qinsang Qu</td>
+		<td>qín sāng qū</td>
+		<td>Twentieth-Century Zheng Composition</td>
+		<td>秦桑曲</td>
+		<td>秦桑曲</td></tr>
+		<tr class="item">
+		<td>qinshu</td>
+		<td>qín shū</td>
+		<td>Shandong Narrative Form</td>
+		<td>琴书</td>
+		<td>琴書</td></tr>
+		<tr class="item">
+		<td>Qinyun</td>
+		<td>qín yùn</td>
+		<td>Traditional Shandong Zheng Composition, "Music Of The Qin"</td>
+		<td>琴韵</td>
+		<td>琴韻</td></tr>
+		<tr class="item">
+		<td>qinzheng</td>
+		<td>qín zhēng</td>
+		<td>Another Term For Zheng</td>
+		<td>秦筝</td>
+		<td>秦箏</td></tr>
+		<tr class="item">
+		<td>Qinzheng Lunwen Yantaohui</td>
+		<td>qín zhēng lùnwén yántǎo huì</td>
+		<td>Workshop On Zheng Writings</td>
+		<td>琴筝论文研讨会</td>
+		<td>琴箏論文研討會</td></tr>
+		<tr class="item">
+		<td>Qiu Dacheng</td>
+		<td>qiū dàchéng</td>
+		<td>Twentieth-Century Zheng Performer And Scholar</td>
+		<td>邱大成</td>
+		<td>邱大成</td></tr>
+		<tr class="item">
+		<td>Qiu Ji</td>
+		<td>qiū jì</td>
+		<td>Zheng Performer And Educator</td>
+		<td>邱霁</td>
+		<td>邱霽</td></tr>
+		<tr class="item">
+		<td>Qixi Yin</td>
+		<td>qī xī yín</td>
+		<td>Zheng Piece - Recital On The Chinese Valentine Day</td>
+		<td>七夕吟</td>
+		<td>七夕吟</td></tr>
+		<tr class="item">
+		<td>qiyue hua</td>
+		<td>qìyuè huà</td>
+		<td>Instrumentalization</td>
+		<td>器乐化</td>
+		<td>器樂化</td></tr>
+		<tr class="item">
+		<td>qlng</td>
+		<td>qīng</td>
+		<td>A Qin Aesthetic Of Lightness</td>
+		<td>轻</td>
+		<td>輕</td></tr>
+		<tr class="item">
+		<td>Qu Xiaosong</td>
+		<td>qú xiǎosōng</td>
+		<td>Composer</td>
+		<td>瞿小松</td>
+		<td>瞿小松</td></tr>
+		<tr class="item">
+		<td>Qu Yuan</td>
+		<td>qūyuán</td>
+		<td>Warring States Poet Of Ancient China</td>
+		<td>屈原</td>
+		<td>屈原</td></tr>
+		<tr class="item">
+		<td>Qu Yun</td>
+		<td>qū yún</td>
+		<td>Zheng Performer And Educator</td>
+		<td>曲云</td>
+		<td>曲雲</td></tr>
+		<tr class="item">
+		<td>Qulü</td>
+		<td>qū lǜ</td>
+		<td>Ming Dynasty Vocal Instruction Book</td>
+		<td>曲律</td>
+		<td>曲律</td></tr>
+		<tr class="item">
+		<td>qupai</td>
+		<td>qǔpái</td>
+		<td>Named Tunes, A Musical Form</td>
+		<td>曲牌</td>
+		<td>曲牌</td></tr>
+		<tr class="item">
+		<td>Rao Ningxin</td>
+		<td>ráo níng xīn</td>
+		<td>Traditional Hakka Zheng Performer</td>
+		<td>饶寜新</td>
+		<td>饒寜新</td></tr>
+		<tr class="item">
+		<td>Ren Qingzhi</td>
+		<td>rèn qīng zhī</td>
+		<td>Mainland Zheng Musician</td>
+		<td>任清之</td>
+		<td>任清之</td></tr>
+		<tr class="item">
+		<td>Renmin Xingdong Dang</td>
+		<td>rénmín xíngdòng dǎng</td>
+		<td>People\'S Action Party (Pap)</td>
+		<td>人民行动党</td>
+		<td>人民行動黨</td></tr>
+		<tr class="item">
+		<td>Renmin Yinyue Chuban She</td>
+		<td>rénmín yīnyuè chūbǎn shè</td>
+		<td>People\'S Music Publishing House</td>
+		<td>人民音乐出版社</td>
+		<td>人民音樂出版社</td></tr>
+		<tr class="item">
+		<td>Rong Zhai</td>
+		<td>róng zhāi</td>
+		<td>Qing Dynasty Court Musician</td>
+		<td>荣斋</td>
+		<td>榮齋</td></tr>
+		<tr class="item">
+		<td>rou</td>
+		<td>róu</td>
+		<td>Portamento, Zheng Technique</td>
+		<td>揉</td>
+		<td>揉</td></tr>
+		<tr class="item">
+		<td>rouyin</td>
+		<td>róu yīn</td>
+		<td>Zheng Technique</td>
+		<td>揉音</td>
+		<td>揉音</td></tr>
+		<tr class="item">
+		<td>ruan</td>
+		<td>ruǎn</td>
+		<td>Chinese Four String Round-Bodied Lute</td>
+		<td>阮</td>
+		<td>阮</td></tr>
+		<tr class="item">
+		<td>ruan wu</td>
+		<td>ruǎn wǔ</td>
+		<td>Tang Dynasty Dance Form</td>
+		<td>软舞</td>
+		<td>軟舞</td></tr>
+		<tr class="item">
+		<td>ruan Xian</td>
+		<td>ruǎnxiàn</td>
+		<td>Hakka Scale</td>
+		<td>软线</td>
+		<td>軟線</td></tr>
+		<tr class="item">
+		<td>Ruan Yu</td>
+		<td>ruǎn yǔ</td>
+		<td>Musician In Ancient China</td>
+		<td>阮禹</td>
+		<td>阮禹</td></tr>
+		<tr class="item">
+		<td>rujia yue</td>
+		<td>rújiā yuè</td>
+		<td>Hakka Concept Of Refined Music</td>
+		<td>儒家乐</td>
+		<td>儒家樂</td></tr>
+		<tr class="item">
+		<td>San Chuan</td>
+		<td>sānchuān</td>
+		<td>A Zheng Trio Based In Beijing</td>
+		<td>三川</td>
+		<td>三川</td></tr>
+		<tr class="item">
+		<td>San Chuci</td>
+		<td>sàn chǔ cí</td>
+		<td>Zheng Piece</td>
+		<td>散楚词</td>
+		<td>散楚詞</td></tr>
+		<tr class="item">
+		<td>sanban</td>
+		<td>sānbǎn</td>
+		<td>The Third Section Of The Shandong First Great Suite</td>
+		<td>三板</td>
+		<td>三板</td></tr>
+		<tr class="item">
+		<td>sanfen sunyi fa</td>
+		<td>sān fēn sǔnyì fǎ</td>
+		<td>A System For Temperament Calculation</td>
+		<td>三分损益法</td>
+		<td>三分损益法</td></tr>
+		<tr class="item">
+		<td>Sanguo Yanyi</td>
+		<td>sānguó yǎnyì</td>
+		<td>Story Of The Three Kingdoms — Ancient Novel</td>
+		<td>三国演义</td>
+		<td>三國演義</td></tr>
+		<tr class="item">
+		<td>Sanmin Lu</td>
+		<td>sānmín lù</td>
+		<td>Name Of Road In Taiwan</td>
+		<td>三民路</td>
+		<td>三民路</td></tr>
+		<tr class="item">
+		<td>Sanmin Zhuyi</td>
+		<td>sānmín zhǔyì</td>
+		<td>Three Principles Of The People</td>
+		<td>三民主义</td>
+		<td>三民主義</td></tr>
+		<tr class="item">
+		<td>sanqu</td>
+		<td>sǎnqǔ</td>
+		<td>Yuan Dynasty Vocal Genre</td>
+		<td>散曲</td>
+		<td>散曲</td></tr>
+		<tr class="item">
+		<td>Sanshi Sanban</td>
+		<td>sānshísān bǎn</td>
+		<td>Traditional Zhejiang Composition</td>
+		<td>三十三板</td>
+		<td>三十三板</td></tr>
+		<tr class="item">
+		<td>Sanxia</td>
+		<td>sānxiá</td>
+		<td>Three Gorges — A Place On The Mainland</td>
+		<td>三峡</td>
+		<td>三峽</td></tr>
+		<tr class="item">
+		<td>sanxian</td>
+		<td>sānxián</td>
+		<td>Three-String Fretless Rebab</td>
+		<td>三弦</td>
+		<td>三弦</td></tr>
+		<tr class="item">
+		<td>sanzhi yao</td>
+		<td>sān zhǐ yáo</td>
+		<td>Zheng Technique</td>
+		<td>三指摇</td>
+		<td>三指搖</td></tr>
+		<tr class="item">
+		<td>sao</td>
+		<td>sǎo</td>
+		<td>Strum</td>
+		<td>扫</td>
+		<td>扫</td></tr>
+		<tr class="item">
+		<td>saoyao sidian</td>
+		<td>sǎo yáo sì diǎn</td>
+		<td>Zheng Technique</td>
+		<td>扫摇四点</td>
+		<td>掃搖四點</td></tr>
+		<tr class="item">
+		<td>saoyin</td>
+		<td>sǎo yīn</td>
+		<td>Zheng Technique</td>
+		<td>扫音</td>
+		<td>掃音</td></tr>
+		<tr class="item">
+		<td>se</td>
+		<td>sè</td>
+		<td>Ancient Chinese Long Zither</td>
+		<td>瑟</td>
+		<td>瑟</td></tr>
+		<tr class="item">
+		<td>Shaanxi</td>
+		<td>shǎnxī</td>
+		<td>Province In Central Western China</td>
+		<td>陕西</td>
+		<td>陝西</td></tr>
+		<tr class="item">
+		<td>Shan Gui</td>
+		<td>shān guǐ</td>
+		<td>Warring States Poem</td>
+		<td>山鬼</td>
+		<td>山鬼</td></tr>
+		<tr class="item">
+		<td>Shan Mei</td>
+		<td>shān mèi</td>
+		<td>Zheng Composition - Mountain Ghost</td>
+		<td>山魅</td>
+		<td>山魅</td></tr>
+		<tr class="item">
+		<td>Shancun Laile Shouhuo Yun</td>
+		<td>shāncūn láile shòuhuòyun</td>
+		<td>Twenty-Century Composition For Chinese Sona</td>
+		<td>山村来了售货员</td>
+		<td>山村來了售貨員</td></tr>
+		<tr class="item">
+		<td>Shandong</td>
+		<td>shāndōng</td>
+		<td>Province In Northern China</td>
+		<td>山东</td>
+		<td>山東</td></tr>
+		<tr class="item">
+		<td>Shandong qinshu</td>
+		<td>shān qínshū</td>
+		<td></td>
+		<td>山东琴书</td>
+		<td>山東琴書</td></tr>
+		<tr class="item">
+		<td>Shandong Yuequ Chaoben Erce</td>
+		<td>shāndōng yuèqǔ chāoběn èr cè</td>
+		<td>Two Copies Of Shandong Zheng Music From The Qing Dynasty</td>
+		<td>山东乐曲抄本二册</td>
+		<td>山東樂曲抄本二册</td></tr>
+		<tr class="item">
+		<td>Shandong Zhengqu Zhenchao Ben</td>
+		<td>shāndōng zhēngqū zhēn chāoběn</td>
+		<td>Shandong Zheng Score Book</td>
+		<td>山东筝曲真抄本</td>
+		<td>山東筝曲真抄本</td></tr>
+		<tr class="item">
+		<td>Shandongpai</td>
+		<td>shāndōng pài</td>
+		<td>Shandong Zheng School</td>
+		<td>山东派</td>
+		<td>山東派</td></tr>
+		<tr class="item">
+		<td>shang</td>
+		<td>shāng</td>
+		<td>Second Tone Of A Chinese Pentatonic Scale</td>
+		<td>商</td>
+		<td>商</td></tr>
+		<tr class="item">
+		<td>shang huayin</td>
+		<td>shàng huá yīn</td>
+		<td>Zheng Technique</td>
+		<td>上滑音</td>
+		<td>上滑音</td></tr>
+		<tr class="item">
+		<td>Shang Lou</td>
+		<td>shàng lóu</td>
+		<td>Zheng Piece - Going Upstairs</td>
+		<td>上楼</td>
+		<td>上樓</td></tr>
+		<tr class="item">
+		<td>Shanghai</td>
+		<td>shànghǎi</td>
+		<td>One Of The Five National Central Cities Of China</td>
+		<td>上海</td>
+		<td>上海</td></tr>
+		<tr class="item">
+		<td>Shanghai Yinyue Xueyuan</td>
+		<td>shànghǎi yīnyuè xué ruǎn</td>
+		<td>Shanghai Music Conservatory</td>
+		<td>上海音乐学院</td>
+		<td>上海音樂學院</td></tr>
+		<tr class="item">
+		<td>Shanghai Yinyue Xueyuan Fuzhong</td>
+		<td>shànghǎi yīnyuè xuéyuàn fùzhōng</td>
+		<td>High School Affiliated To The Shanghai Music Conservatory</td>
+		<td>上海音乐学院附中</td>
+		<td>上海音樂學院附中</td></tr>
+		<tr class="item">
+		<td>Shangqiu</td>
+		<td>shāngqiū</td>
+		<td>Region In Henan Province</td>
+		<td>商丘</td>
+		<td>商丘</td></tr>
+		<tr class="item">
+		<td>shankou</td>
+		<td>shānkǒu</td>
+		<td>Large Bridge On The Right Side Of The Zheng</td>
+		<td>山口</td>
+		<td>山口</td></tr>
+		<tr class="item">
+		<td>Shantou</td>
+		<td>shàntóu</td>
+		<td>A Region On The Mainland</td>
+		<td>汕头</td>
+		<td>汕頭</td></tr>
+		<tr class="item">
+		<td>Shanxi</td>
+		<td>shānxī</td>
+		<td>Province On The Mainland</td>
+		<td>山西</td>
+		<td>山西</td></tr>
+		<tr class="item">
+		<td>shao</td>
+		<td>shǎo</td>
+		<td>Small</td>
+		<td>少</td>
+		<td>少</td></tr>
+		<tr class="item">
+		<td>Shao Guangchen</td>
+		<td>shàoguāngchēn</td>
+		<td>Twentieth Century Composer</td>
+		<td>邵光琛</td>
+		<td>邵光琛</td></tr>
+		<tr class="item">
+		<td>Shaobing Youtiao</td>
+		<td>shāobǐng yóutiáo</td>
+		<td>Zheng Piece - Fried Pancakes</td>
+		<td>烧饼油条</td>
+		<td>燒餅油條</td></tr>
+		<tr class="item">
+		<td>shayin</td>
+		<td>shā yīn</td>
+		<td>Zheng Technique</td>
+		<td>煞音</td>
+		<td>煞音</td></tr>
+		<tr class="item">
+		<td>Shen Liliang</td>
+		<td>chénlìliáng</td>
+		<td>Mainland Musician</td>
+		<td>沉立良</td>
+		<td>沈立良</td></tr>
+		<tr class="item">
+		<td>Shen Yue</td>
+		<td>chén yuē</td>
+		<td>Fifth-Century Poet</td>
+		<td>沈约</td>
+		<td>沈約</td></tr>
+		<tr class="item">
+		<td>sheng</td>
+		<td>shēng</td>
+		<td>Chinese Bamboo Mouth Organ</td>
+		<td>笙</td>
+		<td>笙</td></tr>
+		<tr class="item">
+		<td>sheng</td>
+		<td>shēng</td>
+		<td>Sound</td>
+		<td>声</td>
+		<td>聲</td></tr>
+		<tr class="item">
+		<td>shengduo yunshao</td>
+		<td>shēng duō yùn shǎo</td>
+		<td>More Sound, Less Yun</td>
+		<td>声多韵少</td>
+		<td>聲多韻少</td></tr>
+		<tr class="item">
+		<td>shengqianghua</td>
+		<td>shēngqiāng huà</td>
+		<td>Vocalization</td>
+		<td>声腔化</td>
+		<td>聲腔化</td></tr>
+		<tr class="item">
+		<td>shengshao yunduo</td>
+		<td>shēng shǎo yùn duō</td>
+		<td>Less Sound, More Yun</td>
+		<td>声少韵多</td>
+		<td>聲少韻多</td></tr>
+		<tr class="item">
+		<td>shengyin</td>
+		<td>shēngyīn</td>
+		<td>Sound</td>
+		<td>声音</td>
+		<td>聲音</td></tr>
+		<tr class="item">
+		<td>Shenqi Mipu</td>
+		<td>shénqí mì pǔ</td>
+		<td>Ming Dynasty Qin Score Book</td>
+		<td>神奇秘谱</td>
+		<td>神奇秘譜</td></tr>
+		<tr class="item">
+		<td>Shenyang</td>
+		<td>shěnyáng</td>
+		<td>Capital City Of Liaoning Province</td>
+		<td>沈阳</td>
+		<td>瀋陽</td></tr>
+		<tr class="item">
+		<td>Shenzong</td>
+		<td>shénzōng</td>
+		<td>Ming Dynasty Emperor</td>
+		<td>神宗</td>
+		<td>神宗</td></tr>
+		<tr class="item">
+		<td>shi datao</td>
+		<td>shí dà tào</td>
+		<td>Ten Baban Suites</td>
+		<td>十大套</td>
+		<td>十大套</td></tr>
+		<tr class="item">
+		<td>Shi Shu</td>
+		<td>shǐshū</td>
+		<td>Historical Records Written For Every Dynasty Throughout The Chinese Imperial Period</td>
+		<td>史书</td>
+		<td>史書</td></tr>
+		<tr class="item">
+		<td>Shi Yinmei</td>
+		<td>shǐ yīn měi</td>
+		<td>Traditional Henan Zheng Performer</td>
+		<td>史阴美</td>
+		<td>史陰美</td></tr>
+		<tr class="item">
+		<td>Shi Zhaoyuan</td>
+		<td>shǐzhàoyuán</td>
+		<td>Zheng Performer And Educator</td>
+		<td>史兆元</td>
+		<td>史兆元</td></tr>
+		<tr class="item">
+		<td>shidai jingshen</td>
+		<td>shídài jīngshén</td>
+		<td>Communist Concept Of The "Spirit Of The Time"</td>
+		<td>时代精神</td>
+		<td>時代精神</td></tr>
+		<tr class="item">
+		<td>shifu</td>
+		<td>shīfu</td>
+		<td>Teacher</td>
+		<td>师父</td>
+		<td>師父</td></tr>
+		<tr class="item">
+		<td>Shih Ch\'ingchieh</td>
+		<td>shī qīngjiè</td>
+		<td>Taiwanese Zheng Musician</td>
+		<td>施清介</td>
+		<td>施清介</td></tr>
+		<tr class="item">
+		<td>Shih Wenyao</td>
+		<td>shīwén yào</td>
+		<td>Taiwanese Zheng Musician</td>
+		<td>施文耀</td>
+		<td>施文耀</td></tr>
+		<tr class="item">
+		<td>Shiji</td>
+		<td>shǐjì</td>
+		<td>Han Dynasty History Book "Records Of The Historian"</td>
+		<td>史记</td>
+		<td>史記</td></tr>
+		<tr class="item">
+		<td>Shijing</td>
+		<td>shījīng</td>
+		<td>Book Of Poems - Chinese Classic</td>
+		<td>诗经</td>
+		<td>詩經</td></tr>
+		<tr class="item">
+		<td>Shiliu Ban</td>
+		<td>shílìu bǎn</td>
+		<td>Traditional Zheng Composition On A Baban Form</td>
+		<td>十六板</td>
+		<td>十六板</td></tr>
+		<tr class="item">
+		<td>Shimian Maifu</td>
+		<td>shí miàn máifú</td>
+		<td>Traditional Pipa Composition</td>
+		<td>十面埋伏</td>
+		<td>十面埋伏</td></tr>
+		<tr class="item">
+		<td>Shisanxian Muqin</td>
+		<td>shísān xián mùqín</td>
+		<td>Musical Instrument</td>
+		<td>十三弦木琴</td>
+		<td>十三弦木琴</td></tr>
+		<tr class="item">
+		<td>Shizhiyao</td>
+		<td>shízhǐ yáo</td>
+		<td>Zheng Technique</td>
+		<td>食指摇</td>
+		<td>食指搖</td></tr>
+		<tr class="item">
+		<td>shuang sidian</td>
+		<td>shuāng shí diǎn</td>
+		<td>Zheng Technique</td>
+		<td>双食点</td>
+		<td>雙食點</td></tr>
+		<tr class="item">
+		<td>Shuangban</td>
+		<td>shuāng bǎn</td>
+		<td>Traditional Shandong Composition</td>
+		<td>双板</td>
+		<td>雙板</td></tr>
+		<tr class="item">
+		<td>shuangcui</td>
+		<td>shuāng cuī</td>
+		<td>Chaozhou Technique To Rearticulate A Given Note Three Times</td>
+		<td>双催</td>
+		<td>雙催</td></tr>
+		<tr class="item">
+		<td>shuangdie cui</td>
+		<td>shuāng dié cuī</td>
+		<td>Chaozhou Technique To Rearticulate A Given Note Seven Times</td>
+		<td>双叠催</td>
+		<td>雙疊催</td></tr>
+		<tr class="item">
+		<td>shuangqing</td>
+		<td>shuāng qīng</td>
+		<td>Four-String Fujian Long Neck Lute</td>
+		<td>双清</td>
+		<td>雙清</td></tr>
+		<tr class="item">
+		<td>shuangzhi yao</td>
+		<td>shuāng zhǐ yáo</td>
+		<td>Zheng Technique</td>
+		<td>双指摇</td>
+		<td>雙指搖</td></tr>
+		<tr class="item">
+		<td>Shuhuai Qu</td>
+		<td>shūhuáiqū</td>
+		<td>Zheng Technique - Song Of The Heart</td>
+		<td>舒怀曲</td>
+		<td>舒懷曲</td></tr>
+		<tr class="item">
+		<td>Shuihu Zhuan</td>
+		<td>shuǐhǔ zhuàn</td>
+		<td>The Water Margin — Ancient Novell</td>
+		<td>水浒传</td>
+		<td>水滸傳</td></tr>
+		<tr class="item">
+		<td>Shuo Lue</td>
+		<td>shuō lüè</td>
+		<td>Ming Dynasty Encyclopedia</td>
+		<td>说略</td>
+		<td>說略</td></tr>
+		<tr class="item">
+		<td>Shuowen Jiezi</td>
+		<td>shuō wén jiě zì</td>
+		<td>Han Dynasty Chinese Dictionary</td>
+		<td>说文解字</td>
+		<td>說文解字</td></tr>
+		<tr class="item">
+		<td>Shuyun</td>
+		<td>shū yùn</td>
+		<td>Shandong Zheng Composition</td>
+		<td>书韵</td>
+		<td>书韻</td></tr>
+		<tr class="item">
+		<td>Siban</td>
+		<td>sì bǎn</td>
+		<td>The Fourth Section Ofthe Shandong First Great Suite</td>
+		<td>四板</td>
+		<td>四板</td></tr>
+		<tr class="item">
+		<td>Sichuan</td>
+		<td>sìchuān</td>
+		<td>Province On The Mainland</td>
+		<td>四川</td>
+		<td>四川</td></tr>
+		<tr class="item">
+		<td>sidian</td>
+		<td>sì diǎn</td>
+		<td>Four Points, A Fingering Technique Alternating The Thumb And First Two Fingers</td>
+		<td>四点</td>
+		<td>四點</td></tr>
+		<tr class="item">
+		<td>Sihe Ruyi</td>
+		<td>sì hé rúyì</td>
+		<td>Traditional Zhejiang Composition</td>
+		<td>四合如意</td>
+		<td>四合如意</td></tr>
+		<tr class="item">
+		<td>sijiu</td>
+		<td>sì jiù</td>
+		<td>Communist Concept Of The "Four Olds": Old Ideas, Old Culture, Old Customs, And Old Habits</td>
+		<td>四旧</td>
+		<td>四舊</td></tr>
+		<tr class="item">
+		<td>Siku Quanshu</td>
+		<td>sì kù quánshū</td>
+		<td>Complete Library Of The Four Treasuries, 1782</td>
+		<td>四库全书</td>
+		<td>四庫全書</td></tr>
+		<tr class="item">
+		<td>Singapore</td>
+		<td>xīnjiāpō</td>
+		<td></td>
+		<td>新加坡</td>
+		<td>新加坡</td></tr>
+		<tr class="item">
+		<td>siping bawen</td>
+		<td>sìpíngbāwěn</td>
+		<td>Chinese Idiom For Stability "Four Being Even And Eight Being Stable"</td>
+		<td>四平八稳</td>
+		<td>四平八穩</td></tr>
+		<tr class="item">
+		<td>Sishu</td>
+		<td>sìshū</td>
+		<td>Four Books - Chinese Classic</td>
+		<td>四书</td>
+		<td>四書</td></tr>
+		<tr class="item">
+		<td>sixian</td>
+		<td>sīxián</td>
+		<td>Hakka Zheng Genre</td>
+		<td>丝弦</td>
+		<td>絲弦</td></tr>
+		<tr class="item">
+		<td>sixiang luohou</td>
+		<td>sīxiǎng luòhòu</td>
+		<td>Politically Backward</td>
+		<td>思想落后</td>
+		<td>思想落後</td></tr>
+		<tr class="item">
+		<td>sizhi yao</td>
+		<td>sì zhǐ yáo</td>
+		<td>Zheng Technique</td>
+		<td>四指摇</td>
+		<td>四指搖</td></tr>
+		<tr class="item">
+		<td>sizhuyue</td>
+		<td>sīzhú yuè</td>
+		<td>Silk And Bamboo Music</td>
+		<td>丝竹乐</td>
+		<td>絲竹樂</td></tr>
+		<tr class="item">
+		<td>Song</td>
+		<td>sòng</td>
+		<td>Chinese Dynasty From 960-1279</td>
+		<td>宋</td>
+		<td>宋</td></tr>
+		<tr class="item">
+		<td>Songdai Zouyuetu</td>
+		<td>sòngdài zòu yuè tú</td>
+		<td>Song Dynasty Drawing Of Music Performance</td>
+		<td>宋代奏乐图</td>
+		<td>宋代奏樂圖</td></tr>
+		<tr class="item">
+		<td>Songliang</td>
+		<td>sòng liáng</td>
+		<td>Zheng Piece - On The Way To The Granary</td>
+		<td>送粮</td>
+		<td>送糧</td></tr>
+		<tr class="item">
+		<td>Soo Xiang Key</td>
+		<td>sīxiǎng qǐ</td>
+		<td>Taiwanese Folk Song - Remembrance</td>
+		<td>思想起</td>
+		<td>思想起</td></tr>
+		<tr class="item">
+		<td>su</td>
+		<td>sú</td>
+		<td>Euphonic Quality</td>
+		<td>俗</td>
+		<td>俗</td></tr>
+		<tr class="item">
+		<td>Su Wenxian</td>
+		<td>sūwénxián</td>
+		<td>Chaozhou Zheng Performer</td>
+		<td>苏文贤</td>
+		<td>蘇文賢</td></tr>
+		<tr class="item">
+		<td>Sui</td>
+		<td>suí</td>
+		<td>Chinese Dynasty From 581-618</td>
+		<td>隋</td>
+		<td>隋</td></tr>
+		<tr class="item">
+		<td>Sui Shu</td>
+		<td>suí shū</td>
+		<td>Record Of The Sui Dynasty</td>
+		<td>隋书</td>
+		<td>隋書</td></tr>
+		<tr class="item">
+		<td>Suiping</td>
+		<td>suì píng</td>
+		<td>A County In Henan Province</td>
+		<td>遂平</td>
+		<td>遂平</td></tr>
+		<tr class="item">
+		<td>Sun Wenyan</td>
+		<td>sūnwényán</td>
+		<td>Zheng Performer And Educator</td>
+		<td>孙文妍</td>
+		<td>孫文妍</td></tr>
+		<tr class="item">
+		<td>Sun Yatsen</td>
+		<td>Sūnzhōngshān/ sūnyìxiān</td>
+		<td>Father Of Modern China</td>
+		<td>孙中山 / 孙逸仙</td>
+		<td>孫中山 / 孫逸仙</td></tr>
+		<tr class="item">
+		<td>Suzhou</td>
+		<td>sūzhōu</td>
+		<td>A City On The Mainland</td>
+		<td>苏州</td>
+		<td>蘇州</td></tr>
+		<tr class="item">
+		<td>suzi</td>
+		<td>súzì</td>
+		<td>Folk Music Notation</td>
+		<td>俗字</td>
+		<td>俗字</td></tr>
+		<tr class="item">
+		<td>T \'an Chunzchtian</td>
+		<td>tán zhōng chā</td>
+		<td>Boss Of Huayin Music Centre</td>
+		<td>谭中杈</td>
+		<td>譚中杈</td></tr>
+		<tr class="item">
+		<td>T\'aita</td>
+		<td>táidà</td>
+		<td>National Taiwan University</td>
+		<td>台大</td>
+		<td>台大</td></tr>
+		<tr class="item">
+		<td>tai</td>
+		<td>tài</td>
+		<td>Low Or Large, Often Referring To Drum Sounds</td>
+		<td>太</td>
+		<td>太</td></tr>
+		<tr class="item">
+		<td>Tainan</td>
+		<td>táinán</td>
+		<td>A City In Taiwan</td>
+		<td>台南</td>
+		<td>台南</td></tr>
+		<tr class="item">
+		<td>Tainan Kaishanlu Tianzhu Jiaotang</td>
+		<td>táinán kāishān tiānzhǔ jiàotáng</td>
+		<td>The Catholic Church At Kaishan Road In Tainan</td>
+		<td>台南开山天主教堂</td>
+		<td>台南開山天主教堂</td></tr>
+		<tr class="item">
+		<td>Tainan Wenhua Zhongxin</td>
+		<td>táinán wénhuà zhōngxīn</td>
+		<td>Tainan Cultural Centre</td>
+		<td>台南文化中心</td>
+		<td>台南文化中心</td></tr>
+		<tr class="item">
+		<td>Tan Chin Huat</td>
+		<td>chén zhènfā</td>
+		<td>Singaporean Zheng Musician</td>
+		<td>陈振发</td>
+		<td>陳振發</td></tr>
+		<tr class="item">
+		<td>Tan Dun</td>
+		<td>tándùn</td>
+		<td>Composer</td>
+		<td>谭盾</td>
+		<td>譚盾</td></tr>
+		<tr class="item">
+		<td>Tan Gu Luan</td>
+		<td>tàn gū luán</td>
+		<td>Traditional Fujian Zheng Composition</td>
+		<td>叹孤鸾</td>
+		<td>嘆孤鸞</td></tr>
+		<tr class="item">
+		<td>Tan Han Chang</td>
+		<td>chénhànzhāng</td>
+		<td>Singaporean Musician</td>
+		<td>陈汉章</td>
+		<td>陳漢章</td></tr>
+		<tr class="item">
+		<td>Tan Kee Han</td>
+		<td>chén qǐhàn</td>
+		<td>Singaporean Sanxian Musician</td>
+		<td>陈启汉</td>
+		<td>陳啟漢</td></tr>
+		<tr class="item">
+		<td>Tan Yan Hui</td>
+		<td>tàn yán huí</td>
+		<td>Zheng Piece</td>
+		<td>叹颜回</td>
+		<td>嘆顏回</td></tr>
+		<tr class="item">
+		<td>tanchang</td>
+		<td>tánchàng</td>
+		<td>Narrative Song Genre</td>
+		<td>弹唱</td>
+		<td>彈唱</td></tr>
+		<tr class="item">
+		<td>Tanchiang Tahsüeh</td>
+		<td>dàn jiāng dàxué</td>
+		<td>Tamkang University In Taiwan</td>
+		<td>淡江大学</td>
+		<td>淡江大學</td></tr>
+		<tr class="item">
+		<td>Tang</td>
+		<td>táng</td>
+		<td>Chinese Dynasty From 618-906</td>
+		<td>唐</td>
+		<td>唐</td></tr>
+		<tr class="item">
+		<td>Tang Biguang</td>
+		<td>tángbìguāng</td>
+		<td>Twentieth-Century Composer</td>
+		<td>唐壁光</td>
+		<td>唐壁光</td></tr>
+		<tr class="item">
+		<td>Tang Guocheng</td>
+		<td>tāngguóchéng</td>
+		<td>Traditional Fujian Zheng Performer</td>
+		<td>汤国诚</td>
+		<td>湯國誠</td></tr>
+		<tr class="item">
+		<td>Tangdai Gongyuetu</td>
+		<td>táng dài gōng yuè tú</td>
+		<td>Tang Dynasty Drawing Of Music Performance In The Palace</td>
+		<td>唐代宫乐图</td>
+		<td>唐代宮樂圖</td></tr>
+		<tr class="item">
+		<td>Tangshi Sanbaishou</td>
+		<td>tángshī sānbǎi shǒu</td>
+		<td>Three Hundred Tang Dynasty Poems</td>
+		<td>唐诗三百首</td>
+		<td>唐詩三百首</td></tr>
+		<tr class="item">
+		<td>tanhuang</td>
+		<td>tān huáng</td>
+		<td>Zhejiang Narrative Form</td>
+		<td>滩簧</td>
+		<td>灘簧</td></tr>
+		<tr class="item">
+		<td>tanlun</td>
+		<td>tán lún</td>
+		<td>Contemporary Zheng Counterpoint Technique Of A Synchronized Pluck And Roll</td>
+		<td>弹轮</td>
+		<td>彈輪</td></tr>
+		<tr class="item">
+		<td>tanyao</td>
+		<td>dàn yáo</td>
+		<td>Contemporary Zheng Counterpoint Technique Of A Synchronized Pluck And Tremolo</td>
+		<td>弹摇</td>
+		<td>彈摇</td></tr>
+		<tr class="item">
+		<td>Tanzheng fenyixiang, xinsheng miaorushen</td>
+		<td>tán zhēng fèn yì xiǎng, xīn shēng miào rùshén</td>
+		<td>Ancient Poem</td>
+		<td>弹筝奋逸响，新声妙入神</td>
+		<td>彈箏奮逸響，新聲妙入神</td></tr>
+		<tr class="item">
+		<td>Tay Teow Kiat</td>
+		<td>zhèng cháojí</td>
+		<td>Singaporean Musician</td>
+		<td>郑朝吉</td>
+		<td>鄭朝吉</td></tr>
+		<tr class="item">
+		<td>Thau Yong / Tao Rong Ruyueshe</td>
+		<td>táo róng rú lè shè</td>
+		<td>Opera Group In Singapore</td>
+		<td>陶融儒乐社</td>
+		<td>陶融儒樂社</td></tr>
+		<tr class="item">
+		<td>Thau Yong / Tao Rong Ruyueshe Minyuedui</td>
+		<td>táo róng rú lè shèmín yuèduì</td>
+		<td>Music Group In Singapore</td>
+		<td>陶融儒乐社民乐队</td>
+		<td>陶融儒樂社民樂隊</td></tr>
+		<tr class="item">
+		<td>Thum Soon Boon</td>
+		<td>tánchūnwén</td>
+		<td>Singaporean Zheng Musician</td>
+		<td>谭春文</td>
+		<td>譚春文</td></tr>
+		<tr class="item">
+		<td>ti</td>
+		<td>tī</td>
+		<td>Zheng Technique</td>
+		<td>剔</td>
+		<td>剔</td></tr>
+		<tr class="item">
+		<td>Tianjin</td>
+		<td>tiānjīn</td>
+		<td>One Ofthe Five National Central Cities Of China</td>
+		<td>天津</td>
+		<td>天津</td></tr>
+		<tr class="item">
+		<td>Tianjin Yinyue Xueyuan</td>
+		<td>tiānjīn yīnyuè xuéyuàn</td>
+		<td>Tianjin Music Conservatory</td>
+		<td>天津音乐学院</td>
+		<td>天津音樂學院</td></tr>
+		<tr class="item">
+		<td>Tianshang Renjian</td>
+		<td>tiānshàng rénjiān</td>
+		<td>Zheng Piece - Paradise</td>
+		<td>天上人间</td>
+		<td>天上人間</td></tr>
+		<tr class="item">
+		<td>Tianxia Datong</td>
+		<td>tiānxià dà tóng</td>
+		<td>Universal Hannony, An Album Of Zheng Music, The Title Of A Zheng Composition In Baban Form</td>
+		<td>天下大同</td>
+		<td>天下大同</td></tr>
+		<tr class="item">
+		<td>Tianxia Tong</td>
+		<td>tiānxià tóng</td>
+		<td>The Title Ofa Zheng Composition In Baban Form</td>
+		<td>天下同</td>
+		<td>天下同</td></tr>
+		<tr class="item">
+		<td>tianyan</td>
+		<td>tiān yǎn</td>
+		<td>Traditional Compositional Method Of Adding A Weak Beat</td>
+		<td>添眼</td>
+		<td>添眼</td></tr>
+		<tr class="item">
+		<td>tianzi</td>
+		<td>tiānzì</td>
+		<td>Hakka Term Meaning "To Add"</td>
+		<td>添字</td>
+		<td>添字</td></tr>
+		<tr class="item">
+		<td>tiao</td>
+		<td>tiāo</td>
+		<td>Zheng Technique</td>
+		<td>挑</td>
+		<td>挑</td></tr>
+		<tr class="item">
+		<td>Ting Oh Oh</td>
+		<td>tiān hēi hēi</td>
+		<td>Taiwanese Folk Song - The Sky Is Dark</td>
+		<td>天黑黑</td>
+		<td>天黑黑</td></tr>
+		<tr class="item">
+		<td>Tingyuan Shenshen</td>
+		<td>tíngyuàn shēn shēn</td>
+		<td>Taiwanese Pop Song - Deep In The House Garden</td>
+		<td>庭院深深</td>
+		<td>庭院深深</td></tr>
+		<tr class="item">
+		<td>titanfa</td>
+		<td>tí dàn fǎ</td>
+		<td>Zheng Technique</td>
+		<td>提弹法</td>
+		<td>提彈法</td></tr>
+		<tr class="item">
+		<td>Tomb of Zeng Houyi</td>
+		<td>céng hóu yǐ mù</td>
+		<td>Archaeological Excavation Site On The Mainland</td>
+		<td>曾侯乙墓</td>
+		<td>曾侯乙墓</td></tr>
+		<tr class="item">
+		<td>tong Zheng</td>
+		<td>tóng zhēng</td>
+		<td>A Type Of Zheng</td>
+		<td>铜筝</td>
+		<td>銅箏</td></tr>
+		<tr class="item">
+		<td>Tongdian</td>
+		<td>tōng diǎn</td>
+		<td>Encyclopedic History Of Institutions, 801</td>
+		<td>通典</td>
+		<td>通典</td></tr>
+		<tr class="item">
+		<td>touban</td>
+		<td>tóu bǎn</td>
+		<td>The First Section Of The Shandong First Great Suite</td>
+		<td>头板</td>
+		<td>頭板</td></tr>
+		<tr class="item">
+		<td>Touliu</td>
+		<td>dòu liù</td>
+		<td>A Place In Taiwan</td>
+		<td>斗六</td>
+		<td>鬥六</td></tr>
+		<tr class="item">
+		<td>Ts\'aoling</td>
+		<td>cǎo lǐng</td>
+		<td>A Place In Taiwan</td>
+		<td>草岭</td>
+		<td>草嶺</td></tr>
+		<tr class="item">
+		<td>Tsehsi Kuchengshe</td>
+		<td>zé xī gǔzhēng shè</td>
+		<td>Tse Hsi Zheng Society</td>
+		<td>泽溪古筝社</td>
+		<td>澤溪古箏社</td></tr>
+		<tr class="item">
+		<td>tuo</td>
+		<td>tuō</td>
+		<td>Zheng Technique</td>
+		<td>托</td>
+		<td>托</td></tr>
+		<tr class="item">
+		<td>Tz\'u-yuan</td>
+		<td>cí yuān</td>
+		<td>Dictionary</td>
+		<td>词渊</td>
+		<td>詞淵</td></tr>
+		<tr class="item">
+		<td>Waijiang</td>
+		<td>wài jiāng</td>
+		<td>Kejia Music</td>
+		<td>外江</td>
+		<td>外江</td></tr>
+		<tr class="item">
+		<td>waijiang Xian</td>
+		<td>wài jiāng xián</td>
+		<td>A Term For Hakka Music</td>
+		<td>外江弦</td>
+		<td>外江弦</td></tr>
+		<tr class="item">
+		<td>Wang Ch\'ineng</td>
+		<td>wángqǐnéng</td>
+		<td>Taiwanese Guitar Teacher</td>
+		<td>王启能</td>
+		<td>王啟能</td></tr>
+		<tr class="item">
+		<td>Wang Changyuan</td>
+		<td>wáng chāng yuán</td>
+		<td>Zheng Composer And Performer</td>
+		<td>王昌元</td>
+		<td>王昌元</td></tr>
+		<tr class="item">
+		<td>Wang Dianyu</td>
+		<td>wángdiànyù</td>
+		<td>Traditional Shandong Zheng Performer</td>
+		<td>王殿玉</td>
+		<td>王殿玉</td></tr>
+		<tr class="item">
+		<td>Wang Guangqi</td>
+		<td>wángguāngqí</td>
+		<td>Musicologist</td>
+		<td>王光歧</td>
+		<td>王光歧</td></tr>
+		<tr class="item">
+		<td>Wang Hsun</td>
+		<td>wáng xún</td>
+		<td>Mainland Zheng Musician</td>
+		<td>王珣</td>
+		<td>王珣</td></tr>
+		<tr class="item">
+		<td>Wang Huiran</td>
+		<td>wáng huìrán</td>
+		<td>Mainland Musician</td>
+		<td>王慧然</td>
+		<td>王慧然</td></tr>
+		<tr class="item">
+		<td>Wang Jianmin</td>
+		<td>wángjiànmín</td>
+		<td>Composer</td>
+		<td>王建民</td>
+		<td>王建民</td></tr>
+		<tr class="item">
+		<td>Wang Jide</td>
+		<td>wángjìdé</td>
+		<td>Ming Dynasty Music Scholar</td>
+		<td>王骥德</td>
+		<td>王驥德</td></tr>
+		<tr class="item">
+		<td>Wang Leyong</td>
+		<td>wánglèyǒng</td>
+		<td>Traditional Shandong Zheng Performer</td>
+		<td>王乐永</td>
+		<td>王樂永</td></tr>
+		<tr class="item">
+		<td>Wang Li</td>
+		<td>wáng lì</td>
+		<td>Zheng Performer</td>
+		<td>王莉</td>
+		<td>王莉</td></tr>
+		<tr class="item">
+		<td>Wang Shengwu</td>
+		<td>wáng xǐngwú</td>
+		<td>Traditional Henan Zheng Performer</td>
+		<td>王省吾</td>
+		<td>王省吾</td></tr>
+		<tr class="item">
+		<td>Wang Shu</td>
+		<td>wáng shù</td>
+		<td>Twentieth-Century Composer</td>
+		<td>王树</td>
+		<td>王樹</td></tr>
+		<tr class="item">
+		<td>Wang Wei</td>
+		<td>wáng wéi</td>
+		<td>Poet In Ancient China</td>
+		<td>王维</td>
+		<td>王維</td></tr>
+		<tr class="item">
+		<td>Wang Wenlong</td>
+		<td>wáng wénlóng</td>
+		<td>Taiwanese Erhu Musician</td>
+		<td>王文隆</td>
+		<td>王文隆</td></tr>
+		<tr class="item">
+		<td>Wang Xunzhi</td>
+		<td>wángxùnzhī</td>
+		<td>Traditional Zhejiang Zheng Performer</td>
+		<td>王巽之</td>
+		<td>王巽之</td></tr>
+		<tr class="item">
+		<td>Wang Yingrui</td>
+		<td>wángyāngruì</td>
+		<td>Ethnomusicologist</td>
+		<td>王央睿</td>
+		<td>王央睿</td></tr>
+		<tr class="item">
+		<td>Wang Yun</td>
+		<td>wáng yùn</td>
+		<td>Zheng Performer And Educator</td>
+		<td>王运</td>
+		<td>王運</td></tr>
+		<tr class="item">
+		<td>Wang Zhongshan</td>
+		<td>wáng zhōngshān</td>
+		<td>Zheng Composer And Performer</td>
+		<td>王中山</td>
+		<td>王中山</td></tr>
+		<tr class="item">
+		<td>wanke</td>
+		<td>wán kè</td>
+		<td>A Zhejiang And Jiangsu Term For A Casual Meeting Of Musicians To Play Together</td>
+		<td>玩客</td>
+		<td>玩客</td></tr>
+		<tr class="item">
+		<td>wanwan qiang</td>
+		<td>wǎn wǎn qiāng</td>
+		<td>A Regional Operatic Genre In Central Shaanxi Province</td>
+		<td>碗碗腔</td>
+		<td>碗碗腔</td></tr>
+		<tr class="item">
+		<td>wanyou</td>
+		<td>wán yǒu</td>
+		<td>A Shandong And Henan Term For A Casual Meeting Of Musicians To Play Together</td>
+		<td>玩友</td>
+		<td>玩友</td></tr>
+		<tr class="item">
+		<td>Wei Ch\'iunghua</td>
+		<td>wèiqiónghuá</td>
+		<td>Taiwanese Zheng Musician</td>
+		<td>魏琼华</td>
+		<td>魏瓊華</td></tr>
+		<tr class="item">
+		<td>Wei Hongning</td>
+		<td>wèihóngníng</td>
+		<td>Zheng Maker</td>
+		<td>魏洪宁</td>
+		<td>魏洪寧</td></tr>
+		<tr class="item">
+		<td>Wei Taohua</td>
+		<td>wèidàohuá</td>
+		<td>Taiwanese Zheng Musician And Maker</td>
+		<td>魏道华</td>
+		<td>魏道華</td></tr>
+		<tr class="item">
+		<td>Wei Taomou</td>
+		<td>wèidàomóu</td>
+		<td>Taiwanese Zheng Musician And Maker</td>
+		<td>魏道谋</td>
+		<td>魏道謀</td></tr>
+		<tr class="item">
+		<td>Wei Tei-Don</td>
+		<td>wèidédòng</td>
+		<td>Taiwanese Zheng Musician</td>
+		<td>魏德栋</td>
+		<td>魏德棟</td></tr>
+		<tr class="item">
+		<td>Wei Zhongle</td>
+		<td>wèizhònglè</td>
+		<td>Twentieth-Century Pipa Performer</td>
+		<td>魏仲乐</td>
+		<td>魏仲樂</td></tr>
+		<tr class="item">
+		<td>Wei Ziyou</td>
+		<td>wèiziyóu</td>
+		<td>Traditional Henan Zheng Performer</td>
+		<td>魏子猷</td>
+		<td>魏子猷</td></tr>
+		<tr class="item">
+		<td>Weijin Nanbei Chao</td>
+		<td>wèi jìn nánběicháo</td>
+		<td>Wei, Jin And Southern And Northern Dynasties</td>
+		<td>魏晋南北朝</td>
+		<td>魏晉南北朝</td></tr>
+		<tr class="item">
+		<td>Wen Weizhen</td>
+		<td>wén wěi zhēn</td>
+		<td>Zheng Musician In Hong Kong</td>
+		<td>文伟珍</td>
+		<td>文偉珍</td></tr>
+		<tr class="item">
+		<td>Wenhua Dageming</td>
+		<td>wénhuà dàgémìng</td>
+		<td>The Cultural Revolution</td>
+		<td>文化大革命</td>
+		<td>文化大革命</td></tr>
+		<tr class="item">
+		<td>Wenhua Jiang</td>
+		<td>wénhuá jiǎng</td>
+		<td>A Notional Instrumental Music Competition</td>
+		<td>文华奖</td>
+		<td>文華奬</td></tr>
+		<tr class="item">
+		<td>Wenhua Tahsüeh</td>
+		<td>wénhuà dàxué</td>
+		<td>Chinese Culture University, Taiwan</td>
+		<td>文化大学</td>
+		<td>文化大學</td></tr>
+		<tr class="item">
+		<td>Wenji Guihan</td>
+		<td>wén jī guī hàn</td>
+		<td>Beijing Opera Piece</td>
+		<td>文姬归汉</td>
+		<td>文姬歸漢</td></tr>
+		<tr class="item">
+		<td>Wenxian Tongkao</td>
+		<td>wénxiàn tōng kǎo</td>
+		<td>A Comprehensive Investigation Of Documents And Traditions, 1307</td>
+		<td>文献通考</td>
+		<td>文獻通考</td></tr>
+		<tr class="item">
+		<td>Wenyi Jiemu</td>
+		<td>wényì jiémù</td>
+		<td>Art Program, A Special Score Collection Compiled During The Cultural Revolution</td>
+		<td>文艺节目</td>
+		<td>文藝節目</td></tr>
+		<tr class="item">
+		<td>Wu</td>
+		<td>wú</td>
+		<td>One Of The Kingdoms During The Three Kingdoms Period</td>
+		<td>吴</td>
+		<td>吳</td></tr>
+		<tr class="item">
+		<td>Wu Fei</td>
+		<td>wú fēi</td>
+		<td>Zheng Performer</td>
+		<td>吴非</td>
+		<td>吳非</td></tr>
+		<tr class="item">
+		<td>Wu Xi</td>
+		<td>wúxī</td>
+		<td>City In Jiangsu Province</td>
+		<td>无锡</td>
+		<td>無錫</td></tr>
+		<tr class="item">
+		<td>Wu Yingju</td>
+		<td>wúyīngjù</td>
+		<td>Composer</td>
+		<td>吴应炬</td>
+		<td>吴應炬</td></tr>
+		<tr class="item">
+		<td>Wu Zuqiang</td>
+		<td>wúzǔqiáng</td>
+		<td>Composer</td>
+		<td>吴祖强</td>
+		<td>吴祖强</td></tr>
+		<tr class="item">
+		<td>Wubeizhi</td>
+		<td>wǔbèi zhì</td>
+		<td>Ancient Chinese Text</td>
+		<td>武备志</td>
+		<td>武備志</td></tr>
+		<tr class="item">
+		<td>Wudai</td>
+		<td>wǔdài</td>
+		<td>Five Dynasties</td>
+		<td>五代</td>
+		<td>五代</td></tr>
+		<tr class="item">
+		<td>Wulin</td>
+		<td>wǔlín</td>
+		<td>Another Term For Zhejiang</td>
+		<td>武林</td>
+		<td>武林</td></tr>
+		<tr class="item">
+		<td>wuqu</td>
+		<td>wǔ qū</td>
+		<td>Martial Section Of Traditional Pipa Repertoire</td>
+		<td>武曲</td>
+		<td>武曲</td></tr>
+		<tr class="item">
+		<td>wuqu</td>
+		<td>wǔqǔ</td>
+		<td>Dance Music</td>
+		<td>舞曲</td>
+		<td>舞曲</td></tr>
+		<tr class="item">
+		<td>Wushant\'ou Shuik\'u</td>
+		<td>wū shāntóu shuǐkù</td>
+		<td>A Place In Taiwan</td>
+		<td>乌山头水库</td>
+		<td>烏山頭水庫</td></tr>
+		<tr class="item">
+		<td>Wusuli Chuange</td>
+		<td>wū sū lǐ chuán gē</td>
+		<td>Chinese Folk Song - The Boat Song At The River Of Ussuril</td>
+		<td>乌苏里船歌</td>
+		<td>烏蘇里船歌</td></tr>
+		<tr class="item">
+		<td>wutong</td>
+		<td>wútóng</td>
+		<td>General Type Of Wood For Making Instruments; Often Translated As Paulownia</td>
+		<td>梧桐</td>
+		<td>梧桐</td></tr>
+		<tr class="item">
+		<td>Wuxia</td>
+		<td>wū xiá</td>
+		<td>One Of The Three Gorges — See Sanxia</td>
+		<td>巫峡</td>
+		<td>巫峽</td></tr>
+		<tr class="item">
+		<td>Wuyi Pinglan</td>
+		<td>wúyì pínglán</td>
+		<td>Fujian Traditional Zheng Composition</td>
+		<td>无意凭栏</td>
+		<td>無意憑欄</td></tr>
+		<tr class="item">
+		<td>Wuying</td>
+		<td>wú yǐng</td>
+		<td>Archaeological Excavation Site On The Mainland</td>
+		<td>无影</td>
+		<td>無影</td></tr>
+		<tr class="item">
+		<td>xi</td>
+		<td>xī</td>
+		<td>Brook</td>
+		<td>溪</td>
+		<td>溪</td></tr>
+		<tr class="item">
+		<td>Xi Yun</td>
+		<td>xì yùn</td>
+		<td>Twentieth-Century Zheng Composition</td>
+		<td>戏韵</td>
+		<td>戏韵</td></tr>
+		<tr class="item">
+		<td>Xi\'an</td>
+		<td>xī\'ān</td>
+		<td>Capital Of Shaanxi Province</td>
+		<td>西安</td>
+		<td>西安</td></tr>
+		<tr class="item">
+		<td>Xi\'an guyue</td>
+		<td>xī\'ān gǔyuè</td>
+		<td>Xi\'An Drum Music</td>
+		<td>西安鼓乐</td>
+		<td>西安鼓樂</td></tr>
+		<tr class="item">
+		<td>Xi\'an Yinyue Xueyuan</td>
+		<td>xī\'ān yīnyuè xuéyuàn</td>
+		<td>Xi\'An Music Conservatory</td>
+		<td>西安音乐学院</td>
+		<td>西安音樂學院</td></tr>
+		<tr class="item">
+		<td>xia huayin</td>
+		<td>xiàhuá yīn</td>
+		<td>Zheng Technique</td>
+		<td>下滑音</td>
+		<td>下滑音</td></tr>
+		<tr class="item">
+		<td>xiandai</td>
+		<td>xiàndài</td>
+		<td>Contemporary</td>
+		<td>现代</td>
+		<td>現代</td></tr>
+		<tr class="item">
+		<td>Xiandai zhengyue</td>
+		<td>xiàndài zhēng yuè</td>
+		<td>Modem Zheng Music</td>
+		<td>现代筝乐</td>
+		<td>現代箏樂</td></tr>
+		<tr class="item">
+		<td>Xiang Sihua / Hon Seewah</td>
+		<td>xiàng sī huá</td>
+		<td>Zheng Performer</td>
+		<td>项斯华</td>
+		<td>項斯華</td></tr>
+		<tr class="item">
+		<td>Xiang Yu</td>
+		<td>xiàngyǔ</td>
+		<td>Famous General In Ancient China</td>
+		<td>项羽</td>
+		<td>項羽</td></tr>
+		<tr class="item">
+		<td>Xianggang Yanyi xueyuan</td>
+		<td>xiānggǎng yǎnyì xuéyuàn</td>
+		<td>Hong Kong Academy Of Performing Arts</td>
+		<td>香港演艺学院</td>
+		<td>香港演藝學院</td></tr>
+		<tr class="item">
+		<td>Xianghe Daqu</td>
+		<td>xiāng hé dàqū</td>
+		<td>Han Dynasty Song And Dance Genre</td>
+		<td>相和大曲</td>
+		<td>相和大曲</td></tr>
+		<tr class="item">
+		<td>xianghe ge</td>
+		<td>xiāng hégē</td>
+		<td>Han Dynasty Vocal Genre</td>
+		<td>相和歌</td>
+		<td>相和歌</td></tr>
+		<tr class="item">
+		<td>Xiangshan Shegu</td>
+		<td>xiāngshān shè gǔ</td>
+		<td>Twentieth-Century Zheng Composition</td>
+		<td>香山射鼓</td>
+		<td>香山射鼓</td></tr>
+		<tr class="item">
+		<td>Xiangyun Yinyue Wenjiaoshe</td>
+		<td>xiāng yùn yīnyuè wénjiào shè</td>
+		<td>Tainan Music Shop</td>
+		<td>乡韵音乐文教社</td>
+		<td>鄉韻音樂文教社</td></tr>
+		<tr class="item">
+		<td>xianshi yue</td>
+		<td>xián shī yuè</td>
+		<td>Chaozhou Ensemble Music Genre</td>
+		<td>弦诗乐</td>
+		<td>弦诗乐</td></tr>
+		<tr class="item">
+		<td>xiansuo</td>
+		<td>xián suǒ</td>
+		<td>String Ensemble</td>
+		<td>弦索</td>
+		<td>弦索</td></tr>
+		<tr class="item">
+		<td>Xiansuo Beikao</td>
+		<td>xián suǒ bèikǎo</td>
+		<td>Nineteenth-Century Score Book</td>
+		<td>弦索备考</td>
+		<td>弦索備考</td></tr>
+		<tr class="item">
+		<td>xiansuo diao</td>
+		<td>xián suǒ diào</td>
+		<td>Northern Nanative Singing Genre</td>
+		<td>弦索调</td>
+		<td>弦索調</td></tr>
+		<tr class="item">
+		<td>xiansuo qiang</td>
+		<td>xián suǒ qiāng</td>
+		<td>Northern Nanative Singing Genre</td>
+		<td>弦索腔</td>
+		<td>弦索腔</td></tr>
+		<tr class="item">
+		<td>Xiansuo Shisantao</td>
+		<td>xián suǒ shísān tào</td>
+		<td>Nineteenth-Century Score Book</td>
+		<td>弦索十三套</td>
+		<td>弦索十三套</td></tr>
+		<tr class="item">
+		<td>Xianyan</td>
+		<td>xiān yán</td>
+		<td>Archaeological Excavation Site On The Mainland</td>
+		<td>仙岩</td>
+		<td>仙岩</td></tr>
+		<tr class="item">
+		<td>Xiao</td>
+		<td>xiǎo</td>
+		<td>Small, Tiny</td>
+		<td>小</td>
+		<td>小</td></tr>
+		<tr class="item">
+		<td>Xiao</td>
+		<td>xiāo</td>
+		<td>End-Blown Bamboo Notch Flute</td>
+		<td>箫</td>
+		<td>簫</td></tr>
+		<tr class="item">
+		<td>xiao qu</td>
+		<td>xiǎoqǔ</td>
+		<td>Henan Folk Music</td>
+		<td>小曲</td>
+		<td>小曲</td></tr>
+		<tr class="item">
+		<td>Xiao Youmei</td>
+		<td>xiāo yǒu méi</td>
+		<td>Twentieth-Century Musicologist</td>
+		<td>箫友梅</td>
+		<td>簫友梅</td></tr>
+		<tr class="item">
+		<td>Xiao Youmei</td>
+		<td>xiāoyǒuméi</td>
+		<td>Mainland Musician</td>
+		<td>萧友梅</td>
+		<td>蕭友梅</td></tr>
+		<tr class="item">
+		<td>xiaolun</td>
+		<td>xiǎo lún</td>
+		<td>Pipa Fingering Technique Of A Roll That Excludes The Thumb</td>
+		<td>小轮</td>
+		<td>小輪</td></tr>
+		<tr class="item">
+		<td>Xiaotao Hong</td>
+		<td>xiǎo táohóng</td>
+		<td>Traditional Hakka Zheng Composition</td>
+		<td>小桃红</td>
+		<td>小桃紅</td></tr>
+		<tr class="item">
+		<td>Xiaozhao Yuetuan</td>
+		<td>xiāo tiǎo yuètuán</td>
+		<td>Twentieth-Century Music Society</td>
+		<td>霄窕乐团</td>
+		<td>霄窕樂團</td></tr>
+		<tr class="item">
+		<td>Xibu Suixiang</td>
+		<td>xībù suíxiǎng</td>
+		<td>Twentieth-Century Zheng Composition</td>
+		<td>西部随想</td>
+		<td>西部随想</td></tr>
+		<tr class="item">
+		<td>Xin Kaiban</td>
+		<td>xīn kāi bǎn</td>
+		<td>Zheng Piece</td>
+		<td>新开板</td>
+		<td>新開板</td></tr>
+		<tr class="item">
+		<td>Xin Tang Shu</td>
+		<td>xīn táng shū</td>
+		<td>The New Record Of The Tang Dynasty, 1060</td>
+		<td>新唐书</td>
+		<td>新唐書</td></tr>
+		<tr class="item">
+		<td>Xinchao Sizhu Hui</td>
+		<td>xīncháo sīzhú huì</td>
+		<td>Chaozhou Music Society In Shanghai</td>
+		<td>新潮丝竹会</td>
+		<td>新潮絲竹會</td></tr>
+		<tr class="item">
+		<td>Xing</td>
+		<td>xíng</td>
+		<td>Punishment</td>
+		<td>刑</td>
+		<td>刑</td></tr>
+		<tr class="item">
+		<td>Xingfu Qushui</td>
+		<td>xìngfú qú shuǐ</td>
+		<td>Zheng Piece - Water From The Drain Of Happiness</td>
+		<td>幸福渠水</td>
+		<td>幸福渠水</td></tr>
+		<tr class="item">
+		<td>Xinghai</td>
+		<td>xīnghǎi</td>
+		<td>Guangzhou Music Conservatory</td>
+		<td>星海</td>
+		<td>星海</td></tr>
+		<tr class="item">
+		<td>Xinjiang</td>
+		<td>xīnjiāng</td>
+		<td>Uygur Autonomous Region In Western China</td>
+		<td>新疆</td>
+		<td>新疆</td></tr>
+		<tr class="item">
+		<td>Xinxing Zhuandiaozheng</td>
+		<td>xīnxíng zhuǎndiào zhēng</td>
+		<td>The New Model Of Modulated Zheng</td>
+		<td>新型转调筝</td>
+		<td>新型轉調箏</td></tr>
+		<tr class="item">
+		<td>Xinye</td>
+		<td>xīn yè</td>
+		<td>County In Henan Province</td>
+		<td>新业</td>
+		<td>新業</td></tr>
+		<tr class="item">
+		<td>Xinyuan</td>
+		<td>xīnyuàn</td>
+		<td>Zheng Piece - A Wish</td>
+		<td>心愿</td>
+		<td>心願</td></tr>
+		<tr class="item">
+		<td>Xiong Yue</td>
+		<td>xióng yuè</td>
+		<td>Mainland Zheng Musician</td>
+		<td>熊岳</td>
+		<td>熊岳</td></tr>
+		<tr class="item">
+		<td>xiqin</td>
+		<td>xīqín</td>
+		<td>Shandong Two-String Stick Fiddle</td>
+		<td>奚琴</td>
+		<td>奚琴</td></tr>
+		<tr class="item">
+		<td>Xishan Qinkuang</td>
+		<td>xī shān qín kuàng</td>
+		<td>Aesthetics Of The Qin At Xishan Mountain, 1673</td>
+		<td>溪山琴况</td>
+		<td>溪山琴况</td></tr>
+		<tr class="item">
+		<td>xixue</td>
+		<td>xīxué</td>
+		<td>Western Knowledge</td>
+		<td>西学</td>
+		<td>西学</td></tr>
+		<tr class="item">
+		<td>Xiyang Xiaogu</td>
+		<td>xīyáng xiāo gǔ</td>
+		<td>Pipa Piece - Flute And Drums At Dusk</td>
+		<td>夕阳箫鼓</td>
+		<td>夕陽簫鼓</td></tr>
+		<tr class="item">
+		<td>xiyue</td>
+		<td>xì yuè</td>
+		<td>Chaozhou Ensemble Music Genre</td>
+		<td>细乐</td>
+		<td>细乐</td></tr>
+		<tr class="item">
+		<td>Xu Lingzi</td>
+		<td>xǔ líng zi</td>
+		<td>Mainland Zheng Muscian</td>
+		<td>许菱子</td>
+		<td>許菱子</td></tr>
+		<tr class="item">
+		<td>Xu Xiaolin</td>
+		<td>xúxiǎolín</td>
+		<td>Composer</td>
+		<td>徐晓林</td>
+		<td>徐曉林</td></tr>
+		<tr class="item">
+		<td>Xu Zhengao</td>
+		<td>xúzhèngāo</td>
+		<td>Zheng Maker</td>
+		<td>徐振高</td>
+		<td>徐振高</td></tr>
+		<tr class="item">
+		<td>Xuan Zong</td>
+		<td>xuánzōng</td>
+		<td>Emperor In The Tang Dynasty</td>
+		<td>玄宗</td>
+		<td>玄宗</td></tr>
+		<tr class="item">
+		<td>xuanji</td>
+		<td>xuàn jì</td>
+		<td>To Display Skill</td>
+		<td>炫技</td>
+		<td>炫技</td></tr>
+		<tr class="item">
+		<td>xuanwan yao</td>
+		<td>xuán wàn yáo</td>
+		<td>Zheng Technique</td>
+		<td>悬腕摇</td>
+		<td>懸腕搖</td></tr>
+		<tr class="item">
+		<td>Xue Qiongqiong</td>
+		<td>xuēqióngqióng</td>
+		<td>Tang Dynasty Zheng Performer</td>
+		<td>薛琼琼</td>
+		<td>薛瓊瓊</td></tr>
+		<tr class="item">
+		<td>Xueshan Chunxiao</td>
+		<td>xuěshān chūnxiǎo</td>
+		<td>Twentieth-Century Zheng Composition</td>
+		<td>雪山春晓</td>
+		<td>雪山春曉</td></tr>
+		<tr class="item">
+		<td>xuetang yuege</td>
+		<td>xuétáng yuègē</td>
+		<td>School Song</td>
+		<td>学堂乐歌</td>
+		<td>學堂樂歌</td></tr>
+		<tr class="item">
+		<td>Xueyi Chubanshe</td>
+		<td>xué yì chūbǎn shè</td>
+		<td>Publisher In Taiwan</td>
+		<td>学艺出版社</td>
+		<td>學藝出版社</td></tr>
+		<tr class="item">
+		<td>xun</td>
+		<td>xùn</td>
+		<td>One Of The Eight Trigrams Ofthe Yi Jing</td>
+		<td>巽</td>
+		<td>巽</td></tr>
+		<tr class="item">
+		<td>Xunfeng Qu</td>
+		<td>xūn fēng qū</td>
+		<td>Traditional Hakka Zheng Composition</td>
+		<td>薰风曲</td>
+		<td>薰風曲</td></tr>
+		<tr class="item">
+		<td>Xunyang Pipa</td>
+		<td>xún yáng pípá</td>
+		<td>Pipa Piece - Pipa Of Xunyang</td>
+		<td>浔阳琵琶</td>
+		<td>潯陽琵琶</td></tr>
+		<tr class="item">
+		<td>Xunyang Yeyue</td>
+		<td>xún yáng yè yuè</td>
+		<td>Pipa Piece - Moonlit Night In Xunyang</td>
+		<td>浔阳夜月</td>
+		<td>潯陽夜月</td></tr>
+		<tr class="item">
+		<td>ya</td>
+		<td>yǎ</td>
+		<td>Refined, Elegant</td>
+		<td>雅</td>
+		<td>雅</td></tr>
+		<tr class="item">
+		<td>yan</td>
+		<td>yǎn</td>
+		<td>Weak Beat</td>
+		<td>眼</td>
+		<td>眼</td></tr>
+		<tr class="item">
+		<td>Yan Fu</td>
+		<td>yánfù</td>
+		<td>Qing Dynasty Scientist</td>
+		<td>严复</td>
+		<td>嚴復</td></tr>
+		<tr class="item">
+		<td>Yan Hui</td>
+		<td>huí</td>
+		<td>A Student Of Confucius</td>
+		<td>回</td>
+		<td>回</td></tr>
+		<tr class="item">
+		<td>Yan Jidao</td>
+		<td>yànjǐdào</td>
+		<td>A Poet In Ancient China</td>
+		<td>晏几道</td>
+		<td>晏幾道</td></tr>
+		<tr class="item">
+		<td>Yan\'an</td>
+		<td>yán\'ān</td>
+		<td>The Base Camp Of The Communist Party Of China During The Anti-Japanese War</td>
+		<td>延安</td>
+		<td>延安</td></tr>
+		<tr class="item">
+		<td>yang</td>
+		<td>yáng</td>
+		<td>Masculine, Solid, Opposite Of Yin In The Duality Of Yin-Yang</td>
+		<td>阳</td>
+		<td>陽</td></tr>
+		<tr class="item">
+		<td>Yang Ch\'unk\'un</td>
+		<td>yáng chūn kūn</td>
+		<td>Yong Ronghui</td>
+		<td>扬春坤</td>
+		<td>揚春坤</td></tr>
+		<tr class="item">
+		<td>Yang Dajun</td>
+		<td>yáng dà jūn</td>
+		<td>Mainland Professor Of The China Music Conservatory</td>
+		<td>扬大钧</td>
+		<td>揚大鈞</td></tr>
+		<tr class="item">
+		<td>Yang Guangquan</td>
+		<td>yángguǎngquán</td>
+		<td>Traditional Chaozhou Musician</td>
+		<td>杨广泉</td>
+		<td>楊廣泉</td></tr>
+		<tr class="item">
+		<td>yang qin</td>
+		<td>yángqín</td>
+		<td>Hammered Dulcimer</td>
+		<td>扬琴</td>
+		<td>扬琴</td></tr>
+		<tr class="item">
+		<td>Yang Ronghui</td>
+		<td>yángrónghuì</td>
+		<td>Zheng Teacher In Taiwan</td>
+		<td>杨荣惠</td>
+		<td>楊榮惠</td></tr>
+		<tr class="item">
+		<td>Yang Ronghui Shisheng Zhengyue Yanzouhui</td>
+		<td>yángrónghuì shī shēng zhēng yuè yǎnzòu huì</td>
+		<td>Yang Ronghui Teacher And Students Zheng Concert</td>
+		<td>杨荣惠师生筝乐演奏会</td>
+		<td>楊榮惠師生箏樂演奏會</td></tr>
+		<tr class="item">
+		<td>Yang Xiuming</td>
+		<td>yáng xiùmíng</td>
+		<td>Traditional Chaozhou Zheng Performer</td>
+		<td>杨秀明</td>
+		<td>楊秀明</td></tr>
+		<tr class="item">
+		<td>Yang Yinliu</td>
+		<td>yáng yīn liú</td>
+		<td>Musicologist</td>
+		<td>杨荫浏</td>
+		<td>楊蔭瀏</td></tr>
+		<tr class="item">
+		<td>Yangbian Cuima Yunliang Mang</td>
+		<td>yáng biān cuī mǎ yun liáng máng</td>
+		<td>Twenty-Century Composition For Chinese Dizi</td>
+		<td>扬鞭催马送粮忙</td>
+		<td>揚鞭催馬送糧忙</td></tr>
+		<tr class="item">
+		<td>Yangguan Sandie</td>
+		<td>yáng guān sān dié</td>
+		<td>Qin / Zheng Piece - Song At Yangguan</td>
+		<td>阳关三叠</td>
+		<td>陽關三疊</td></tr>
+		<tr class="item">
+		<td>Yangzheng Xuanpu</td>
+		<td>yǎng zhèng xuān pǔ</td>
+		<td>Scores Of Yangzheng Xuan</td>
+		<td>养正轩谱</td>
+		<td>養正軒譜</td></tr>
+		<tr class="item">
+		<td>Yangzhou</td>
+		<td>yángzhōu</td>
+		<td>A City On The Mainland</td>
+		<td>扬州</td>
+		<td>揚州</td></tr>
+		<tr class="item">
+		<td>yanshi</td>
+		<td>yǎn shì</td>
+		<td>To Interpret</td>
+		<td>演释</td>
+		<td>演釋</td></tr>
+		<tr class="item">
+		<td>yanyue</td>
+		<td>yán yuè</td>
+		<td>Tang Imperial Court Banquet Music</td>
+		<td>筵乐</td>
+		<td>筵樂</td></tr>
+		<tr class="item">
+		<td>yanzou</td>
+		<td>yǎnzòu</td>
+		<td>To Perform</td>
+		<td>演奏</td>
+		<td>演奏</td></tr>
+		<tr class="item">
+		<td>yao</td>
+		<td>yáo</td>
+		<td>Zheng Fingering Technique For Tremolo</td>
+		<td>摇</td>
+		<td>摇</td></tr>
+		<tr class="item">
+		<td>yaosheng</td>
+		<td>yáo shēng</td>
+		<td>Moving Tone</td>
+		<td>摇声</td>
+		<td>摇聲</td></tr>
+		<tr class="item">
+		<td>yaoyou</td>
+		<td>yáo yóu</td>
+		<td>Zheng Fingering Technique For Tremolo That Moves Along The String</td>
+		<td>摇游</td>
+		<td>摇游</td></tr>
+		<tr class="item">
+		<td>Yaozhi</td>
+		<td>yáo zhǐ</td>
+		<td>Zheng Technique</td>
+		<td>摇指</td>
+		<td>搖指</td></tr>
+		<tr class="item">
+		<td>Yaozu Wuqu</td>
+		<td>yáozú wǔqǔ</td>
+		<td>Zheng Piece - Dancing Song Of The Yao People</td>
+		<td>瑶族舞曲</td>
+		<td>瑤族舞曲</td></tr>
+		<tr class="item">
+		<td>Yashan Ai</td>
+		<td>yá shān āi</td>
+		<td>Traditional Hakka Zheng Composition</td>
+		<td>涯山哀</td>
+		<td>涯山哀</td></tr>
+		<tr class="item">
+		<td>yayue</td>
+		<td>yǎ yuè</td>
+		<td>Refined Music</td>
+		<td>雅乐</td>
+		<td>雅樂</td></tr>
+		<tr class="item">
+		<td>yayun</td>
+		<td>yāyùn</td>
+		<td>To Rhyme</td>
+		<td>押韵</td>
+		<td>押韻</td></tr>
+		<tr class="item">
+		<td>Ye Xiaogang</td>
+		<td>yèxiǎogāng</td>
+		<td>Composer</td>
+		<td>叶小刚</td>
+		<td>葉小剛</td></tr>
+		<tr class="item">
+		<td>Yejing Luanling</td>
+		<td>yè jìng luán líng</td>
+		<td>Traditional Shandong Zheng Composition</td>
+		<td>夜静銮铃</td>
+		<td>夜静鑾鈴</td></tr>
+		<tr class="item">
+		<td>Yeo Siew Wee</td>
+		<td>yángxiùwěi</td>
+		<td>The Owner Of Karl Heng Enterprise In Singapore</td>
+		<td>杨秀伟</td>
+		<td>楊秀偉</td></tr>
+		<tr class="item">
+		<td>yi</td>
+		<td>yì</td>
+		<td>Intention, Feeling</td>
+		<td>意</td>
+		<td>意</td></tr>
+		<tr class="item">
+		<td>Yi Dian Jin</td>
+		<td>yīdiǎn jīn</td>
+		<td>Traditional Hakka Zheng Composition</td>
+		<td>一点金</td>
+		<td>一點金</td></tr>
+		<tr class="item">
+		<td>Yi Guren</td>
+		<td>yì gùrén</td>
+		<td>Zheng Piece - Remembering An Old Friend</td>
+		<td>亿故人</td>
+		<td>億故人</td></tr>
+		<tr class="item">
+		<td>Yi Jing</td>
+		<td>yì jīng</td>
+		<td>Chinese Book Of Changes, Classical Chinese Text</td>
+		<td>易经</td>
+		<td>易經</td></tr>
+		<tr class="item">
+		<td>Yi Suzi</td>
+		<td>yī sùzi</td>
+		<td>Eighteenth-Century Writer</td>
+		<td>一素子</td>
+		<td>一素子</td></tr>
+		<tr class="item">
+		<td>yiban sanyan</td>
+		<td>yī bǎn sān yǎn</td>
+		<td>One Strong Beat, Three Weak Beats</td>
+		<td>一板三眼</td>
+		<td>一板三眼</td></tr>
+		<tr class="item">
+		<td>yiban yiyan</td>
+		<td>yībǎnyīyǎn</td>
+		<td>One Strong Beat, One Weak Beat</td>
+		<td>一板一眼</td>
+		<td>一板一眼</td></tr>
+		<tr class="item">
+		<td>Yili Hepan</td>
+		<td>yīlí hépàn</td>
+		<td>Twentieth-Century Zheng Composition</td>
+		<td>伊犁河畔</td>
+		<td>伊犁河畔</td></tr>
+		<tr class="item">
+		<td>yin</td>
+		<td>yín</td>
+		<td>Zheng Fingering Technique Of Light Vibrato</td>
+		<td>吟</td>
+		<td>吟</td></tr>
+		<tr class="item">
+		<td>yin</td>
+		<td>yīn</td>
+		<td>Music</td>
+		<td>音</td>
+		<td>音</td></tr>
+		<tr class="item">
+		<td>yin</td>
+		<td>yīn</td>
+		<td>Feminine, Fluid, Opposite Ofyang In The Duality Of Yin-Yang</td>
+		<td>阴</td>
+		<td>陰</td></tr>
+		<tr class="item">
+		<td>Yin Qun</td>
+		<td>yǐn qún</td>
+		<td>Mainland Zheng Musician</td>
+		<td>尹群</td>
+		<td>尹群</td></tr>
+		<tr class="item">
+		<td>Yingkou</td>
+		<td>yíngkǒu</td>
+		<td>City In Liaoning Province</td>
+		<td>营口</td>
+		<td>營口</td></tr>
+		<tr class="item">
+		<td>Yingkou Manzhou yueqichang</td>
+		<td>yíngkǒu mǎnzhōu yuèqì chǎng</td>
+		<td>Ying Kou Manchuria Musical Instrument Factory</td>
+		<td>营口满洲乐器厂</td>
+		<td>營口滿洲樂器廠</td></tr>
+		<tr class="item">
+		<td>yingxian</td>
+		<td>yìng xiàn</td>
+		<td>Traditional Hakka Scale</td>
+		<td>硬线</td>
+		<td>硬线</td></tr>
+		<tr class="item">
+		<td>Yingxiongmen Zhansheng Dadu He</td>
+		<td>yīngxióngmen zhànshèng dà dù hé</td>
+		<td>Victory Of The Heroes At River Dadu</td>
+		<td>英雄们战胜大度河</td>
+		<td>英雄們戰勝大度河</td></tr>
+		<tr class="item">
+		<td>Yinhe Bipo</td>
+		<td>yínhé bìbō</td>
+		<td>Zheng Piece - Blue Waves Of The Milky Way</td>
+		<td>银河碧波</td>
+		<td>銀河碧波</td></tr>
+		<tr class="item">
+		<td>yinyin</td>
+		<td>yín yīn</td>
+		<td>Zheng Technique</td>
+		<td>吟音</td>
+		<td>吟音</td></tr>
+		<tr class="item">
+		<td>Yinyueying</td>
+		<td>yīnyuè yíng</td>
+		<td>Music Camp</td>
+		<td>音乐营</td>
+		<td>音樂營</td></tr>
+		<tr class="item">
+		<td>Yiwen Leiju</td>
+		<td>yì wén lèijù</td>
+		<td>Collection Of Literature Arranged By Categories, 624</td>
+		<td>艺文类聚</td>
+		<td>藝文類聚</td></tr>
+		<tr class="item">
+		<td>Yixiang She</td>
+		<td>yì xiǎng shè</td>
+		<td>Hakka Music Society In Shanghai</td>
+		<td>逸响社</td>
+		<td>逸響社</td></tr>
+		<tr class="item">
+		<td>yiyun busheng</td>
+		<td>yǐ yùn bǔ shēng</td>
+		<td>Zheng Aesthetic Of Using Yun To Enrich Sound</td>
+		<td>以韵补声</td>
+		<td>以韻補聲</td></tr>
+		<tr class="item">
+		<td>yizhaoxian</td>
+		<td>yī zhāo xiān</td>
+		<td>Shandong Technical Commentary Of "One Smart Move"</td>
+		<td>一招鲜</td>
+		<td>一招鮮</td></tr>
+		<tr class="item">
+		<td>Yizhu Zhuandiaozheng</td>
+		<td>yí zhù zhuǎndiào zhēng</td>
+		<td>The Movable Bridge Modulated Zheng</td>
+		<td>移柱转调筝</td>
+		<td>移柱轉調箏</td></tr>
+		<tr class="item">
+		<td>Yizu Wuqu</td>
+		<td>yízú wǔqǔ</td>
+		<td>Zheng Piece - Dancing Song Of The Yi Nationality</td>
+		<td>彝族舞曲</td>
+		<td>彝族舞曲</td></tr>
+		<tr class="item">
+		<td>Yljing</td>
+		<td>yìjìng</td>
+		<td>An Idealized Place Or Philosophical State Suggested By A Poetic Title And The Programmatic Contents Of A Piece</td>
+		<td>意境</td>
+		<td>意境</td></tr>
+		<tr class="item">
+		<td>Youlan</td>
+		<td>yōu lán</td>
+		<td>Ancient Qin Piece</td>
+		<td>幽兰</td>
+		<td>幽蘭</td></tr>
+		<tr class="item">
+		<td>youyao</td>
+		<td>yóu yáo</td>
+		<td>Zheng Technique</td>
+		<td>游摇</td>
+		<td>遊搖</td></tr>
+		<tr class="item">
+		<td>Youyi Shangdian</td>
+		<td>yǒuyì shāngdiàn</td>
+		<td>Friendship Store</td>
+		<td>友谊商店</td>
+		<td>友誼商店</td></tr>
+		<tr class="item">
+		<td>youyun</td>
+		<td>yōu yùn</td>
+		<td>The Delight Of Elegant Reclusion</td>
+		<td>幽韵</td>
+		<td>幽韻</td></tr>
+		<tr class="item">
+		<td>yu</td>
+		<td>yú</td>
+		<td>An Ancient Bamboo Mouth Organ</td>
+		<td>竽</td>
+		<td>竽</td></tr>
+		<tr class="item">
+		<td>Yu</td>
+		<td>yù</td>
+		<td>Ancient Sheng</td>
+		<td>芋</td>
+		<td>芋</td></tr>
+		<tr class="item">
+		<td>yu</td>
+		<td>yǔ</td>
+		<td>The Pitch La In The Common Chinese Pentatonic Scale</td>
+		<td>羽</td>
+		<td>羽</td></tr>
+		<tr class="item">
+		<td>Yu Huiyong</td>
+		<td>yú huì yǒng</td>
+		<td>Composer, Former Minister Of Culture</td>
+		<td>于会泳</td>
+		<td>于會泳</td></tr>
+		<tr class="item">
+		<td>Yu Meiren</td>
+		<td>yú měirén</td>
+		<td>Wife Of Xiang Y U</td>
+		<td>虞美人</td>
+		<td>虞美人</td></tr>
+		<tr class="item">
+		<td>yuan</td>
+		<td>yuán</td>
+		<td>Qin Aesthetic Of Smoothness</td>
+		<td>圆</td>
+		<td>圆</td></tr>
+		<tr class="item">
+		<td>Yuan</td>
+		<td>yuán</td>
+		<td>Chinese Dynasty From 1271-1368</td>
+		<td>元</td>
+		<td>元</td></tr>
+		<tr class="item">
+		<td>Yuan Haowen</td>
+		<td>yuán hào wèn</td>
+		<td>A Scholar In Ancient China</td>
+		<td>元好问</td>
+		<td>元好問</td></tr>
+		<tr class="item">
+		<td>yuanban jiahua</td>
+		<td>yuánbǎn jiā huā</td>
+		<td>Compositional Method Of Adding Flowers To The Original Beats</td>
+		<td>原板加花</td>
+		<td>原板加花</td></tr>
+		<tr class="item">
+		<td>yue</td>
+		<td>yuè</td>
+		<td>Music</td>
+		<td>乐</td>
+		<td>樂</td></tr>
+		<tr class="item">
+		<td>Yue \'er Gao</td>
+		<td>yuè er gāo</td>
+		<td>Traditional Composition - The Moon Is High</td>
+		<td>月儿高</td>
+		<td>月兒高</td></tr>
+		<tr class="item">
+		<td>Yue Ji</td>
+		<td>Yuè jì</td>
+		<td>Record Of Music</td>
+		<td>乐记</td>
+		<td>樂記</td></tr>
+		<tr class="item">
+		<td>Yuefu Shiji</td>
+		<td>yuèfǔ shījí</td>
+		<td>Collection Of Lyrics From The Music Bureau, C. 1254</td>
+		<td>乐府诗集</td>
+		<td>樂府詩集</td></tr>
+		<tr class="item">
+		<td>Yuehe minsheng</td>
+		<td>yuè hé mínshēng</td>
+		<td>Confucian Saying Of "If Music Is Harmonious, People Are Harmonious"</td>
+		<td>乐合民生</td>
+		<td>樂合民生</td></tr>
+		<tr class="item">
+		<td>Yueju Yuekan</td>
+		<td>yuè jù yuè kān</td>
+		<td>Journal Of Musical Theater And Music</td>
+		<td>乐剧乐刊</td>
+		<td>樂劇樂刊</td></tr>
+		<tr class="item">
+		<td>yueqin</td>
+		<td>yuèqín</td>
+		<td>Small Round-Bodied Lute</td>
+		<td>月琴</td>
+		<td>月琴</td></tr>
+		<tr class="item">
+		<td>yueshan</td>
+		<td>yuèshān</td>
+		<td>Fixed Bridge On The Right Side Of The Zheng</td>
+		<td>岳山</td>
+		<td>岳山</td></tr>
+		<tr class="item">
+		<td>Yueshu</td>
+		<td>Yuè shū</td>
+		<td>Treatise On Music, C. 1100</td>
+		<td>乐书</td>
+		<td>樂書</td></tr>
+		<tr class="item">
+		<td>Yuetao Xiang Man Yuetaoshan</td>
+		<td>yuè tiāo xiāng mǎnyuè tiāo shān</td>
+		<td>Zheng Piece-The Fragrance Of The Moon Plum Filling The Yuetao Mountain</td>
+		<td>月挑香满月挑山</td>
+		<td>月挑香滿月挑山</td></tr>
+		<tr class="item">
+		<td>yuetong</td>
+		<td>Yuè tóng</td>
+		<td>Confucian Saying Of "Music Unites"</td>
+		<td>乐同</td>
+		<td>樂同</td></tr>
+		<tr class="item">
+		<td>yuetuan</td>
+		<td>yuè tuán</td>
+		<td>Music Group, Or Chinese Orchestra</td>
+		<td>乐团</td>
+		<td>樂團</td></tr>
+		<tr class="item">
+		<td>yuji</td>
+		<td>yú jǐ</td>
+		<td>Self-Entertainment</td>
+		<td>娱己</td>
+		<td>娱己</td></tr>
+		<tr class="item">
+		<td>Yule Tang</td>
+		<td>yù lè táng</td>
+		<td>An Auditorium In Taiwan</td>
+		<td>育乐堂</td>
+		<td>育樂堂</td></tr>
+		<tr class="item">
+		<td>yun</td>
+		<td>yùn</td>
+		<td>Zheng Aesthetic Of Sophistication, Refinement, And Beauty Expressed By The Anyin Technique</td>
+		<td>韵</td>
+		<td>韻</td></tr>
+		<tr class="item">
+		<td>Yun Qing</td>
+		<td>yúnqìng</td>
+		<td>Traditional Composition</td>
+		<td>云庆</td>
+		<td>雲慶</td></tr>
+		<tr class="item">
+		<td>yunduo shengshao</td>
+		<td>yùn duō shēng shǎo</td>
+		<td>Zheng Aesthetic Of More Yun, Less Sound</td>
+		<td>韵多声少</td>
+		<td>韻多聲少</td></tr>
+		<tr class="item">
+		<td>yunwei</td>
+		<td>yùnwèi</td>
+		<td>Feeling</td>
+		<td>韵味</td>
+		<td>韻味</td></tr>
+		<tr class="item">
+		<td>Yunxiao</td>
+		<td>yúnxiāo</td>
+		<td>Region In Fujian Province</td>
+		<td>云霄</td>
+		<td>雲霄</td></tr>
+		<tr class="item">
+		<td>Yuqiao Wenda</td>
+		<td>yú qiáo wèndá</td>
+		<td>Zheng Piece - A Dialogue Between A Fisherman And A Wood Cutter</td>
+		<td>渔樵问答</td>
+		<td>漁樵問答</td></tr>
+		<tr class="item">
+		<td>yuren</td>
+		<td>yú rén</td>
+		<td>Entertaining Others</td>
+		<td>娱人</td>
+		<td>娱人</td></tr>
+		<tr class="item">
+		<td>Yuzhou Changwan</td>
+		<td>yúzhōu chàng wǎn</td>
+		<td>Twentieth-Century Zheng Composition - Fishermen\'S Song At Night</td>
+		<td>渔舟唱晚</td>
+		<td>漁舟唱晚</td></tr>
+		<tr class="item">
+		<td>zaju</td>
+		<td>zájù</td>
+		<td>Yuan Dynasty Operatic Genre</td>
+		<td>杂剧</td>
+		<td>雜劇</td></tr>
+		<tr class="item">
+		<td>zaoju </td>
+		<td>zàojù</td>
+		<td>Chaozhou Term For Variation</td>
+		<td>造句</td>
+		<td>造句</td></tr>
+		<tr class="item">
+		<td>Zeng Houyi</td>
+		<td>céng hóu yǐ</td>
+		<td>Marquis From Fifth Century Bce</td>
+		<td>曾侯乙</td>
+		<td>曾侯乙</td></tr>
+		<tr class="item">
+		<td>Zeng Zhimin</td>
+		<td>céng zhì mín</td>
+		<td>Twentieth-Century Scholar</td>
+		<td>曾志忞</td>
+		<td>曾志忞</td></tr>
+		<tr class="item">
+		<td>Zhan Taifeng</td>
+		<td>zhàn táifēng</td>
+		<td>Twentieth-Century Zheng Composition - Battling Against The Typhoon</td>
+		<td>战台风</td>
+		<td>戰台風</td></tr>
+		<tr class="item">
+		<td>Zhang Guisheng</td>
+		<td>zhāng guì shēng</td>
+		<td>Composer</td>
+		<td>张贵声</td>
+		<td>张贵声</td></tr>
+		<tr class="item">
+		<td>Zhang Kun</td>
+		<td>zhāng kūn</td>
+		<td>Zheng Maker</td>
+		<td>张昆</td>
+		<td>张昆</td></tr>
+		<tr class="item">
+		<td>Zhang Lufen</td>
+		<td>zhānglùfēn</td>
+		<td>Mainland Zheng Musician</td>
+		<td>张路芬</td>
+		<td>張路芬</td></tr>
+		<tr class="item">
+		<td>Zhang Xiaofeng</td>
+		<td>zhāngxiǎofēng</td>
+		<td>Composer</td>
+		<td>张晓峰</td>
+		<td>張晓峰</td></tr>
+		<tr class="item">
+		<td>Zhang Yan</td>
+		<td>zhāng yàn</td>
+		<td>Twentieth-Century Zheng Performer</td>
+		<td>张燕</td>
+		<td>张燕</td></tr>
+		<tr class="item">
+		<td>Zhang Zelun</td>
+		<td>zhāngzélún</td>
+		<td>Scholar</td>
+		<td>张泽伦</td>
+		<td>張澤倫</td></tr>
+		<tr class="item">
+		<td>Zhang Zhitong</td>
+		<td>zhāng zhī tong</td>
+		<td>Qing Dynasty Scholar</td>
+		<td>张之恫</td>
+		<td>张之恫</td></tr>
+		<tr class="item">
+		<td>Zhang Zirui</td>
+		<td>zhāngziruì</td>
+		<td>Zheng Maker</td>
+		<td>张子锐</td>
+		<td>张子锐</td></tr>
+		<tr class="item">
+		<td>Zhanguo Ce</td>
+		<td>zhànguó cè</td>
+		<td>Records Of The Warring States</td>
+		<td>战国策</td>
+		<td>戰國策</td></tr>
+		<tr class="item">
+		<td>Zhanguo Shidai</td>
+		<td>zhànguó shídài</td>
+		<td>The Warring States Period</td>
+		<td>战国时代</td>
+		<td>戰國時代</td></tr>
+		<tr class="item">
+		<td>zhantou quwei</td>
+		<td>zhǎn tóu qù wěi</td>
+		<td>Compositional Method For Variation</td>
+		<td>斩头去尾</td>
+		<td>斬頭去尾</td></tr>
+		<tr class="item">
+		<td>Zhanyou</td>
+		<td>zhànyǒu</td>
+		<td>Comrade, Name For A Chinese Art Troupe</td>
+		<td>战友</td>
+		<td>戰友</td></tr>
+		<tr class="item">
+		<td>Zhao Chun</td>
+		<td>zhào chún</td>
+		<td>Zheng Student</td>
+		<td>赵纯</td>
+		<td>趙純</td></tr>
+		<tr class="item">
+		<td>Zhao Manqin</td>
+		<td>zhàomànqín</td>
+		<td>Zheng Educator</td>
+		<td>赵曼琴</td>
+		<td>趙曼琴</td></tr>
+		<tr class="item">
+		<td>Zhao Yuzhai</td>
+		<td>zhàoyùzhāi</td>
+		<td>Traditional Shandong Zheng Performer</td>
+		<td>赵玉斋</td>
+		<td>赵玉斋</td></tr>
+		<tr class="item">
+		<td>Zhao\'an</td>
+		<td>zhào ān</td>
+		<td>Region In Fujian Province</td>
+		<td>诏安</td>
+		<td>詔安</td></tr>
+		<tr class="item">
+		<td>Zhaojun Yuan</td>
+		<td>zhāojūn yuàn</td>
+		<td>Traditional Hakka Zheng Composition</td>
+		<td>昭君怨</td>
+		<td>昭君怨</td></tr>
+		<tr class="item">
+		<td>Zhejiang</td>
+		<td>zhèjiāng</td>
+		<td>Province In Eastern China</td>
+		<td>浙江</td>
+		<td>浙江</td></tr>
+		<tr class="item">
+		<td>Zhejiang Chao</td>
+		<td>zhèjiāng cháo</td>
+		<td>Mainland Music Group</td>
+		<td>浙江潮</td>
+		<td>浙江潮</td></tr>
+		<tr class="item">
+		<td>Zhejiangpai</td>
+		<td>zhèjiāng pài</td>
+		<td>Zhejiang Zheng School</td>
+		<td>浙江派</td>
+		<td>浙江派</td></tr>
+		<tr class="item">
+		<td>Zhen</td>
+		<td>zhèn</td>
+		<td>One Ofthe Eight Trigrams Of The Yi Jing</td>
+		<td>震</td>
+		<td>震</td></tr>
+		<tr class="item">
+		<td>Zheng</td>
+		<td>zhèng</td>
+		<td>Governance, Administration</td>
+		<td>政</td>
+		<td>政</td></tr>
+		<tr class="item">
+		<td>Zheng</td>
+		<td>zhēng</td>
+		<td>Overarching Term For Chinese Long Zither</td>
+		<td>筝</td>
+		<td>箏</td></tr>
+		<tr class="item">
+		<td>Zheng</td>
+		<td>zhēng</td>
+		<td>To Fight Over Something</td>
+		<td>争</td>
+		<td>爭</td></tr>
+		<tr class="item">
+		<td>Zheng He</td>
+		<td>zhèng hé</td>
+		<td>Ming Dynasty Official</td>
+		<td>郑和</td>
+		<td>鄭和</td></tr>
+		<tr class="item">
+		<td>Zheng payin</td>
+		<td>zhèng pá yīn</td>
+		<td>Zheng Technique</td>
+		<td>正琶音</td>
+		<td>正琶音</td></tr>
+		<tr class="item">
+		<td>Zheng Yingsun</td>
+		<td>zhèngyǐngsūn</td>
+		<td>Mainland Musician</td>
+		<td>郑颖孙</td>
+		<td>鄭穎孫</td></tr>
+		<tr class="item">
+		<td>Zhengfu</td>
+		<td>zhēng fù</td>
+		<td>Odes To The Zheng</td>
+		<td>筝赋</td>
+		<td>箏賦</td></tr>
+		<tr class="item">
+		<td>Zhengfu Xu</td>
+		<td>zhēng fù xù</td>
+		<td>Preface Of Odes To The Zheng</td>
+		<td>筝赋序</td>
+		<td>箏賦序</td></tr>
+		<tr class="item">
+		<td>Zhenggai Xiaozu</td>
+		<td>zhēng gǎi xiǎozǔ</td>
+		<td>Zheng Reform Unit</td>
+		<td>筝改小组</td>
+		<td>箏改小組</td></tr>
+		<tr class="item">
+		<td>Zhengqu Xuan</td>
+		<td>zhēngqū xuǎn</td>
+		<td>A Collection Of Zheng Notation</td>
+		<td>筝曲选</td>
+		<td>箏曲選</td></tr>
+		<tr class="item">
+		<td>Zhengshe Zhounianqing</td>
+		<td>zhēng shè zhōunián qìng</td>
+		<td>Annual Concert Of Yang\'S Zheng Class</td>
+		<td>筝社周年庆</td>
+		<td>箏社週年慶</td></tr>
+		<tr class="item">
+		<td>Zhi</td>
+		<td>zhǐ</td>
+		<td>A Pitch On The Common Chinese Pentatonic Scale</td>
+		<td>徵</td>
+		<td>徵</td></tr>
+		<tr class="item">
+		<td>Zhi</td>
+		<td>zhǐ</td>
+		<td>Finger</td>
+		<td>指</td>
+		<td>指</td></tr>
+		<tr class="item">
+		<td>Zhiqu Weihushan</td>
+		<td>zhì qǔ wēi hǔ shān</td>
+		<td>Taking The Tiger Mountain By Strategy, One Of The Eight Model Operas</td>
+		<td>智取威虎山</td>
+		<td>智取威虎山</td></tr>
+		<tr class="item">
+		<td>zhong</td>
+		<td>zhòng</td>
+		<td>A Qin Aesthetic Of Heaviness — A Zheng Sound Quality</td>
+		<td>重</td>
+		<td>重</td></tr>
+		<tr class="item">
+		<td>Zhong</td>
+		<td>zhōng</td>
+		<td>Confucian Aesthetic Of Equilibrium</td>
+		<td>中</td>
+		<td>中</td></tr>
+		<tr class="item">
+		<td>Zhongguo Changpian Gongsi</td>
+		<td>zhōngguó chàngpiàn gōngsī</td>
+		<td>China Record Company</td>
+		<td>中国唱片公司</td>
+		<td>中國唱片公司</td></tr>
+		<tr class="item">
+		<td>zhongguo dalu</td>
+		<td>zhōngguó dàlù</td>
+		<td>Mainland China</td>
+		<td>中国大陆</td>
+		<td>中國大陸</td></tr>
+		<tr class="item">
+		<td>Zhongguo Guzheng Yishu Xueshu Jiaoliu Hui</td>
+		<td>zhōngguó gǔzhēng yìshù xuéshù jiāoliú huì</td>
+		<td>Chinese Zheng Conference</td>
+		<td>中国古筝艺术学术交流会</td>
+		<td>中國古箏藝術學術交流會</td></tr>
+		<tr class="item">
+		<td>Zhongguo Wenlian Chuban She</td>
+		<td>zhōngguó wénlián chūbǎn shè</td>
+		<td>Chinese Literary Association Publishing House</td>
+		<td>中国文联出版社</td>
+		<td>中國文聯出版社</td></tr>
+		<tr class="item">
+		<td>Zhongguo Yangzhou Guzheng Xueshu Jiaoliu Hui</td>
+		<td>zhōngguó yángzhōu gǔzhēng xuéshù jiāoliú huì</td>
+		<td>1986 National Guzheng Conference</td>
+		<td>中国扬州古筝学术交流会</td>
+		<td>中國揚州古箏學術交流會</td></tr>
+		<tr class="item">
+		<td>Zhongguo Yingkou Dongbei yueqi gongsi</td>
+		<td>zhōngguó yíng běi yuèqì gōngsī</td>
+		<td>China Yingkou Dongbei Music Instrumental Company</td>
+		<td>中国营北乐器公司</td>
+		<td>中國營北樂器公司</td></tr>
+		<tr class="item">
+		<td>Zhongguo Yinyue Gailiang Shuo</td>
+		<td>zhōng guó yīnyuè gǎiliáng shuō</td>
+		<td>Discourse On Chinese Music Reform</td>
+		<td>中国音乐改良说</td>
+		<td>中國音樂改良说</td></tr>
+		<tr class="item">
+		<td>Zhongguo Yinyue Xueyuan</td>
+		<td>zhōngguó yīnyuè xuéyuàn</td>
+		<td>China Music Conservatory</td>
+		<td>中国音乐学院</td>
+		<td>中國音樂學院</td></tr>
+		<tr class="item">
+		<td>Zhongguo Yishu Tuan</td>
+		<td>zhōngguó yìshù tuán</td>
+		<td>Chinese National Art Troupe</td>
+		<td>中国艺术团</td>
+		<td>中國藝術團</td></tr>
+		<tr class="item">
+		<td>Zhonghua Yueqi</td>
+		<td>zhōnghuá yuèqì</td>
+		<td>Zhonghua Musical Instrument</td>
+		<td>中华乐器</td>
+		<td>中華樂器</td></tr>
+		<tr class="item">
+		<td>zhongliu</td>
+		<td>zhòng liù</td>
+		<td>Chaozhou Scale Of Heavy Six</td>
+		<td>重六</td>
+		<td>重六</td></tr>
+		<tr class="item">
+		<td>zhongxue weiti, xixue weiyong</td>
+		<td>zhōngxué wèi tǐ, xīxué wèi yòng</td>
+		<td>Qing Dynasty Initiative Of Chinese Learning As Substance, Western Learning For Application</td>
+		<td>中学为体，西学为用</td>
+		<td>中學為體，西學為用</td></tr>
+		<tr class="item">
+		<td>Zhongyang Gewu Tuan</td>
+		<td>zhōngyāng gēwǔ tuán</td>
+		<td>Central Song And Dance Troupe</td>
+		<td>中央歌舞团</td>
+		<td>中央歌舞團</td></tr>
+		<tr class="item">
+		<td>Zhongyang Yinyue Xueyuan</td>
+		<td>zhōngyāng yīnyuè xuéyuàn</td>
+		<td>Central Music Conservatory</td>
+		<td>中央音乐学院</td>
+		<td>中央音樂學院</td></tr>
+		<tr class="item">
+		<td>Zhongzhou Gudiao</td>
+		<td>zhōngzhōu gǔ diào</td>
+		<td>Hakka Score Book</td>
+		<td>中州古调</td>
+		<td>中州古調</td></tr>
+		<tr class="item">
+		<td>Zhongzhou Guqu</td>
+		<td>zhōngzhōu gǔ qū</td>
+		<td>A Form Of Chinese Music</td>
+		<td>中州古曲</td>
+		<td>中州古曲</td></tr>
+		<tr class="item">
+		<td>Zhou Enlai</td>
+		<td>zhōu\'ēnlái</td>
+		<td>Chinese Prime Minister</td>
+		<td>周恩来</td>
+		<td>周恩來</td></tr>
+		<tr class="item">
+		<td>Zhou Ji</td>
+		<td>zhōu jí</td>
+		<td>Twentieth-Century Ethnomusicologist, Composer</td>
+		<td>周吉</td>
+		<td>周吉</td></tr>
+		<tr class="item">
+		<td>Zhou Jiu</td>
+		<td>zhōu jiū</td>
+		<td>Ancient Chinese Music Official</td>
+		<td>州鸠</td>
+		<td>州鳩</td></tr>
+		<tr class="item">
+		<td>Zhou Long</td>
+		<td>zhōu lóng</td>
+		<td>Composer</td>
+		<td>周龙</td>
+		<td>周龍</td></tr>
+		<tr class="item">
+		<td>Zhou Wang</td>
+		<td>zhōu wàng</td>
+		<td>Zheng Performer And Educator</td>
+		<td>周望</td>
+		<td>周望</td></tr>
+		<tr class="item">
+		<td>Zhou Yanjia</td>
+		<td>zhōuyán jiǎ</td>
+		<td>Zheng Composer And Educator</td>
+		<td>周延甲</td>
+		<td>周延甲</td></tr>
+		<tr class="item">
+		<td>Zhou Yu</td>
+		<td>zhōu yú</td>
+		<td>A General In Ancient China</td>
+		<td>周俞</td>
+		<td>週俞</td></tr>
+		<tr class="item">
+		<td>Zhu</td>
+		<td>zhù</td>
+		<td>Ancient Five-String Bamboo Zither</td>
+		<td>筑</td>
+		<td>筑</td></tr>
+		<tr class="item">
+		<td>Zhu Lei</td>
+		<td>zhū lěi</td>
+		<td>Zheng Performer</td>
+		<td>朱蕾</td>
+		<td>朱蕾</td></tr>
+		<tr class="item">
+		<td>Zhu Ripan</td>
+		<td>zhū rì pān</td>
+		<td>Ming Dynasty Poet</td>
+		<td>朱日潘</td>
+		<td>朱日潘</td></tr>
+		<tr class="item">
+		<td>zhuan</td>
+		<td>zhuǎn</td>
+		<td>Deviation</td>
+		<td>转</td>
+		<td>轉</td></tr>
+		<tr class="item">
+		<td>zhuche</td>
+		<td>zhù chǐ</td>
+		<td>Hakka And Chaozhou Compositional Method To Insert Re In Between Two Melodic Notes</td>
+		<td>伫尺</td>
+		<td>佇尺</td></tr>
+		<tr class="item">
+		<td>Zhufanzhi</td>
+		<td>zhū fān zhì</td>
+		<td>Ancient Chinese Text</td>
+		<td>诸蕃志</td>
+		<td>諸蕃志</td></tr>
+		<tr class="item">
+		<td>zhufuo</td>
+		<td>zhù fú</td>
+		<td>Hakka And Chaozhou Compositional Method To Insert A Short Glissando Between Two Melodic Notes</td>
+		<td>伫拂</td>
+		<td>佇拂</td></tr>
+		<tr class="item">
+		<td>zhuliu</td>
+		<td>zhù liù</td>
+		<td>Hakka And Chaozhou Compositional Method To Insert Sol Between Two Melodic Notes</td>
+		<td>伫六</td>
+		<td>佇六</td></tr>
+		<tr class="item">
+		<td>Zhuo</td>
+		<td>zhuó</td>
+		<td>Murky — Zheng Sound Quality</td>
+		<td>浊</td>
+		<td>濁</td></tr>
+		<tr class="item">
+		<td>Zi Qi</td>
+		<td>zǐqī</td>
+		<td>A Character In A Famous Musical Story</td>
+		<td>了期</td>
+		<td>了期</td></tr>
+		<tr class="item">
+		<td>zitan</td>
+		<td>zǐtán</td>
+		<td>A Type Of Red Sandalwood Used For Making Instruments</td>
+		<td>紫檀</td>
+		<td>紫檀</td></tr>
+		<tr class="item">
+		<td>Zuo Zhuan</td>
+		<td>zuǒ chuán</td>
+		<td>Chronicles Of Zuo, A Confucian Classical Text</td>
+		<td>左传</td>
+		<td>左傳</td></tr>
+		  </tbody>
+		</table>
+</div>
+</div>
+{{ range $index, $element := .Params.sections2 }}
+{{ partial "basic-sections" $element }}
+{{end}}
+
+{{ end }}

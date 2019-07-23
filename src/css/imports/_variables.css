@@ -1,6 +1,6 @@
 :root {
 	/* Colors */
-	--primary: rgba(255, 68, 0, 1);
+	--primary: rgba(0, 0, 0, 1);
 	--highlight: rgba(254, 213, 198, 1);
 	--white: rgba(255, 255, 255, 1);
 	--off-white: rgba(255, 253, 252, 1);
@@ -14,6 +14,8 @@
 	--font-family: Nunito Sans, -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
 	--line-height: 1.5;
 
+  --font-size-sx: 12px; /*Added for image captions*/
+	/*--font-size-s: 14px; /*Added for nav section links on home page*/
 	--font-size: 18px;
 	--font-size-m: 20px;
 	--font-size-l: 22px;

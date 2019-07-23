@@ -1,0 +1,13 @@
+<div class="flex-m mhn3-m mb4">
+<!-- the "with" Makes this media block flexible; can be used on pages where images are desired OR for normal sectional use. May be wise to use site-wide.-->
+  <div class="ph3-m w-25-m">
+    <img src="{{.imageUrl}}" alt="" class="db mb2">
+    <p class="f6">{{.caption}}</p>
+  </div>
+
+  <div class="ph3-m">
+    {{ $anchortarget := replaceRE " " "" .heading }}
+    <h3 class="f3 b lh-title mb1" id="{{$anchortarget}}">{{.heading}}</h3>
+    <p>{{.text | markdownify}}</p>
+  </div>
+</div>

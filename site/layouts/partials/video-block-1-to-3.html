@@ -1,0 +1,12 @@
+<div class="flex-m mhn3-m mb4">
+  <div class="ph3-m w-25-m">
+    	<div class="videocontainer">
+    <iframe src="//www.youtube.com/embed/{{ .youtubecode }}" frameborder="0" allowfullscreen class="videoobject"></iframe>
+    </div>
+  </div>
+  <div class="ph3-m w-75-m">
+    {{ $anchortarget := replaceRE " " "" .heading }}
+    <h3 class="f3 b lh-title mb1" id="{{$anchortarget}}">{{.heading}}</h3>
+    <p>{{.text | markdownify}}</p>
+  </div>
+</div>

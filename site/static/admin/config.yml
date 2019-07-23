@@ -1,8 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: GuzhengAlive/hugo-cms # Path to your GitHub repository
 
 media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
+enableRobotsTXT: true
 
 collections: # A list of collections the CMS should be able to edit
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
@@ -15,6 +17,48 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Intro Blurb", name: "description", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "artist" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Artist" # Used in the UI, ie.: "New Post"
+    folder: "site/content/artists" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Location Tease", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Videos", name: videos, widget: list, fields: [
+          {label: "Youtube Video Code", name: "youtubecode", widget: "string"}]}
+  - name: "expert" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Expert" # Used in the UI, ie.: "New Post"
+    folder: "site/content/guzheng-experts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Intro Blurb", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Videos", name: videos, widget: list, fields: [
+          {label: "Youtube Video Code", name: "youtubecode", widget: "string"}]}
+  - name: "guzhengs-style" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Guzheng Style" # Used in the UI, ie.: "New Post"
+    folder: "site/content/guzhengs-styles" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Section", name: "section", widget: "string"}
+      - {label: "Order", name: "order", widget: "string"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "new-album-releases" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Album Release" # Used in the UI, ie.: "New Post"
+    folder: "site/content/new-album-releases" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Release Date", name: "date", widget: "date"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "avarname", name: "avarname", widget: "string"}
+      - {label: "Text", name: "text", widget: "markdown"}
   - name: "pages"
     label: "Pages"
     files:
@@ -23,20 +67,19 @@ collections: # A list of collections the CMS should be able to edit
         name: "home"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Subtitle, name: subtitle, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
           - {label: Image, name: image, widget: image}
-          - {label: "Blurb", name: blurb, widget: object, fields: [
-              {label: "Heading", name: "heading", widget: string},
-              {label: "Text", name: "text", widget: "text"}]}
-          - {label: "Intro", name: intro, widget: object, fields: [
-              {label: "Heading", name: "heading", widget: string},
-              {label: "Text", name: "text", widget: "text"}]}
-          - {label: "Products", name: products, widget: list, fields: [
+          - {label: Image_Credit, name: image_credit, widget: markdown, required: false}
+          - {label: "Groups", name: groups, widget: list, fields: [
+              {label: "Title", name: "title", widget: "text"},
               {label: "Image", name: "image", widget: "image"},
-              {label: "Text", name: "text", widget: "text"}]}
-          - {label: "Values", name: "values", widget: "object", fields: [
-              {label: "Heading", name: "heading", widget: string},
-              {label: "Text", name: "text", widget: "text"}]}
+              {label: "Text", name: "text", widget: "markdown"}]}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+              - {label: Heading, name: heading, widget: string, required: false}
+              - {label: Text, name: text, widget: markdown, required: false}
       - file: "site/content/contact/_index.md"
         label: "Contact Page"
         name: "contact"
@@ -60,6 +103,7 @@ collections: # A list of collections the CMS should be able to edit
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
+          - {label: Image_Credit, name: image_credit, widget: markdown, required: false}
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
@@ -73,6 +117,7 @@ collections: # A list of collections the CMS should be able to edit
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
+          - {label: Image_Credit, name: image_credit, widget: markdown, required: false}
           - label: Values
             name: values
             widget: list
@@ -80,3 +125,752 @@ collections: # A list of collections the CMS should be able to edit
               - {label: Heading, name: heading, widget: string}
               - {label: Text, name: text, widget: text}
               - {label: Image, name: imageUrl, widget: image}
+      - file: "site/content/about-gza/_index.md"
+        label: "About GZA"
+        name: "aboutgza"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/bibliography/_index.md"
+        label: "Bibliography"
+        name: "bibliography"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/blogs-and-private-works/_index.md"
+        label: "Blogs and Private Works Page"
+        name: "blogs-and-private-works"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image_Credit, name: image_credit, widget: markdown, required: false}
+          - label: Blogs
+            name: blogs
+            widget: list
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - {label: Text, name: text, widget: markdown}
+              - {label: Image, name: imageUrl, widget: image}
+              - {label: Link, name: link, widget: string}
+      - file: "site/content/buy-new/_index.md"
+        label: "Buy New"
+        name: "buynew"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/buy-used-guzheng/_index.md"
+        label: "Buy Used Guzheng"
+        name: "buyusedguzheng"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+            - {label: Lightbox, name: lightbox, widget: list, fields: [
+                        {label: "Image", name: "image", widget: "image"},
+                        {label: "Target", name: "target", widget: "string"},
+                        {label: "Caption", name: "caption", widget: "markdown"}]}
+      - file: "site/content/change-log/_index.md"
+        label: "Change Log"
+        name: "changelog"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/cost-of-ownership/_index.md"
+        label: "Cost Of Ownership"
+        name: "costofownership"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/cypher-notation/_index.md"
+        label: "Cypher Notation"
+        name: "cyphernotation"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/digitizing-scores/_index.md"
+        label: "Digitizing Scores"
+        name: "digitizingscores"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/finger-picks/_index.md"
+        label: "Finger Picks"
+        name: "finger-picks"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - {label: Text, name: text, widget: markdown}
+              - {label: Image, name: imageUrl, widget: image}
+              - {label: Caption, name: caption, widget: text}
+      - file: "site/content/further-reading/_index.md"
+        label: "Further Reading"
+        name: "furtherreading"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/general-mentions/_index.md"
+        label: "General Mentions"
+        name: "generalmentions"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/glossary/_index.md"
+        label: "Glossary"
+        name: "glossary"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/guzheng-bands/_index.md"
+        label: "Guzheng Bands"
+        name: "guzhengbands"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/guzheng-care/_index.md"
+        label: "Guzheng Care"
+        name: "guzhengcare"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/guzheng-history/_index.md"
+        label: "Guzheng History"
+        name: "guzhenghistory"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/guzheng-in-90-seconds/_index.md"
+        label: "Guzheng in 90 Seconds"
+        name: "guzhengin90"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+              - {label: Heading, name: heading, widget: string, required: false}
+              - {label: Anchor, name: anchor, widget: string, required: false}
+              - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/guzheng-pricing-tiers/_index.md"
+        label: "Guzheng Pricing Tiers"
+        name: "guzhengpricingtiers"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/guzheng-repertoire/_index.md"
+        label: "Guzheng Repertoire"
+        name: "guzhengrepertoire"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+          - label: Blinds
+            name: blinds
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: text, name: text, widget: markdown, required: false}
+      - file: "site/content/guzheng-schools-and-styles/_index.md"
+        label: "Guzheng Schools And Styles"
+        name: "guzhengschoolsandstyles"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/guzheng-sheet-music-sources/_index.md"
+        label: "Guzheng Sheet Music Sources"
+        name: "guzhengsheetmusicsources"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/guzheng-stores/_index.md"
+        label: "Guzheng Stores"
+        name: "guzhengstores"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/guzheng-terminology/_index.md"
+        label: "Guzheng Terminology"
+        name: "guzheng-terminology"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+              - {label: Heading, name: heading, widget: string, required: false}
+              - {label: Text, name: text, widget: markdown, required: false}
+              - {label: Image, name: imageUrl, widget: image, required: false}
+              - {label: Caption, name: caption, widget: text, required: false}
+      - file: "site/content/guzheng-timelines/_index.md"
+        label: "Guzheng Timelines"
+        name: "guzhengtimelines"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+          - label: Pre-Modern Timeline
+            name: pmtimeline
+            widget: list
+            fields:
+            - {label: Kingdom, name: kingdom, widget: string, required: false}
+            - {label: Period, name: period, widget: string, required: false}
+            - {label: Date Range, name: daterange, widget: string, required: false}
+            - {label: Image, name: image, widget: image, required: false}
+            - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+            - {label: Region, name: region, widget: string, required: false}
+            - {label: Strings, name: strings, widget: string, required: false}
+            - {label: Event, name: event, widget: string, required: false}
+            - {label: Usage, name: usage, widget: string, required: false}
+          - label: sections2
+            name: sections2
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+          - label: Modern Timeline
+            name: mtimeline
+            widget: list
+            fields:
+            - {label: Year, name: year, widget: string, required: false}
+            - {label: Image, name: image, widget: image, required: false}
+            - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+            - {label: Description, name: description, widget: markdown, required: false}
+          - label: Blinds
+            name: blinds
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: text, name: text, widget: markdown, required: false}
+      - file: "site/content/guzheng-tuning/_index.md"
+        label: "Guzheng Tuning"
+        name: "guzhengtuning"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/guzheng-woods/_index.md"
+        label: "Guzheng Woods"
+        name: "guzhengwoods"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+          - label: Sections2
+            name: sections2
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/how-to-make-guzheng/_index.md"
+        label: "How To Make Guzheng"
+        name: "howtomakeguzheng"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/identify-turtle-shell/_index.md"
+        label: "Identify Turtle Shell"
+        name: "identifyturtleshell"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+              - {label: Heading, name: heading, widget: string, required: false}
+              - {label: Text, name: text, widget: markdown, required: false}
+              - {label: Image, name: imageUrl, widget: image, required: false}
+              - {label: Caption, name: caption, widget: text, required: false}
+      - file: "site/content/import-issues-cites/_index.md"
+        label: "Import Issues Cites"
+        name: "importissuescites"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/keys/_index.md"
+        label: "Keys"
+        name: "keys"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+            - {label: Image, name: imageUrl, widget: image, required: false}
+            - {label: Caption, name: caption, widget: text, required: false}
+      - file: "site/content/mother-tunes-and-music-theory/_index.md"
+        label: "Mother Tunes And Music Theory"
+        name: "mothertunesandmusictheory"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/notes-on-wood-drying/_index.md"
+        label: "Notes On Wood Drying"
+        name: "notesonwooddrying"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/pick-materials/_index.md"
+        label: "Pick Materials"
+        name: "pickmaterials"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/project-reach/_index.md"
+        label: "Project Reach"
+        name: "projectreach"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/research-tools/_index.md"
+        label: "Research Tools"
+        name: "researchtools"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/shipping-guzheng/_index.md"
+        label: "Shipping Guzheng"
+        name: "shippingguzheng"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/similar-instruments/_index.md"
+        label: "Similar Instruments"
+        name: "similarinstruments"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/sitemap-historic/_index.md"
+        label: "Sitemap Historic"
+        name: "sitemaphistoric"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/sources/_index.md"
+        label: "Sources"
+        name: "sources"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/special-thanks/_index.md"
+        label: "Special Thanks"
+        name: "specialthanks"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/strings/_index.md"
+        label: "Strings"
+        name: "strings"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/string-tension/_index.md"
+        label: "String Tension"
+        name: "stringtension"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/teachers/_index.md"
+        label: "Teachers"
+        name: "teachers"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/tune-guzheng-diatonic/_index.md"
+        label: "Tune Guzheng Diatonic"
+        name: "tuneguzhengdiatonic"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/tuning-16-18-23-26/_index.md"
+        label: "Tuning 16 18 23 26"
+        name: "tuning16182326"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+          - label: Blinds
+            name: blinds
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: text, name: text, widget: markdown, required: false}
+      - file: "site/content/tuning-butterfly-multitonic-zheng/_index.md"
+        label: "Tuning Butterfly Multitonic Zheng"
+        name: "tuningbutterflymultitoniczheng"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/virtual-instruments/_index.md"
+        label: "Virtual Instruments"
+        name: "virtual-instruments"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - {label: Intro, name: intro, widget: markdown, required: false}
+          - label: Instruments
+            name: instruments
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: "Youtube Code", name: youtubecode, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+      - file: "site/content/what-is-a-guzheng-school/_index.md"
+        label: "What Is A Guzheng School"
+        name: "whatisaguzhengschool"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections1
+            name: sections1
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+          - label: Images
+            name: images
+            widget: list
+            fields:
+            - {label: Image, name: image, widget: image, required: false}
+            - {label: Caption, name: caption, widget: markdown, required: false}
+          - label: Sections2
+            name: sections2
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: Text, name: text, widget: markdown, required: false}
+          - label: Blinds
+            name: blinds
+            widget: list
+            fields:
+            - {label: Heading, name: heading, widget: string, required: false}
+            - {label: text, name: text, widget: markdown, required: false}
+      - file: "site/content/write-sheet-music/_index.md"
+        label: "Write Sheet Music"
+        name: "writesheetmusic"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Image Credit, name: imagecredit, widget: markdown, required: false}
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+              - {label: Heading, name: heading, widget: string, required: false}
+              - {label: Text, name: text, widget: markdown, required: false}
+              - {label: Image, name: imageUrl, widget: image, required: false}
+              - {label: Caption, name: caption, widget: text, required: false}
+          - label: Images
+            name: images
+            widget: list
+            fields:
+            - {label: Image, name: image, widget: image, required: false}
+            - {label: Caption, name: caption, widget: markdown, required: false}
+            - {label: Download URL, name: downloadUrl, widget: string, required: false}
+          - label: Sections2
+            name: sections2
+            widget: list
+            fields:
+              - {label: Heading, name: heading, widget: string, required: false}
+              - {label: Text, name: text, widget: markdown, required: false}
+              - {label: Image, name: imageUrl, widget: image, required: false}
+              - {label: Caption, name: caption, widget: text, required: false}
