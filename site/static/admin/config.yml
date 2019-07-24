@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: GuzhengAlive/hugo-cms # Path to your GitHub repository
+  repo: GuzhengAlive/one-click-hugo-cms # Path to your GitHub repository
 
 media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
